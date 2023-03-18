@@ -91,16 +91,16 @@ export default function Home() {
             <Image alt="avatar" src={avatardev} />
           </div>
         </section>
-        <section className="w-[50rem] mx-auto">
+        <section className="w-full mx-auto">
           <div>
-            <h3 className="text-3xl py-1 dark:text-white ">I work with</h3>
+            <h3 className="text-3xl py-1 dark:text-white">I work with</h3>
             <p className="text-md py-5 leading-8 text-gray-800 dark:text-gray-200 max-w-xl mx-auto md:text-xl">
               Software Development, front-web, back-end. Get in touch and let's
               talk.
             </p>
           </div>
           <div className="lg:flex gap-10">
-            <div className="text-center shadow-lg p-10 rounded-xl my-10  dark:bg-white flex-1 max-w-[50%] mx-auto">
+            <div className="text-center shadow-lg p-10 rounded-xl my-10  dark:bg-white flex-1 mx-auto">
               <Image
                 className="mx-auto"
                 alt="Software Developement"
