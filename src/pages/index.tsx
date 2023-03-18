@@ -31,7 +31,7 @@ export default function Home() {
             <ul className="flex items-center">
               <li
                 title={`Change theme to ${
-                  darkMode ? "light mode" : " dark mode"
+                  darkMode ? "light mode" : "dark mode"
                 }`}
               >
                 {darkMode ? (
