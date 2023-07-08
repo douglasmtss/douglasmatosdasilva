@@ -5,28 +5,28 @@ import {
   AiFillGithub,
 } from "react-icons/ai";
 import { BsFillMoonStarsFill, BsFillSunFill } from "react-icons/bs";
-import { useState } from "react";
+import React from "react";
 import avatardev from "public/favicon_io/android-chrome-512x512.png";
-import dev from "public/dev.png";
 import Image from "next/image";
-import underConstruction from "public/under-construction.png";
+import { useGithubApi } from "@/hooks/useGihubApi";
 
 export default function Home() {
-  const [darkMode, setDarkMode] = useState(true);
+  const [darkMode, setDarkMode] = React.useState(true);
+  const { data, loading } = useGithubApi()
 
-  return (
+  return !loading && (
     <div className={darkMode ? "dark" : ""}>
       <Head>
-        <title>Douglas Matos da Silva</title>
+        <title>{data.name}</title>
         <meta name="description" content="Website's Douglas Matos da Silva" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon_io/favicon-32x32.png" />
       </Head>
-      <main className="bg-white dark:bg-gray-900 px-10">
+      <main className="w-full h-full bg-white dark:bg-gray-900 px-10">
         <section className="min-h-screen">
           <nav className="py-10 mb-12 flex justify-between dark:text-white">
             <h1 className="font-burtons text-xl">
-              <a href="/">douglasmatosdev</a>
+              <a href="/">{data.login}</a>
             </h1>
             <ul className="flex items-center">
               <li
@@ -45,31 +45,14 @@ export default function Home() {
                   />
                 )}
               </li>
-              <li>
-                <a
-                  title="Blog"
-                  className="bg-gradient-to-r from-cyan-500 text- to-teal-500 text-white px-4 py-2 border-none rounded-md ml-8"
-                  href="#"
-                >
-                  Blog
-                </a>
-              </li>
-              {/* <li>
-                <a
-                  className="bg-gradient-to-r from-cyan-500 text- to-teal-500 text-white px-4 py-2 border-none rounded-md ml-8"
-                  href="#"
-                >
-                  Resume
-                </a>
-              </li> */}
             </ul>
           </nav>
           <div className="text-center py-10">
             <h2 className="text-5xl py-2 text-teal-600 font-medium">
-              Douglas Matos da Silva
+            {data.name.split(' ').filter((_, index) => index == 0 || index === 3).join(' ')}
             </h2>
             <h3 className="text-2xl py-2 dark:text-white md:text-3xl">
-              Father, husband, brother and software developer.
+              {data.bio}
             </h3>
           </div>
           <div className="text-5xl flex justify-center gap-16 py-3 text-gray-600 dark:text-gray-400">
@@ -79,18 +62,24 @@ export default function Home() {
             >
               <AiFillLinkedin />
             </a>
-            <a href="https://twitter.com/devdouglasmatos" target="_blank">
+            <a href={`https://twitter.com/${data.twitter_username}`} target="_blank">
               <AiFillTwitterCircle />
             </a>
-            <a href="https://github.com/douglasmatosdev" target="_blank">
+            <a href={`https://github.com/${data.login}`} target="_blank">
               <AiFillGithub />
             </a>
           </div>
           <div className="mx-auto bg-gradient-to-b from-teal-500 rounded-full w-80 h-80 relative overflow-hidden mt-20 md:h-96 md:w-96">
-            <Image alt="avatar" src={avatardev} />
+            <Image
+              loader={() => data.avatar_url}
+              alt="avatar"
+              src={data.avatar_url}
+              width={384}
+              height={384}
+            />
           </div>
         </section>
-        <section className="w-full mx-auto">
+        {/* <section className="w-full mx-auto">
           <div>
             <h3 className="text-3xl py-1 dark:text-white">I work with</h3>
             <p className="text-md py-5 leading-8 text-gray-800 dark:text-gray-200 max-w-xl mx-auto md:text-xl">
@@ -131,7 +120,7 @@ export default function Home() {
               <p className="text-gray-800 py-1">E muito mais!</p>
             </div>
           </div>
-        </section>
+        </section> */}
         <section className="w-[50rem] mx-auto py-10">
           <div>
             <h3 className="text-3xl py-1 dark:text-white ">Portofolio</h3>
@@ -141,12 +130,12 @@ export default function Home() {
           </div>
           <div className="flex flex-col gap-10 py-10 lg:flex-row lg:flex-wrap jus">
             <div className="basis-1/3 flex-1 ">
-              <Image
+              {/* <Image
                 title="under construction - comming soon"
                 alt="under construction"
                 className="rounded-lg object-cover max-w-[60%]  mx-auto -mt-[200px]"
                 src={underConstruction}
-              />
+              /> */}
             </div>
           </div>
         </section>
