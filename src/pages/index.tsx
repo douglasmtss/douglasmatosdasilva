@@ -6,7 +6,7 @@ import {
 } from "react-icons/ai";
 import { BsFillMoonStarsFill, BsFillSunFill } from "react-icons/bs";
 import { useState } from "react";
-import avatardev from "public/dev-ed-wave.png";
+import avatardev from "public/favicon_io/android-chrome-512x512.png";
 import dev from "public/dev.png";
 import Image from "next/image";
 import underConstruction from "public/under-construction.png";
@@ -17,7 +17,7 @@ export default function Home() {
   return (
     <div className={darkMode ? "dark" : ""}>
       <Head>
-        <title>Douglas Matos</title>
+        <title>Douglas Matos da Silva</title>
         <meta name="description" content="Website's Douglas Matos da Silva" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon_io/favicon-32x32.png" />
@@ -26,13 +26,12 @@ export default function Home() {
         <section className="min-h-screen">
           <nav className="py-10 mb-12 flex justify-between dark:text-white">
             <h1 className="font-burtons text-xl">
-              <a href="#">douglasmatosdev</a>
+              <a href="/">douglasmatosdev</a>
             </h1>
             <ul className="flex items-center">
               <li
-                title={`Change theme to ${
-                  darkMode ? "light mode" : "dark mode"
-                }`}
+                title={`Change theme to ${darkMode ? "light mode" : "dark mode"
+                  }`}
               >
                 {darkMode ? (
                   <BsFillSunFill
@@ -67,7 +66,7 @@ export default function Home() {
           </nav>
           <div className="text-center py-10">
             <h2 className="text-5xl py-2 text-teal-600 font-medium">
-              Douglas Silva
+              Douglas Matos da Silva
             </h2>
             <h3 className="text-2xl py-2 dark:text-white md:text-3xl">
               Father, husband, brother and software developer.
