@@ -6,9 +6,9 @@ import {
 } from "react-icons/ai";
 import { BsFillMoonStarsFill, BsFillSunFill } from "react-icons/bs";
 import React from "react";
-import avatardev from "public/favicon_io/android-chrome-512x512.png";
 import Image from "next/image";
 import { useGithubApi } from "@/hooks/useGihubApi";
+import Link from "next/link";
 
 export default function Home() {
   const [darkMode, setDarkMode] = React.useState(true);
@@ -26,7 +26,7 @@ export default function Home() {
         <section className="min-h-screen">
           <nav className="py-10 mb-12 flex justify-between dark:text-white">
             <h1 className="font-burtons text-xl">
-              <a href="/">{data.login}</a>
+              <Link href="/">{data.login}</Link>
             </h1>
             <ul className="flex items-center">
               <li
@@ -56,18 +56,18 @@ export default function Home() {
             </h3>
           </div>
           <div className="text-5xl flex justify-center gap-16 py-3 text-gray-600 dark:text-gray-400">
-            <a
+            <Link
               href="https://www.linkedin.com/in/devdouglasmatos/"
               target="_blank"
             >
               <AiFillLinkedin />
-            </a>
-            <a href={`https://twitter.com/${data.twitter_username}`} target="_blank">
+            </Link>
+            <Link href={`https://twitter.com/${data.twitter_username}`} target="_blank">
               <AiFillTwitterCircle />
-            </a>
-            <a href={`https://github.com/${data.login}`} target="_blank">
+            </Link>
+            <Link href={`https://github.com/${data.login}`} target="_blank">
               <AiFillGithub />
-            </a>
+            </Link>
           </div>
           <div className="mx-auto bg-gradient-to-b from-teal-500 rounded-full w-80 h-80 relative overflow-hidden mt-20 md:h-96 md:w-96">
             <Image
