@@ -69,7 +69,7 @@ export default function Home() {
               <AiFillGithub />
             </Link>
           </div>
-          <div className="mx-auto bg-gradient-to-b from-teal-500 rounded-full w-80 h-80 relative overflow-hidden mt-20 md:h-96 md:w-96">
+          <div className="w-full mx-auto bg-gradient-to-b from-teal-500 rounded-full relative overflow-hidden mt-20 md:h-96 md:w-96">
             <Image
               loader={() => data.avatar_url}
               alt="avatar"
@@ -121,7 +121,7 @@ export default function Home() {
             </div>
           </div>
         </section> */}
-        <section className="w-[50rem] mx-auto py-10">
+        <section className="w-full mx-auto py-10">
           <div>
             <h3 className="text-3xl py-1 dark:text-white ">Portofolio</h3>
             <p className="text-md py-2 leading-8 text-gray-800 dark:text-gray-200">
