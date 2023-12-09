@@ -1,5 +1,8 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
 @import url(./reset.css);
 
 body {
-    background-color: blue;
 }
