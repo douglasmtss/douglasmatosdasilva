@@ -4,9 +4,9 @@ interface IconCrossProps {
 export const IconCross = ({ onClick }: IconCrossProps) => {
 
     return (
-        <div onClick={onClick} className="relative origin-center">
-            <div className="absolute rotate-45 w-6 h-1 dark:bg-dmds-5 bg-dmds-2"></div>
-            <div className="absolute -rotate-45 w-6 h-1 dark:bg-dmds-5 bg-dmds-2"></div>
+        <div onClick={onClick} className="relative w-7 h-7">
+            <div className="absolute origin-center top-[8px] -left-[2px] rotate-45 w-7 h-1 dark:bg-dmds-5 bg-dmds-2"></div>
+            <div className="absolute origin-center top-[8px] -left-[2px] -rotate-45 w-7 h-1 dark:bg-dmds-5 bg-dmds-2"></div>
         </div>
     )
 }

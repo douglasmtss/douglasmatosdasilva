@@ -7,8 +7,8 @@ export const Footer = (): JSX.Element => {
                 <a 
                     key={link.title}
                     href={link.url}
-                    className='py-1 px-4 md:p-8 text-dmds-3 dark:text-dmds-5'
                     target='_blank'
+                    className='py-1 px-4 md:p-8 text-dmds-3 dark:text-dmds-5 hover:underline'
                 >
                     {link.title}
                 </a>
