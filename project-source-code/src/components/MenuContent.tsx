@@ -1,6 +1,6 @@
 'use client'
 import { FaHome, FaUser, FaPaperclip } from 'react-icons/fa'
-
+import { Outlet, Link } from 'react-router-dom';
 interface MenuContentProps {
     open: boolean
 }
@@ -34,14 +34,15 @@ export const MenuContent = ({ open }: MenuContentProps): JSX.Element => {
                     {
                         links.map((link, index) => (
                             <li key={`${link.text}_${index}`} className='md:ml-8'>
-                                <a href={link.url} className="mt-6 flex justify-start items-center text-dms-2 dark:text-dmds-4 md:m-0 md:text-2xl md:cursor-pointer md:hover:underline">
+                                <Link to={link.url} className="mt-6 flex justify-start items-center text-dms-2 dark:text-dmds-4 md:m-0 md:text-2xl md:cursor-pointer md:hover:underline">
                                     {link.icon}
                                     <span className="ml-6">{link.text}</span>
-                                </a>
+                                </Link>
                             </li>
                         ))
                     }
                 </ul>
+                <Outlet />
             </div>
         </div>
     )
