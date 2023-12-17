@@ -1,6 +1,6 @@
+'use client'
 import { useState } from "react";
 import { Menu } from "./Menu";
-
 
 export const MenuAside = (): JSX.Element => {
     const [open, setOpen] = useState(false)

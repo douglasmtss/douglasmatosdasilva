@@ -1,3 +1,4 @@
+'use client'
 import { useState } from "react";
 import { BsFillMoonStarsFill, BsFillSunFill } from "react-icons/bs";
 

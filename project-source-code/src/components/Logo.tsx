@@ -1,3 +1,4 @@
+'use client'
 import logo from '@/assets/logo.svg'
 import binaryCircle from '@/assets/binary-circle.svg'
 

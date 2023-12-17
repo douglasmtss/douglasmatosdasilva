@@ -1,3 +1,4 @@
+'use client'
 import "@fontsource/open-sans";
 import "@fontsource/ranga";
 import './index.css'

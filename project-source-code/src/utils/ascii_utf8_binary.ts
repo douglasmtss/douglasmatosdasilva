@@ -1,4 +1,4 @@
-
+'use client'
 export const convert = {
     asciiUtf8ToBinary(text: string): string {
         let binaryString = ''

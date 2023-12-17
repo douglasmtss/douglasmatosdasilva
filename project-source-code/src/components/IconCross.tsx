@@ -1,3 +1,4 @@
+'use client'
 interface IconCrossProps {
     onClick: (e: React.MouseEvent<HTMLDivElement, MouseEvent>) => void
 }

@@ -1,3 +1,4 @@
+'use client'
 interface IconHamburgerProps {
     onClick: (e: React.MouseEvent<HTMLDivElement, MouseEvent>) => void
 }

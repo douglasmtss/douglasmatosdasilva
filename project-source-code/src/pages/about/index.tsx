@@ -1,3 +1,4 @@
+'use client'
 import TopPageContent from "@/components/TopPageContent"
 
 export default function About() {

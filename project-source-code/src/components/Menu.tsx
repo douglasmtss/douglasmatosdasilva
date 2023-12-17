@@ -1,3 +1,4 @@
+'use client'
 import { IconCross } from './IconCross'
 import { IconHamburger } from './IconHamburger'
 import { MenuAside } from './MenuAside'

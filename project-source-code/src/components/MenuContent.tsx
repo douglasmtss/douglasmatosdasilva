@@ -1,3 +1,4 @@
+'use client'
 import { FaHome, FaUser, FaPaperclip } from 'react-icons/fa'
 
 interface MenuContentProps {

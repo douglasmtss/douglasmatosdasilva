@@ -1,3 +1,4 @@
+'use client'
 import { contacts } from '@/utils/links'
 export const Footer = (): JSX.Element => {
 
