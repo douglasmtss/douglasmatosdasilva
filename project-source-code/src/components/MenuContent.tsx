@@ -31,10 +31,10 @@ export const MenuContent = ({ open }: MenuContentProps): JSX.Element => {
                 <h1 className='md:hidden font-ranga mt-8 text-5xl text-dmds-2 dark:text-dmds-1 md:text-6xl tracking-tighter'>Douglas Silva</h1>
                 <ul className="mt-6 pt-8 border-t dark:border-dmds-5 md:flex md:justify-end md:items-end md:border-none md:border md:m-0 md:p-0">
                     {
-                        links.map(link => (
-                            <li className='md:ml-8'>
+                        links.map((link, index) => (
+                            <li key={`${link.text}_${index}`} className='md:ml-8'>
                                 <a href={link.url} className="mt-6 flex justify-start items-center text-dms-2 dark:text-dmds-4 md:m-0 md:text-2xl md:cursor-pointer md:hover:underline">
-                                   {link.icon}
+                                    {link.icon}
                                     <span className="ml-6">{link.text}</span>
                                 </a>
                             </li>
