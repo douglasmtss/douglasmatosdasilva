@@ -28,12 +28,12 @@ export const TogggleTheme = (): JSX.Element => {
             {darkMode ? (
                 <BsFillSunFill
                     onClick={handleClick}
-                    className=" cursor-pointer text-2xl text-yellow-500"
+                    className="z-[999] cursor-pointer text-2xl text-yellow-500"
                 />
             ) : (
                 <BsFillMoonStarsFill
                     onClick={handleClick}
-                    className="cursor-pointer text-2xl text-blue-800"
+                    className="z-[999] cursor-pointer text-2xl text-blue-800"
                 />
             )}
         </div>
