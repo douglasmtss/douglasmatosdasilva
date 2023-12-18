@@ -16,12 +16,21 @@
   "dependencies": {
     "@fontsource/open-sans": "^5.0.20",
     "@fontsource/ranga": "^5.0.18",
+    "clsx": "^2.0.0",
+    "contentlayer": "^0.3.4",
     "next": "14.0.4",
+    "next-contentlayer": "^0.3.4",
     "next-themes": "^0.2.1",
     "react": "^18",
     "react-dom": "^18",
     "react-icons": "^4.12.0",
-    "react-router-dom": "^6.21.0"
+    "react-router-dom": "^6.21.0",
+    "rehype-autolink-headings": "^7.1.0",
+    "rehype-pretty-code": "^0.12.1",
+    "rehype-slug": "^6.0.0",
+    "remark-gfm": "^4.0.0",
+    "shikiji": "^0.9.9",
+    "tailwind-merge": "^2.1.0"
   },
   "devDependencies": {
     "@douglasmatosdev/eslint-config": "^1.0.4",
