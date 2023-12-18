@@ -3,7 +3,7 @@ import TopPageContent from '@/components/TopPageContent'
 
 export default function Home(): JSX.Element {
     return (
-        <div className="bg-dmds-1 dark:bg-dmds-2 h-screen flex flex-col md:px-8 md:pt-8">
+        <div className="absolute bottom-0 top-0 left-0 right-0 bg-dmds-1 dark:bg-dmds-2 flex flex-col md:px-8 md:pt-8">
             <TopPageContent />
             <header className="flex flex-col items-center py-8 w-max mx-auto">
                 <h1 className="font-ranga mt-8 text-5xl text-dmds-2 dark:text-dmds-1 md:text-8xl tracking-tighter mb-8">
