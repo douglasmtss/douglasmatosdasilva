@@ -2,7 +2,7 @@ import { contacts } from '@/utils/links'
 
 export const Footer = (): JSX.Element => {
     return (
-        <footer className={`flex flex-wrap justify-center h-max px-2 pt-2 pb-12 md:pb-2 mt-auto`}>
+        <footer className={`flex flex-wrap justify-center h-max px-2 pt-2 pb-8 mt-auto`}>
             {contacts.map(link => (
                 <a
                     key={link.title}
