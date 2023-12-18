@@ -13,7 +13,6 @@ export default function Home(): JSX.Element {
                     Father, husband, brother and software developer.
                 </span>
             </header>
-            <main className="w-full flex-1"></main>
             <Footer />
         </div>
     )
