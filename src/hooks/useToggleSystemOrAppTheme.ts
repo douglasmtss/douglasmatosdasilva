@@ -2,12 +2,15 @@
 
 import { useTheme } from 'next-themes'
 import { useCallback, useEffect, useState } from 'react'
+import { useIsClient } from './useIsClient'
 
 export const useToggleSystemOrAppTheme = (): {
     theme: ThemeModes
     toggleTheme: () => void
 } => {
-    const getCurrentTheme = (): boolean => window.matchMedia('(prefers-color-scheme: dark)').matches
+    const isClient = useIsClient()
+
+    const getCurrentTheme = (): boolean => !!isClient && window.matchMedia('(prefers-color-scheme: dark)').matches
 
     const { theme, setTheme } = useTheme()
     const [currentTheme, setCurrentTheme] = useState<ThemeModes>(getCurrentTheme() ? 'dark' : 'light')
@@ -30,6 +33,7 @@ export const useToggleSystemOrAppTheme = (): {
             setCurrentTheme(theme as ThemeModes)
         }
 
+        if (!isClient) return
         const darkThemeMediaQuery = window.matchMedia('(prefers-color-scheme: dark)')
         const currentTheme = darkThemeMediaQuery.matches ? 'dark' : 'light'
 
