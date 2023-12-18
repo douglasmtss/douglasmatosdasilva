@@ -1,6 +1,7 @@
 import type { Metadata } from 'next'
 import './globals.css'
 import ThemeProvider from '@/providers/themeProvider'
+import { IsClientCtxProvider } from '@/hooks/useIsClient'
 
 export const metadata: Metadata = {
     title: 'Douglas Matos',
@@ -11,9 +12,11 @@ export default function RootLayout({ children }: { children: React.ReactNode }):
     return (
         <html suppressHydrationWarning={true} lang="en">
             <body>
-                <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
-                    {children}
-                </ThemeProvider>
+                <IsClientCtxProvider>
+                    <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
+                        {children}
+                    </ThemeProvider>
+                </IsClientCtxProvider>
             </body>
         </html>
     )
