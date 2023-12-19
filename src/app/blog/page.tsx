@@ -17,6 +17,8 @@ async function getDocFromParams(slug: string): Promise<Doc> {
 }
 
 export default async function page({ params }: PageProps): Promise<JSX.Element> {
+    console.log(params)
+
     const doc = await getDocFromParams(params.slug)
 
     console.log(doc)
