@@ -17,7 +17,7 @@ export const MenuContent = ({ open }: MenuContentProps): JSX.Element => {
             text: 'About'
         },
         {
-            url: '/pages/blog',
+            url: '/blog',
             icon: <FaPaperclip />,
             text: 'Blog'
         }

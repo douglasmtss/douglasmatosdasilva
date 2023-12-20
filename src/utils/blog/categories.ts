@@ -1,12 +1,5 @@
 import { readdirSync } from 'fs'
 
-type Tree = {
-    parentId: number | string | null
-    id: number | string
-    name?: string
-    slug?: string
-    children?: Tree[]
-}
 const blogPath = 'src/articles/blog'
 
 const mountSlug = (str: string): string => {
@@ -15,19 +8,28 @@ const mountSlug = (str: string): string => {
     return str.toLocaleLowerCase().replaceAll(' ', '-').trim()
 }
 
+const getAllFilesNames = (source: string): string[] => {
+    return readdirSync(source, { withFileTypes: true })
+        .filter(file => file.isFile())
+        .map(file => file.name)
+}
+
 const getAllFoldersNames = (source: string): string[] => {
     return readdirSync(source, { withFileTypes: true })
         .filter(dirent => dirent.isDirectory())
         .map(dirent => dirent.name)
 }
 
-const mountObjects = (arr: string[], root: Tree): Tree[] => {
+const mountObjects = (arr: string[], root: CategoryTree, source: string): CategoryTree[] => {
     return arr.map((a, i) => {
+        const newSource = `${source}/${mountSlug(a)}`
         if (typeof root?.id === 'undefined') {
             return {
                 id: `root_${i}`,
                 parentId: null,
                 name: a,
+                files: getAllFilesNames(`${newSource}`),
+                source: newSource,
                 slug: mountSlug(a),
                 children: []
             }
@@ -36,6 +38,8 @@ const mountObjects = (arr: string[], root: Tree): Tree[] => {
                 id: `${root.name}__${i}`,
                 parentId: root.id,
                 name: a,
+                files: getAllFilesNames(`${blogPath}/${newSource}`),
+                source: newSource,
                 slug: mountSlug(a),
                 children: []
             }
@@ -43,36 +47,38 @@ const mountObjects = (arr: string[], root: Tree): Tree[] => {
     })
 }
 
-const mountTree = (path: string, data: Tree[], root = {} as Tree): void => {
-    const foldersNamesList = getAllFoldersNames(path)
-    const objectsReferences = mountObjects(foldersNamesList, root)
+const mountTree = (source: string, data: CategoryTree[], root = {} as CategoryTree): void => {
+    let historySource = source.replace(`${blogPath}/`, '')
+    const foldersNamesList = getAllFoldersNames(source)
+    const objectsReferences = mountObjects(foldersNamesList, root, historySource)
 
     objectsReferences.forEach(or => {
         data.push(or)
-        mountTree(`${path}/${or.name}`, data, or)
+        historySource = `${historySource}/${or.name}`
+        mountTree(`${source}/${or.name}`, data, or)
     })
 }
 
-export default async function blogCategories(): Promise<Tree[]> {
-    const tree = [] as Tree[]
+export default async function blogCategories(): Promise<CategoryTree[]> {
+    const tree = [] as CategoryTree[]
     mountTree(blogPath, tree)
 
     const idMapping = tree.reduce(
         (acc, el, i) => {
-            acc[el.id] = i
+            acc[el.id as string] = i
 
             return acc
         },
         {} as { [key: string]: number }
     )
-    const categories = [] as Tree[]
+    const categories = [] as CategoryTree[]
     tree.forEach(el => {
         if (el.parentId === null) {
             categories.push(el)
 
             return
         }
-        const parentEl = tree[idMapping[el.parentId]]
+        const parentEl = tree[idMapping[el.parentId as string]]
         parentEl.children = [...(parentEl.children || []), el]
     })
 
