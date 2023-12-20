@@ -28,6 +28,14 @@ export const Doc = defineDocumentType(() => ({
         description: {
             type: 'string'
         },
+        createdAt: {
+            type: 'string',
+            required: true
+        },
+        author: {
+            type: 'string',
+            required: true
+        },
         published: {
             type: 'boolean',
             default: true

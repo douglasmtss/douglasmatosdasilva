@@ -26,6 +26,14 @@ var Doc = defineDocumentType(() => ({
     description: {
       type: "string"
     },
+    createdAt: {
+      type: "string",
+      required: true
+    },
+    author: {
+      type: "string",
+      required: true
+    },
     published: {
       type: "boolean",
       default: true
@@ -73,4 +81,4 @@ export {
   Doc,
   contentlayer_config_default as default
 };
-//# sourceMappingURL=compiled-contentlayer-config-LNWPTZT7.mjs.map
+//# sourceMappingURL=compiled-contentlayer-config-SHL6EPTU.mjs.map

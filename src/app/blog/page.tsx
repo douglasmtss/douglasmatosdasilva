@@ -1,33 +1,24 @@
-import { Mdx } from '@/components/Mdx'
-import { Doc, allDocs } from 'contentlayer/generated'
-import { notFound } from 'next/navigation'
+import blogCategories from '@/utils/blog/categories'
+import Link from 'next/link'
 
-interface PageProps {
-    params: {
-        slug: string
-    }
-}
-
-async function getDocFromParams(slug: string): Promise<Doc> {
-    const doc = allDocs.find(doc => doc.slugAsParams === slug)
-
-    if (!doc) notFound()
-
-    return doc
-}
-
-export default async function page({ params }: PageProps): Promise<JSX.Element> {
-    console.log(params)
-
-    const doc = await getDocFromParams(params.slug)
-
-    console.log(doc)
+export default async function Page(): Promise<JSX.Element> {
+    const categories = await blogCategories()
 
     return (
         <div>
-            <h1>{doc.title}</h1>
-            {/* <div>{JSON.stringify(doc)}</div> */}
-            <Mdx code={doc.body.code} />
+            <h1>blog</h1>
+            <div>
+                <h2>Main categories</h2>
+                <ul>
+                    {categories.map((c, i) => (
+                        <li key={`${i}__${c.name}`}>
+                            <Link className="cursor-pointer" href={`/blog/${c.slug}`}>
+                                {c.name}
+                            </Link>
+                        </li>
+                    ))}
+                </ul>
+            </div>
         </div>
     )
 }
