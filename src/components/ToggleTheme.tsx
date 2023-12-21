@@ -2,7 +2,7 @@
 import { useToggleSystemOrAppTheme } from '@/hooks/useToggleSystemOrAppTheme'
 import { BsFillMoonStarsFill, BsFillSunFill } from 'react-icons/bs'
 
-export const TogggleTheme = (): JSX.Element => {
+export default function TogggleTheme(): JSX.Element {
     const { theme, toggleTheme } = useToggleSystemOrAppTheme()
 
     const isDarkMode = theme === 'dark'

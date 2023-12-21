@@ -34,6 +34,10 @@ var Doc = defineDocumentType(() => ({
       type: "string",
       required: true
     },
+    imageSource: {
+      type: "string",
+      required: true
+    },
     published: {
       type: "boolean",
       default: true
@@ -81,4 +85,4 @@ export {
   Doc,
   contentlayer_config_default as default
 };
-//# sourceMappingURL=compiled-contentlayer-config-SHL6EPTU.mjs.map
+//# sourceMappingURL=compiled-contentlayer-config-32GNYQMH.mjs.map

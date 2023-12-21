@@ -1,10 +1,8 @@
-import { Footer } from '@/components/Footer'
-import TopPageContent from '@/components/TopPageContent'
+import WrapperPage from '@/components/WrapperPage'
 
 export default function Home(): JSX.Element {
     return (
-        <div className="absolute bottom-0 top-0 left-0 right-0 bg-dmds-1 dark:bg-dmds-2 flex flex-col md:px-8 md:pt-8">
-            <TopPageContent />
+        <WrapperPage>
             <header className="flex flex-col items-center py-8 w-max mx-auto">
                 <h1 className="font-ranga mt-8 text-5xl text-dmds-2 dark:text-dmds-1 md:text-8xl tracking-tighter mb-8">
                     Douglas Silva
@@ -13,7 +11,6 @@ export default function Home(): JSX.Element {
                     Father, husband, brother and software developer.
                 </span>
             </header>
-            <Footer />
-        </div>
+        </WrapperPage>
     )
 }
