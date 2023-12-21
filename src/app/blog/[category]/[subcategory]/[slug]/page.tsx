@@ -4,8 +4,7 @@ import { Doc, allDocs } from 'contentlayer/generated'
 import { notFound } from 'next/navigation'
 import { mountSlugParam } from '@/utils/blog/mountSlugParam'
 import blogCategories from '@/utils/blog/categories'
-import TopPageContent from '@/components/TopPageContent'
-import { Footer } from '@/components/Footer'
+import WrapperPage from '@/components/WrapperPage'
 
 interface PageProps {
     params: {
@@ -32,15 +31,15 @@ export default async function Page({ params }: PageProps): Promise<JSX.Element> 
     console.log(categories, params)
 
     return (
-        <div>
-            <TopPageContent />
-            <h1>{doc.title}</h1>
-            <h2>{doc.description}</h2>
-            <small>
-                {doc.createdAt} - {doc.author}
-            </small>
-            <Mdx code={doc.body.code} />
-            <Footer />
-        </div>
+        <WrapperPage>
+            <div className="mt-6">
+                <h1 className="font-bold text-2xl text-dmds-2 dark:text-dmds-1 mb-6">{doc.title}</h1>
+                <h2 className="font-light text-lg text-dmds-3 dark:text-dmds-4 mb-6">{doc.description}</h2>
+                <small className="font-semibold text-md text-dmds-4 mb-6">
+                    {doc.createdAt} - {doc.author}
+                </small>
+                <Mdx code={doc.body.code} />
+            </div>
+        </WrapperPage>
     )
 }

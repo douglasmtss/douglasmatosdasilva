@@ -36,6 +36,10 @@ export const Doc = defineDocumentType(() => ({
             type: 'string',
             required: true
         },
+        imageSource: {
+            type: 'string',
+            required: true
+        },
         published: {
             type: 'boolean',
             default: true
