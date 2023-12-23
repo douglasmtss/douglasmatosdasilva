@@ -11,12 +11,13 @@ var computedFields = {
   },
   slugAsParams: {
     type: "string",
-    resolve: (doc) => doc._raw.flattenedPath.split("/").slice(1).join("/")
+    resolve: (doc) => doc._raw.flattenedPath?.replace("/", "")
+    // .split('/').slice(1).join('/')
   }
 };
 var Doc = defineDocumentType(() => ({
   name: "Doc",
-  filePathPattern: `blog/**/*.mdx`,
+  filePathPattern: `./**/*.mdx`,
   contentType: "mdx",
   fields: {
     title: {
@@ -34,7 +35,7 @@ var Doc = defineDocumentType(() => ({
       type: "string",
       required: true
     },
-    imageSource: {
+    image: {
       type: "string",
       required: true
     },
@@ -85,4 +86,4 @@ export {
   Doc,
   contentlayer_config_default as default
 };
-//# sourceMappingURL=compiled-contentlayer-config-32GNYQMH.mjs.map
+//# sourceMappingURL=compiled-contentlayer-config-BFU75P44.mjs.map

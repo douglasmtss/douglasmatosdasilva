@@ -1,4 +1,4 @@
-import loadIcon from '@/assets/load-icon.png'
+import loadIcon from '@/assets/images/load-icon.png'
 import Image from 'next/image'
 
 interface LoadIconProps {

@@ -12,13 +12,13 @@ const computedFields = {
     },
     slugAsParams: {
         type: 'string',
-        resolve: doc => doc._raw.flattenedPath.split('/').slice(1).join('/')
+        resolve: doc => doc._raw.flattenedPath?.replace('/', '') // .split('/').slice(1).join('/')
     }
 }
 
 export const Doc = defineDocumentType(() => ({
     name: 'Doc',
-    filePathPattern: `blog/**/*.mdx`,
+    filePathPattern: `./**/*.mdx`,
     contentType: 'mdx',
     fields: {
         title: {
@@ -36,7 +36,7 @@ export const Doc = defineDocumentType(() => ({
             type: 'string',
             required: true
         },
-        imageSource: {
+        image: {
             type: 'string',
             required: true
         },

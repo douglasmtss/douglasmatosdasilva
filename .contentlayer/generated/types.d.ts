@@ -17,7 +17,7 @@ export type Doc = {
   description?: string | undefined
   createdAt: string
   author: string
-  imageSource: string
+  image: string
   published: boolean
   /** MDX file body */
   body: MDX

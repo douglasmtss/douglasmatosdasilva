@@ -1,5 +1,5 @@
-import logo from '@/assets/logo.svg'
-import binaryCircle from '@/assets/binary-circle.svg'
+import logo from '@/assets/images/logo.svg'
+import binaryCircle from '@/assets/images/binary-circle.svg'
 import Image from 'next/image'
 
 export interface LogoProps {
