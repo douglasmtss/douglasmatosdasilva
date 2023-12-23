@@ -17,12 +17,12 @@ export default function PostPreview(props: PostPreviewProps): JSX.Element {
     const stats = readingTime(props.content)
 
     return (
-        <a href={props.href} className="border-0 w-96 ml-5 no-underline">
+        <a href={props.href} className="border-0 w-full md:w-96 md:ml-5 no-underline">
             <Animation index={`${props.index}`}>
                 <div className="flex flex-col">
                     <div
                         style={{ backgroundImage: `url(${props.image})` }}
-                        className="rounded-[8px] w-[370px] h-[180px] mb-5 bg-cover bg-no-repeat bg-center filter-[grayscale(1)]"
+                        className="rounded-[8px] w-full md:w-[370px] h-[180px] mb-5 bg-cover bg-no-repeat bg-center filter-[grayscale(1)]"
                     />
 
                     <div className="max-w-md">
