@@ -3,6 +3,7 @@ import { useMDXComponent } from 'next-contentlayer/hooks'
 
 import { cn } from '@/utils/tailwindMerge'
 import Image from 'next/image'
+import Pre from './Pre'
 
 const components = {
     h1: ({ className, ...props }: React.HTMLAttributes<HTMLHeadingElement>) => (
@@ -16,7 +17,8 @@ const components = {
     ),
     strong: ({ className, ...props }: React.HTMLAttributes<HTMLHeadingElement>) => (
         <strong className={cn('font-bold', className)} {...props} />
-    )
+    ),
+    pre: Pre
 }
 
 interface MdxProps {
@@ -28,6 +30,8 @@ export function Mdx({ code }: MdxProps): JSX.Element {
 
     return (
         <div className="my-6">
+            {/* eslint-disable-next-line @typescript-eslint/ban-ts-comment */}
+            {/* @ts-ignore */}
             <Component components={components} />
         </div>
     )
