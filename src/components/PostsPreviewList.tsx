@@ -35,7 +35,9 @@ export default function PostsPreviewList(props: PostsPreviewListProps): JSX.Elem
                 <p dangerouslySetInnerHTML={{ __html: props.description }} />
 
                 <h2>All Posts</h2>
-                <div className="flex flex-col md:flex-row items-center md:justify-between md:items-baseline">{renderAllPosts()}</div>
+                <div className="flex flex-col md:flex-row items-center md:justify-between md:items-baseline">
+                    {renderAllPosts()}
+                </div>
             </motion.div>
         </>
     )
