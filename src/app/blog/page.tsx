@@ -17,7 +17,7 @@ function getPosts(): Record<string, string>[] {
 export async function generateMetadata(): Promise<Metadata> {
     const allPosts = getPosts() as Record<string, string>[]
     const title = 'Blog // Douglas Matos'
-    const image = '/static/images/random.webp'
+    const image = '/images/random.webp'
     const description = stripHtml(
         `Here you can find all the <strong>${allPosts.length} articles</strong> I wrote. You can read about web development, software engineering, and tech career in both English and Portuguese.`
     )
