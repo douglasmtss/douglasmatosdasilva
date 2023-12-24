@@ -1,3 +1,10 @@
+import { Metadata } from 'next'
+
+export const metadata: Metadata = {
+    title: 'About // Douglas Matos',
+    description: 'This page contains some information of author - Douglas Matos da Silva'
+}
+
 export default function About(): JSX.Element {
     return (
         <main className="flex flex-col mb-8">

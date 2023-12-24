@@ -1,4 +1,5 @@
 import { contacts } from '@/utils/links'
+import Link from 'next/link'
 
 export const Footer = (): JSX.Element => {
     return (
@@ -16,6 +17,9 @@ export const Footer = (): JSX.Element => {
                         {link.title}
                     </a>
                 ))}
+            </div>
+            <div className="text-dmds-3 dark:text-dmds-5 hover:underline">
+                <Link href="/pages/privacy">Privacy</Link>
             </div>
         </footer>
     )

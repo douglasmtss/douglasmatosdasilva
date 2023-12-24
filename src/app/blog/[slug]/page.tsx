@@ -16,8 +16,26 @@ type GenerateMetadataProps = {
     params: { slug: string }
 }
 
+const getCachedDocFromParams = async (slug: string): Promise<Doc> => {
+    const doc = await getDocFromParams(slug)
+
+    return doc
+}
+
+export async function generateStaticParams(): Promise<string[]> {
+    return allDocs.map(doc => doc.slugAsParams) // .slice(0, 10) // precache on first 10 posts
+}
+
+async function getDocFromParams(slug: string): Promise<Doc> {
+    const doc = allDocs.find(doc => doc.slugAsParams === slug)
+
+    if (!doc) notFound()
+
+    return doc
+}
+
 export async function generateMetadata({ params }: GenerateMetadataProps): Promise<Metadata> {
-    const doc = await getDocFromParams(params.slug)
+    const doc = await getCachedDocFromParams(params.slug)
 
     const title = `Post // ${doc.title}`
     const image = doc.image
@@ -37,16 +55,8 @@ export async function generateMetadata({ params }: GenerateMetadataProps): Promi
     }
 }
 
-async function getDocFromParams(slug: string): Promise<Doc> {
-    const doc = allDocs.find(doc => doc.slugAsParams === slug)
-
-    if (!doc) notFound()
-
-    return doc
-}
-
 export default async function Page({ params }: PageProps): Promise<JSX.Element> {
-    const doc = await getDocFromParams(mountSlugParam(params))
+    const doc = await getCachedDocFromParams(mountSlugParam(params))
 
     return (
         <div className="mt-6">
