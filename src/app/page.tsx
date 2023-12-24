@@ -4,7 +4,12 @@ import Script from 'next/script'
 export default function Home(): JSX.Element {
     return (
         <WrapperPage>
-            <Script src="https://www.googletagmanager.com/gtag/js?id=G-8J47CXLFL2"></Script>
+            <Script
+                async
+                src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9377371618407904"
+                crossOrigin="anonymous"
+            />
+            <Script async src="https://www.googletagmanager.com/gtag/js?id=G-8J47CXLFL2" />
             <Script id="google-analytics">
                 {`
                     window.dataLayer = window.dataLayer || [];
