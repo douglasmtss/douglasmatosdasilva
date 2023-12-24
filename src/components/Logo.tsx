@@ -10,7 +10,7 @@ export const Logo = ({ containerClassName = 'w-16 h-16 md:w-32 md:h-32' }: LogoP
     return (
         <div className={`rounded-full relative ${containerClassName}`}>
             <figure>
-                <a href="/logo-meaning">
+                <a href="/">
                     <Image
                         className="top-0 left-0 w-full h-full absolute animation-rotate-reverse"
                         src={binaryCircle}

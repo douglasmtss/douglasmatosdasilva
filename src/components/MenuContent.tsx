@@ -26,8 +26,8 @@ export const MenuContent = ({ open }: MenuContentProps): JSX.Element => {
     return (
         <div className="fixed md:w-full md:relative md:top-0 md:right-0 md:bottom-0 md:left-0 md:h-max top-0 -right-full bottom-0 left-full transition-all">
             <div
-                className={`fixed md:hidden top-0 right-0 bottom-0 ${
-                    open ? '-left-full opacity-60' : 'left-0 opacity-0'
+                className={`fixed md:hidden ${
+                    open ? 'top-0 right-0 bottom-0 left-0 opacity-60' : 'top-0 -right-full bottom-0 left-full opacity-0'
                 } bg-black dark:bg-white flex justify-end transition-all duration-700 delay-350`}
             />
 
