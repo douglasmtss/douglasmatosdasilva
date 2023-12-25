@@ -7,7 +7,13 @@ import Pre from './Pre'
 
 const components = {
     h1: ({ className, ...props }: React.HTMLAttributes<HTMLHeadingElement>) => (
-        <h1 className={cn('mt-2 scroll-m-20 text-4xl font-bold tracking-tight', className)} {...props} />
+        <h1 className={cn('mt-2 text-4xl font-bold tracking-tight', className)} {...props} />
+    ),
+    h2: ({ className, ...props }: React.HTMLAttributes<HTMLHeadingElement>) => (
+        <h1 className={cn('mt-2 text-2xl font-semibold tracking-tight', className)} {...props} />
+    ),
+    h3: ({ className, ...props }: React.HTMLAttributes<HTMLHeadingElement>) => (
+        <h1 className={cn('mt-2 text-xl font-bold tracking-tight', className)} {...props} />
     ),
     img: ({ className, ...props }: React.HTMLAttributes<HTMLHeadingElement>) => (
         <Image src="" alt="" width={370} height={210} className={cn('my-6 w-full', className)} {...props} />

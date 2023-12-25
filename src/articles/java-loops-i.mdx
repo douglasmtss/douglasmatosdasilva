@@ -1,37 +1,40 @@
 ---
 title: Java Loops I
-description: An article nextjs middleware
-createdAt: April 06, 2023 01:20 PM
+description: Como resolver o desafio do Hackerrank em java, Java Loops I. Neste desafio, usaremos loops para nos ajudar a fazer algumas contas simples.
+createdAt: Dezembro 25, 2023 18:40 PM
 author: Douglas Matos
-image: /images/hackerrank.jpg
+image: /images/thumb-hackerrank-java-loops-i.png
 ---
-![Satellite](/images/hackerrank.jpg)
+![Hackerrank - Java Loops I](/images/thumb-hackerrank-java-loops-i.png)
 
-### Objective
-In this challenge, we're going to use loops to help us do some simple math.
 
-### Task
-Given an integer, , print its first  multiples. Each multiple  (where ) should be printed on a new line in the form: N x i = result.
+## Vamos primeiro ler o enunciado do desafio
 
-### Input Format
+### Objetivo
+Neste desafio, usaremos loops para nos ajudar a fazer algumas contas simples.
 
-A single integer, .
+### Tarefa
+Dado um número inteiro, ***N*** , imprima seu primeiro **10** múltiplos. Cada múltiplo ***N x i*** (onde ***{'1 <= i <= 10'}***) deve ser impresso em uma nova linha no formato: **N x i = result**.
 
-### Constraints
+### Formato de entrada
 
-### Output Format
+Um único número inteiro, ***N***.
 
-Print  lines of output; each line  (where ) contains the  of  in the form:
-N x i = result.
+### Restrições
 
-### Sample Input
+- ***{'2 <= N <= 20'}***
 
-```
+### Formato de saída
+
+Imprimir **10** linhas de saída; cada linha ***i*** (onde ***{'1 <= i <= 10'}***) contém o ***result*** de ***N x i*** no formato: **N x i = result**.
+
+### Exemplo de entrada
+```bash
 2
 ```
-### Sample Output
+### Saída de amostra
 
-```
+```bash
 2 x 1 = 2
 2 x 2 = 4
 2 x 3 = 6
@@ -43,8 +46,42 @@ N x i = result.
 2 x 9 = 18
 2 x 10 = 20
 ```
-```javascript
-export async function sum(a, b) {
-    return a + b;
+
+No desfio, é deixado um código inicial, o que aparece logo a seguir
+
+```java
+import java.io.*;
+import java.math.*;
+import java.security.*;
+import java.text.*;
+import java.util.*;
+import java.util.concurrent.*;
+import java.util.regex.*;
+
+public class Solution {
+    public static void main(String[] args) throws IOException {
+        BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(System.in));
+
+        int N = Integer.parseInt(bufferedReader.readLine().trim());
+
+        bufferedReader.close();
+    }
 }
 ```
+
+Vamos a solução, primeiro crie um loop for, o qual terá como condição final ***{'i <= 10'}***, pois o enunciodo pede para imprimirmos os 10 primeiros múltiplos.
+
+```java
+for (int i = 1; i <= 10; i++) {
+    
+}
+```
+
+Em seguida chame o ***{'System.out.println'}*** passando ***N***, concatenado com a ***string*** ***" x "***, concatenado com ***i***, concatenado com a ***string*** ***" = "***, concatenado com a multiplicação de **N * i**
+
+```java
+for (int i = 1; i <= 10; i++) {
+    System.out.println(N + " x " + i + " = " + N * i);
+}
+```
+
