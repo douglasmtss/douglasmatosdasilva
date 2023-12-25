@@ -15,7 +15,7 @@ export default function CopyButton({ text }: { text: string }): JSX.Element {
     }
 
     return (
-        <button disabled={isCopied} onClick={copy}>
+        <button disabled={isCopied} onClick={copy} className="text-dmds-1">
             {isCopied ? 'Copied!' : 'Copy'}
         </button>
     )
