@@ -2,5 +2,6 @@
 
 import javaLoopsIMdx from './java-loops-i.mdx.json' assert { type: 'json' }
 import leoMeoEGeoComoPodemosExplicarOsDiferentesTiposDeOrbitaMdx from './leo-meo-e-geo-como-podemos-explicar-os-diferentes-tipos-de-orbita.mdx.json' assert { type: 'json' }
+import welcomeToJavaMdx from './welcome-to-java.mdx.json' assert { type: 'json' }
 
-export const allDocs = [javaLoopsIMdx, leoMeoEGeoComoPodemosExplicarOsDiferentesTiposDeOrbitaMdx]
+export const allDocs = [javaLoopsIMdx, leoMeoEGeoComoPodemosExplicarOsDiferentesTiposDeOrbitaMdx, welcomeToJavaMdx]
