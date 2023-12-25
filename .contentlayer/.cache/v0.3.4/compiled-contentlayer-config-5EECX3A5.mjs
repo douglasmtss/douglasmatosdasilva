@@ -20,6 +20,10 @@ var Doc = defineDocumentType(() => ({
   filePathPattern: `./**/*.mdx`,
   contentType: "mdx",
   fields: {
+    lastModified: {
+      type: "string",
+      required: false
+    },
     title: {
       type: "string",
       required: true
@@ -86,4 +90,4 @@ export {
   Doc,
   contentlayer_config_default as default
 };
-//# sourceMappingURL=compiled-contentlayer-config-BFU75P44.mjs.map
+//# sourceMappingURL=compiled-contentlayer-config-5EECX3A5.mjs.map
