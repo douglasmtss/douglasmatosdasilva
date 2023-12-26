@@ -3,8 +3,9 @@ import Link from 'next/link'
 
 interface MenuContentProps {
     open: boolean
+    setOpen: React.Dispatch<React.SetStateAction<boolean>>
 }
-export const MenuContent = ({ open }: MenuContentProps): JSX.Element => {
+export const MenuContent = ({ open, setOpen }: MenuContentProps): JSX.Element => {
     const links = [
         {
             url: '/',
@@ -45,6 +46,7 @@ export const MenuContent = ({ open }: MenuContentProps): JSX.Element => {
                             <Link
                                 href={link.url}
                                 className="mt-6 flex justify-start items-center text-dms-2 dark:text-dmds-4 md:m-0 md:text-2xl md:cursor-pointer md:hover:underline"
+                                onClick={() => setOpen(!open)}
                             >
                                 {link.icon}
                                 <span className="ml-6">{link.text}</span>

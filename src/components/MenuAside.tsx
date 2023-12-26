@@ -9,7 +9,7 @@ export const MenuAside = (): JSX.Element => {
 
     return (
         <>
-            <MenuContent open={open} />
+            <MenuContent open={open} setOpen={setOpen} />
 
             <div className="realative md:hidden">
                 {open ? <IconCross onClick={() => setOpen(!open)} /> : <IconHamburger onClick={() => setOpen(!open)} />}
