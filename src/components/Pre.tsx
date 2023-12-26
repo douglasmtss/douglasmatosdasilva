@@ -48,7 +48,7 @@ export default function Pre(props: PreProps): JSX.Element {
                 <span className="text-dmds-5 dark:text-dmds-5">{lang}</span>
                 <CopyButton text={textContet} />
             </div>
-            <div data-code="code" className="p-4">
+            <div data-code="code" className="p-4 overflow-x-auto">
                 {props.children}
             </div>
         </pre>

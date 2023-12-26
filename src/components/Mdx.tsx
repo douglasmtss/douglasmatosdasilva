@@ -22,7 +22,10 @@ const components = {
         <p className={cn('mb-6 text-xl leading-9 font-light text-dmds-3 dark:text-dmds-5', className)} {...props} />
     ),
     strong: ({ className, ...props }: React.HTMLAttributes<HTMLHeadingElement>) => (
-        <strong className={cn('font-bold', className)} {...props} />
+        <strong className={cn('font-extrabold', className)} {...props} />
+    ),
+    b: ({ className, ...props }: React.HTMLAttributes<HTMLHeadingElement>) => (
+        <bdo className={cn('font-bold', className)} {...props} />
     ),
     pre: Pre
 }
