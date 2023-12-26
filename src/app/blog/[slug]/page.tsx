@@ -5,6 +5,8 @@ import { notFound } from 'next/navigation'
 import { mountSlugParam } from '@/utils/blog/mountSlugParam'
 import { Metadata } from 'next'
 import { isDevMode } from '@/lib/is-dev-mode'
+import stripHtml from '@/lib/strip-html'
+import mdToHtml from '@/lib/mdToHtml'
 
 interface PageProps {
     params: {
@@ -39,7 +41,7 @@ export async function generateMetadata({ params }: GenerateMetadataProps): Promi
 
     const title = `Post // ${doc.title}`
     const image = doc.image
-    const description = doc.description
+    const description = stripHtml(doc.description ?? '').replaceAll('**', '')
     const url = isDevMode() ? 'http://localhost:3000' : 'https://douglasmatosdasilva.com.br'
 
     return {
@@ -58,10 +60,15 @@ export async function generateMetadata({ params }: GenerateMetadataProps): Promi
 export default async function Page({ params }: PageProps): Promise<JSX.Element> {
     const doc = await getCachedDocFromParams(mountSlugParam(params))
 
+    const description = await mdToHtml(doc.description ?? '')
+
     return (
         <div className="mt-6">
             <h1 className="font-bold text-2xl text-dmds-2 dark:text-dmds-1 mb-6">{doc.title}</h1>
-            <h2 className="font-light text-lg text-dmds-3 dark:text-dmds-4 mb-6">{doc.description}</h2>
+            <h2
+                className="font-light text-lg text-dmds-3 dark:text-dmds-4 mb-6"
+                dangerouslySetInnerHTML={{ __html: description }}
+            />
             <small className="font-semibold text-md text-dmds-4 mb-6">
                 {doc.createdAt} - {doc.author}
             </small>
