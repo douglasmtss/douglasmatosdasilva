@@ -2,6 +2,7 @@ import { useState } from 'react'
 import { motion } from 'framer-motion'
 import readingTime from 'reading-time'
 import Link from 'next/link'
+import stripHtml from '@/lib/strip-html'
 
 interface PostPreviewProps {
     content: string
@@ -15,6 +16,7 @@ interface PostPreviewProps {
 
 export default function PostPreview(props: PostPreviewProps): JSX.Element {
     const stats = readingTime(props.content)
+    const description = stripHtml(props.description ?? '')
 
     return (
         <Link href={props.href} className="border-0 w-full md:w-96 md:ml-5 no-underline cursor-pointer">
@@ -27,7 +29,7 @@ export default function PostPreview(props: PostPreviewProps): JSX.Element {
 
                     <div className="max-w-md">
                         <h3 className="m-0 text-dmds-2 dark:text-dmds-1">{props.title}</h3>
-                        <p className="text-dmds-3 dark:text-dmds-4 m-0 overflow-hidden">{props.description}</p>
+                        <p className="text-dmds-3 dark:text-dmds-4 m-0 overflow-hidden">{description}</p>
                         <p className="mx-1 my-0 text-dmds-2 dark:text-dmds-1 uppercase inline-block font-[500] text-[12px]">
                             {stats.text}
                         </p>
