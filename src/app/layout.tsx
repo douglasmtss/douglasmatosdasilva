@@ -1,8 +1,10 @@
 import type { Metadata } from 'next'
 import './globals.css'
+import 'react-toastify/dist/ReactToastify.css'
 import ThemeProvider from '@/providers/themeProvider'
 import { IsClientCtxProvider } from '@/hooks/useIsClient'
 import { isDevMode } from '@/lib/is-dev-mode'
+import { ToastContainer } from 'react-toastify'
 
 const url = isDevMode() ? 'http://localhost:3000' : 'https://douglasmatosdasilva.com.br'
 
@@ -23,6 +25,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }):
     return (
         <html suppressHydrationWarning={true} lang="en">
             <body>
+                <ToastContainer />
                 <IsClientCtxProvider>
                     <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
                         {children}
