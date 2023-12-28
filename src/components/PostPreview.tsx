@@ -19,12 +19,12 @@ export default function PostPreview(props: PostPreviewProps): JSX.Element {
     const description = stripHtml(props.description ?? '')
 
     return (
-        <Link href={props.href} className="border-0 w-full md:w-96 md:ml-5 no-underline cursor-pointer">
+        <Link href={props.href} className="border-0 flex-1 md:w-96 no-underline cursor-pointer">
             <Animation index={`${props.index}`}>
                 <div className="flex flex-col">
                     <div
                         style={{ backgroundImage: `url(${props.image})` }}
-                        className="rounded-[8px] w-full md:w-[370px] h-[180px] mb-5 bg-cover bg-no-repeat bg-center filter-[grayscale(1)]"
+                        className="rounded-[8px] w-full h-[180px] mb-5 bg-cover bg-no-repeat bg-center filter-[grayscale(1)]"
                     />
 
                     <div className="max-w-md">
@@ -48,7 +48,7 @@ function Animation(props: { index: string; children: React.ReactNode }): JSX.Ele
         <motion.div
             onHoverStart={() => setHovered(props.index)}
             onHoverEnd={() => setHovered('')}
-            className="realative w-full p-5"
+            className="realative w-full"
         >
             {isHovered && (
                 <motion.div

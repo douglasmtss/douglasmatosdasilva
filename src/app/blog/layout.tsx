@@ -19,7 +19,7 @@ export default function PageLayout({ children }: WrapperPageProps): JSX.Element 
                 listClasses="hover:underline mx-2 font-bold text-dms-4"
                 capitalizeLinks
             />
-            <section className="w-11/12 md:w-full max-w-[800px] flex-1 h-full ml-auto mr-auto">{children}</section>
+            <section className=" w-11/12 md:w-full max-w-[80%] flex-1 h-full ml-auto mr-auto">{children}</section>
             <Footer />
         </main>
     )
