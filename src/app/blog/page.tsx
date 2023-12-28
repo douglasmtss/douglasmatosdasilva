@@ -8,14 +8,14 @@ const PostsPreviewList = dynamic(() => import('@/components/PostsPreviewList'), 
     ssr: false
 })
 
-function getPosts(): Record<string, string>[] {
+function getPosts(): Post[] {
     const allPosts = getAllPosts(['createdAt', 'slug', 'title', 'image', 'content', 'description'])
 
     return allPosts
 }
 
 export async function generateMetadata(): Promise<Metadata> {
-    const allPosts = getPosts() as Record<string, string>[]
+    const allPosts = getPosts() as Post[]
     const title = 'Blog // Douglas Matos'
     const image = '/images/random.webp'
     const description = stripHtml(
@@ -37,7 +37,7 @@ export async function generateMetadata(): Promise<Metadata> {
 }
 
 export default function Posts(): JSX.Element {
-    const allPosts = getPosts() as Record<string, string>[]
+    const allPosts = getPosts() as Post[]
     const description = `Here you can find all the <strong>${allPosts.length} articles</strong> I wrote. You can read about web development, software engineering, and tech career in both English and Portuguese.`
 
     return (

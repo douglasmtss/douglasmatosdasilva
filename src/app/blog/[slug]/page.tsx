@@ -7,6 +7,7 @@ import { Metadata } from 'next'
 import { isDevMode } from '@/lib/is-dev-mode'
 import stripHtml from '@/lib/strip-html'
 import mdToHtml from '@/lib/mdToHtml'
+import BlogDate from '@/components/BlogDate'
 
 interface PageProps {
     params: {
@@ -70,7 +71,7 @@ export default async function Page({ params }: PageProps): Promise<JSX.Element> 
                 dangerouslySetInnerHTML={{ __html: description }}
             />
             <small className="font-semibold text-md text-dmds-4 mb-6">
-                {doc.createdAt} - {doc.author}
+                <BlogDate dateString={doc.createdAt} /> - {doc.author}
             </small>
             <Mdx code={doc.body.code} />
         </div>
