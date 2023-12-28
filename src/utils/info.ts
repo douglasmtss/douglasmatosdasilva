@@ -26,6 +26,10 @@ interface Info {
         linkedin: FieldNameAndUrl
         discord: FieldNameAndUrl
     }
+    mail: {
+        main: string
+        secundary: string
+    }
 }
 
 export default function info(): Info {
@@ -36,6 +40,10 @@ export default function info(): Info {
     const experienceAge = currentYear - 2019
     const collegeSemesters = (currentYear - 2020) * 2
     const inCollegeNow = currentYear <= 2025
+    const mail = {
+        main: 'douglasmatos.contato@gmail.com',
+        secundary: 'douglasmatosdev@gmail.com'
+    }
     const github = {
         name: 'douglasmatosdev',
         url: 'https://github.com/douglasmatosdev'
@@ -85,6 +93,7 @@ export default function info(): Info {
     }
 
     return {
+        mail,
         currentYear,
         age,
         experienceAge,

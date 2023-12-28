@@ -68,7 +68,7 @@ export default function Home(): JSX.Element {
                 </Paragraph>
                 <Paragraph>
                     Desejo tudo de bom a você! Para mais informações entre em{' '}
-                    <Link href="/pages/contato">
+                    <Link href="/pages/contact">
                         <strong>
                             <u>contato.</u>
                         </strong>

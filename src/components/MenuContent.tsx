@@ -1,4 +1,4 @@
-import { FaHome, FaUser, FaPaperclip } from 'react-icons/fa'
+import { FaHome, FaUser, FaPaperclip, FaMailBulk } from 'react-icons/fa'
 import Link from 'next/link'
 
 interface MenuContentProps {
@@ -15,12 +15,17 @@ export const MenuContent = ({ open, setOpen }: MenuContentProps): JSX.Element =>
         {
             url: '/pages/about',
             icon: <FaUser />,
-            text: 'About'
+            text: 'Sobre'
         },
         {
             url: '/blog',
             icon: <FaPaperclip />,
             text: 'Blog'
+        },
+        {
+            url: '/pages/contact',
+            icon: <FaMailBulk />,
+            text: 'Contato'
         }
     ]
 
