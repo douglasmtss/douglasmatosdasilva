@@ -27,7 +27,7 @@ export async function generateMetadata(): Promise<Metadata> {
 
 export default function Contact(): JSX.Element {
     return (
-        <div className="w-6/12 ml-auto mr-auto" title="página de contato">
+        <div className="w-full md:w-6/12 ml-auto mr-auto" title="página de contato">
             <Paragraph>
                 Entre em contato. Tentarei responder, mas isso pode demorar um pouco, pois sou ocupado.
             </Paragraph>
