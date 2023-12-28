@@ -1,13 +1,24 @@
+import { getAllPosts } from '@/lib/blog'
 import PostPreview from './PostPreview'
 
-interface PostsPreviewListProps {
-    description: string
-    allPosts: Post[]
+function getPosts(): Post[] {
+    const allPosts = getAllPosts(['createdAt', 'slug', 'title', 'image', 'content', 'description'])
+
+    return allPosts
 }
 
-export default function PostsPreviewList(props: PostsPreviewListProps): JSX.Element {
+interface LastPostProps {
+    amount?: number
+}
+const LastPosts = (props: LastPostProps): JSX.Element => {
+    const { amount = 5 } = props
+
+    const allPosts = getPosts()
+
+    const lastPosts = allPosts.slice(allPosts.length - amount, allPosts.length)
+
     const renderAllPosts = (): Iterable<React.ReactNode> => {
-        return props.allPosts.map((post, index) => {
+        return lastPosts.map((post, index) => {
             return (
                 <PostPreview
                     key={index}
@@ -25,12 +36,11 @@ export default function PostsPreviewList(props: PostsPreviewListProps): JSX.Elem
 
     return (
         <div className="flex flex-col w-full">
-            <p dangerouslySetInnerHTML={{ __html: props.description }} />
-
-            <h2 className="mb-6">All Posts</h2>
             <div className="flex flex-col items-center gap-4 md:flex-row md:items-start md:justify-start md:flex-wrap md:gap-5">
                 {renderAllPosts()}
             </div>
         </div>
     )
 }
+
+export default LastPosts

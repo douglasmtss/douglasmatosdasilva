@@ -1,9 +1,6 @@
 import fs from 'fs'
 import { join } from 'path'
 import matter from 'gray-matter'
-// import { remark } from 'remark'
-// import html from 'remark-html'
-// import prism from 'remark-prism'
 
 const postsDirectory = join(process.cwd(), 'src/articles')
 
@@ -36,17 +33,11 @@ export function getPostBySlug(slug: string, fields: string[] = []): Record<strin
     return items
 }
 
-export function getAllPosts(fields: string[] = []): Record<string, string>[] {
+export function getAllPosts(fields: string[] = []): Post[] {
     const slugs = getPostSlugs()
     const posts = slugs
         .map(slug => getPostBySlug(slug, fields))
-        .sort((post1, post2) => (post1.createdAt > post2.createdAt ? -1 : 1))
+        .sort((post1, post2) => (post1.createdAt > post2.createdAt ? -1 : 1)) as unknown as Post[]
 
     return posts
 }
-
-// export async function convertMarkdownToHtml(markdown) {
-//     const result = await remark().use(html, { sanitize: false }).use(prism).process(markdown)
-
-//     return result.toString()
-// }

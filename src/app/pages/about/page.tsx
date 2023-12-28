@@ -2,23 +2,20 @@ import { Metadata } from 'next'
 import perfilImg from '@/assets/images/perfil.jpeg'
 import Image from 'next/image'
 import Paragraph from '@/components/Paragraph'
+import info from '@/utils/info'
 
 export const metadata: Metadata = {
-    title: 'About // Douglas Matos',
+    title: 'Sobre // Douglas Matos',
     description: 'This page contains some information of author - Douglas Matos da Silva'
 }
 
 export default function About(): JSX.Element {
-    const currentYear = +new Date().getFullYear()
-    const age = currentYear - 1993
-    const experienceAge = currentYear - 2019
-    const collegeSemesters = (currentYear - 2020) * 2
-    const inCollegeNow = currentYear <= 2025
+    const { age, experienceAge, collegeSemesters, inCollegeNow } = info()
 
     return (
         <main className="flex flex-col mb-8">
             <section className="bg-blue-500 dark:bg-blue-950 h-28 flex justify-center items-center mb-12">
-                <h1 className="text-dmds-1 dark:text-dmds-1 text-4xl font-bold">About</h1>
+                <h1 className="text-dmds-1 dark:text-dmds-1 text-4xl font-bold">Sobre</h1>
             </section>
 
             <section className="w-full h-full text-justify  break-words whitespace-break-spaces">
