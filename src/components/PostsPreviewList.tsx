@@ -1,5 +1,4 @@
 'use client'
-import { motion } from 'framer-motion'
 import dynamic from 'next/dynamic'
 
 const PostPreview = dynamic(() => import('@/components/PostPreview'), {
@@ -30,15 +29,13 @@ export default function PostsPreviewList(props: PostsPreviewListProps): JSX.Elem
     }
 
     return (
-        <>
-            <motion.div layout>
-                <p dangerouslySetInnerHTML={{ __html: props.description }} />
+        <div className="flex flex-col w-full">
+            <p dangerouslySetInnerHTML={{ __html: props.description }} />
 
-                <h2>All Posts</h2>
-                <div className="flex flex-col md:flex-row items-center md:justify-between md:items-baseline">
-                    {renderAllPosts()}
-                </div>
-            </motion.div>
-        </>
+            <h2 className="mb-6">All Posts</h2>
+            <div className="flex flex-col items-center gap-4 md:flex-row md:items-start md:justify-start md:flex-wrap md:gap-5">
+                {renderAllPosts()}
+            </div>
+        </div>
     )
 }
