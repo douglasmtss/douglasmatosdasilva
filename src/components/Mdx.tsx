@@ -4,6 +4,7 @@ import { useMDXComponent } from 'next-contentlayer/hooks'
 import { cn } from '@/utils/tailwindMerge'
 import Image from 'next/image'
 import Pre from './Pre'
+import Paragraph from './Paragraph'
 
 const components = {
     h1: ({ className, ...props }: React.HTMLAttributes<HTMLHeadingElement>) => (
@@ -19,7 +20,7 @@ const components = {
         <Image src="" alt="" width={370} height={210} className={cn('my-6 w-full', className)} {...props} />
     ),
     p: ({ className, ...props }: React.HTMLAttributes<HTMLHeadingElement>) => (
-        <p className={cn('mb-6 text-xl leading-9 font-light text-dmds-3 dark:text-dmds-5', className)} {...props} />
+        <Paragraph className={className} {...props} />
     ),
     strong: ({ className, ...props }: React.HTMLAttributes<HTMLHeadingElement>) => (
         <strong className={cn('font-extrabold', className)} {...props} />
