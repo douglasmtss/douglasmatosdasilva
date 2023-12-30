@@ -1,6 +1,11 @@
+import { FaFacebookSquare, FaInstagramSquare, FaTwitterSquare, FaGithubSquare, FaLinkedin } from 'react-icons/fa'
+import { IoLogoDiscord } from 'react-icons/io5'
+import { BiLogoGmail } from 'react-icons/bi'
+
 type FieldNameAndUrl = {
     name: string
     url: string
+    icon?: React.ReactNode
 }
 
 interface Info {
@@ -18,11 +23,11 @@ interface Info {
     }
     college: FieldNameAndUrl
     socialMedias: {
+        gmail: FieldNameAndUrl
         github: FieldNameAndUrl
         instagram: FieldNameAndUrl
         facebook: FieldNameAndUrl
         twitter: FieldNameAndUrl
-        telegram: FieldNameAndUrl
         linkedin: FieldNameAndUrl
         discord: FieldNameAndUrl
     }
@@ -65,30 +70,39 @@ export default function info(): Info {
     }
 
     const socialMedias = {
-        github,
+        gmail: {
+            name: 'Douglas Matos da Silva',
+            url: `mailto:${mail.secundary}`,
+            icon: <BiLogoGmail />
+        },
+        github: {
+            ...github,
+            icon: <FaGithubSquare />
+        },
         instagram: {
-            name: '',
-            url: ''
+            name: 'douglasmatosdev',
+            url: 'https://www.instagram.com/douglasmatosdev',
+            icon: <FaInstagramSquare />
         },
         facebook: {
             name: 'devdouglasmatos',
-            url: 'https://www.facebook.com/devdouglasmatos'
+            url: 'https://www.facebook.com/devdouglasmatos',
+            icon: <FaFacebookSquare />
         },
         twitter: {
             name: 'devdouglasmatos',
-            url: 'https://twitter.com/devdouglasmatos'
-        },
-        telegram: {
-            name: '',
-            url: ''
+            url: 'https://twitter.com/devdouglasmatos',
+            icon: <FaTwitterSquare />
         },
         linkedin: {
             name: 'devdouglasmatos',
-            url: 'www.linkedin.com/in/devdouglasmatos'
+            url: 'www.linkedin.com/in/devdouglasmatos',
+            icon: <FaLinkedin />
         },
         discord: {
-            name: '',
-            url: ''
+            name: 'douglasmatosdev',
+            url: 'https://discord.com/channels/douglasmatosdev',
+            icon: <IoLogoDiscord />
         }
     }
 

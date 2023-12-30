@@ -6,6 +6,7 @@ import perfilImg from '@/assets/images/perfil.jpeg'
 import info from '@/utils/info'
 import Paragraph from '@/components/Paragraph'
 import Link from 'next/link'
+import SocialMedias from '@/components/SocialMedias'
 
 export default function Home(): JSX.Element {
     const { age, experienceAge, collegeSemesters, inCollegeNow, company, college, github } = info()
@@ -152,6 +153,33 @@ export default function Home(): JSX.Element {
                     title="botão saiba mais"
                 >
                     <Link href="/blog" title="link para o blog">
+                        Saiba mais
+                    </Link>
+                </button>
+            </section>
+
+            <section className="mb-36" title="seção visão geral">
+                <h2
+                    className="mb-6 text-2xl font-semibold tracking-tight hover:underline"
+                    title="titulo seção de contato"
+                >
+                    <Link href="/pages/contact">Contato</Link>
+                </h2>
+                <Paragraph>
+                    Se você quer entrar em contato, o principal meio é via e-mail, isso pode ser feito para área de
+                    contato.
+                </Paragraph>
+                <Paragraph>
+                    Mas você pode encontrar meus perfis em alguns redes sociais, porém não garanto conseguir responder a
+                    tempo caso me envie mensagem por meio de alguma delas.
+                </Paragraph>
+                <SocialMedias />
+                <button
+                    type="button"
+                    className="rounded-md bg-dmds-5 dark:text-dmds-2 px-4 py-2 text-xl mt-6"
+                    title="botão saiba mais"
+                >
+                    <Link href="/pages/contact" title="link para o formulário de contato">
                         Saiba mais
                     </Link>
                 </button>
