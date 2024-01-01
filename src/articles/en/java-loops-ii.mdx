@@ -1,0 +1,219 @@
+---
+title: Java Loops II
+description: 'Como resolver o desafio do Hackerrank em java, Java Loops II. Usamos os números inteiros **a**, **b**, e **n** para criar a seguinte série: **(a + 2<sup>0</sup> . b), (a + 2<sup>0</sup> . b + 2<sup>1</sup> . b), ..., (a + 2<sup>0</sup> . b + 2<sup>1</sup> . b + ... + 2<sup>n-1</sup> . b)**. Você é dado **q** consultas em forma de **a**, **b**, e **n**. Para cada consulta, imprima a série correspondente ao dado **a**, **b**, e **n** valores como uma única linha de **n** inteiros separados por espaço.'
+createdAt: 2023-12-25 18:40
+author: Douglas Matos
+image: /en/images/thumb-hackerrank-java-loops-ii.png
+lastModified: 2023-12-25 10:20
+---
+![Hackerrank - Java Loops II](/en/images/thumb-hackerrank-java-loops-ii.png)
+
+
+## Vamos primeiro ler o enunciado do desafio
+
+Usamos os números inteiros **a**, **b**, e **n** para criar a seguinte série: **(a + 2<sup>0</sup> . b), (a + 2<sup>0</sup> . b + 2<sup>1</sup> . b), ..., (a + 2<sup>0</sup> . b + 2<sup>1</sup> . b + ... + 2<sup>n-1</sup> . b)**
+
+Você é dado **q** consultas em forma de **a**, **b**, e **n**. Para cada consulta, imprima a série correspondente ao dado **a**, **b**, e **n** valores como uma única linha de **n** inteiros separados por espaço.
+
+### Formato de entrada
+
+A primeira linha contém um número inteiro, **q**, denotando o número de consultas.
+Cada linha **i** do **q** as linhas subsequentes contêm três inteiros separados por espaços que descrevem os respectivos ***a<sub>i</sub>, b<sub>i</sub> e n<sub>i</sub>***,, evalores para essa consulta.
+
+### Restrições
+- **{'0 <= q <= 500'}**
+- **{'0 <= a, b <= 50'}**
+- **{'0 <= n <= 15'}**
+
+### Formato de saída
+
+Para cada consulta, imprima a série correspondente em uma nova linha. Cada série deve ser impressa em ordem como uma única linha deinteiros separados por espaço.
+
+### Exemplo de entrada
+
+```bash
+2
+0 2 10
+5 3 5
+```
+
+### Saída de amostra
+
+```bash
+2 6 14 30 62 126 254 510 1022 2046
+8 14 26 50 98
+```
+
+### Explicação
+
+Temos duas dúvidas:
+
+1. Nós usamos **{'a = 0, b = 2'}**, e **{'n = 10'}**, produzir algumas séries **s<sub>1</sub>,...,s<sub>n-1</sub>**:
+- **s<sub>0</sub> = 0 + 1 . 2 = 2**
+- **s<sub>1</sub> = 0 + 1 . 2 + 2 . 2 = 6**
+- **s<sub>2</sub> = 0 + 1 . 2 + 2 . 2 + 4 . 2 = 14**
+
+... e assim por diante.
+
+Uma vez que batemos **n = 10**, imprimimos os primeiros dez termos como uma única linha de inteiros separados por espaço.
+
+2. Nós usamos **{'a = 5, b = 3'}**, e **{'n = 5'}** eproduzir algumas séries **s<sub>1</sub>,...,s<sub>n-1</sub>**:
+- **s<sub>0</sub> = 5 + 1 . 3 = 8**
+- **s<sub>0</sub> = 5 + 1 . 3 + 2 . 3 = 14**
+- **s<sub>0</sub> = 5 + 1 . 3 + 2 . 3 + 4 . 3 = 26**
+- **s<sub>0</sub> = 5 + 1 . 3 + 2 . 3 + 4 . 3 + 8 . 3 = 50**
+- **s<sub>0</sub> = 5 + 1 . 3 + 2 . 3 + 4 . 3 + 8 . 3 + 16 . 3 = 98**
+
+Em seguida, imprimimos cada elemento de nossa série como uma única linha de valores separados por espaço.
+
+No desfio, é deixado um código inicial, o que aparece logo a seguir.
+
+```java
+import java.util.*;
+import java.io.*;
+
+class Solution{
+    public static void main(String []argh){
+        Scanner in = new Scanner(System.in);
+        int t=in.nextInt();
+        for(int i=0;i<t;i++){
+            int a = in.nextInt();
+            int b = in.nextInt();
+            int n = in.nextInt();
+        }
+        in.close();
+    }
+}
+```
+
+Vamos a solução, primeiro crie a variável **result** dentro do loop já existente.
+```java 
+import java.util.*;
+import java.io.*;
+
+class Solution{
+    public static void main(String []argh){
+        Scanner in = new Scanner(System.in);
+        int t=in.nextInt();
+        for(int i=0;i<t;i++){
+            int a = in.nextInt();
+            int b = in.nextInt();
+            int n = in.nextInt();
+        
+            double result = a;
+        }
+
+
+        in.close();
+    }
+}
+```
+
+Agora  crie um loop "for" dentro do loop já existente tendo como condição de término **j < n**
+```java 
+import java.util.*;
+import java.io.*;
+
+class Solution{
+    public static void main(String []argh){
+        Scanner in = new Scanner(System.in);
+        int t=in.nextInt();
+        for(int i=0;i<t;i++){
+            int a = in.nextInt();
+            int b = in.nextInt();
+            int n = in.nextInt();
+
+            double result = a;
+
+            for (int j = 0; j < n; j++) {
+            }
+        }        
+
+        in.close();
+    }
+}
+```
+
+Agora, vamos calcular os expoentes.
+```java 
+import java.util.*;
+import java.io.*;
+
+class Solution{
+    public static void main(String []argh){
+        Scanner in = new Scanner(System.in);
+        int t=in.nextInt();
+        for(int i=0;i<t;i++){
+            int a = in.nextInt();
+            int b = in.nextInt();
+            int n = in.nextInt();
+
+            double result = a;
+
+            for (int j = 0; j < n; j++) {
+                double z = Math.pow(2, j);
+            }
+        }        
+
+        in.close();
+    }
+}
+```
+
+Em seguida atribuir a variável **result** a multiplicação de **2 * b**
+```java 
+import java.util.*;
+import java.io.*;
+
+class Solution{
+    public static void main(String []argh){
+        Scanner in = new Scanner(System.in);
+        int t=in.nextInt();
+        for(int i=0;i<t;i++){
+            int a = in.nextInt();
+            int b = in.nextInt();
+            int n = in.nextInt();
+
+            double result = a;
+
+            for (int j = 0; j < n; j++) {
+                double z = Math.pow(2, j);
+                result += z * b;
+            }
+        }        
+
+        in.close();
+    }
+}
+```
+
+Agora é só imprimir os valores formatados
+```java 
+import java.util.Scanner;
+
+public class Solution {
+    public static void main(String[] args) {
+
+        Scanner in = new Scanner(System.in);
+        int t = in.nextInt();
+
+        for (int i = 0; i < t; i++) {
+            int a = in.nextInt();
+            int b = in.nextInt();
+            int n = in.nextInt();
+
+            double result = a;
+
+            for (int j = 0; j < n; j++) { // "n" times
+                double z = Math.pow(2, j);
+                result += z * b;
+                System.out.printf("%.0f ", result);
+            }
+            System.out.println();
+
+        }
+
+        in.close();
+    }
+}
+```

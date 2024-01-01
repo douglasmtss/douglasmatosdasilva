@@ -3,27 +3,44 @@ import './globals.css'
 import 'react-toastify/dist/ReactToastify.css'
 import ThemeProvider from '@/providers/themeProvider'
 import { IsClientCtxProvider } from '@/hooks/useIsClient'
-import { isDevMode } from '@/lib/is-dev-mode'
 import { ToastContainer } from 'react-toastify'
+import { Locale, i18n } from '#/i18n.config'
+import getBaseUrl from '@/lib/baseUrl'
 
-const url = isDevMode() ? 'http://localhost:3000' : 'https://douglasmatosdasilva.com.br'
+export async function generateMetadata({ params }: { params: { lang: Locale } }): Promise<Metadata> {
+    const title = 'Home Page // Douglas Matos da Silva'
+    const description =
+        'This is my personal website, where i have one blog with any articles, tutors, challenges e more. Douglas Matos da Silva'
+    const baseUrl = getBaseUrl()
+    const url = `${baseUrl}/${params.lang}`
+    const images = `${url}/images/opengraph-image.png`
 
-export const metadata: Metadata = {
-    metadataBase: new URL(url),
-    title: 'Home Page // Douglas Matos da Silva',
-    description: 'Douglas Matos da Silva',
-    openGraph: {
-        url,
-        title: 'Home Page // Douglas Matos da Silva',
-        description:
-            'This is my personal website, where i have one blog with any articles, tutors, challenges e more. Douglas Matos da Silva',
-        images: '/images/opengraph-image.png'
+    return {
+        metadataBase: new URL(url),
+        title,
+        description,
+        openGraph: {
+            url,
+            title,
+            description,
+            images
+        }
     }
 }
 
-export default function RootLayout({ children }: { children: React.ReactNode }): JSX.Element {
+export async function generateStaticParams(): Promise<{ lang: Locale }[]> {
+    return i18n.locales.map(locale => ({ lang: locale }))
+}
+
+export default function RootLayout({
+    children,
+    params
+}: {
+    children: React.ReactNode
+    params: { lang: Locale }
+}): JSX.Element {
     return (
-        <html suppressHydrationWarning={true} lang="en">
+        <html suppressHydrationWarning={true} lang={params.lang}>
             <body>
                 <ToastContainer />
                 <IsClientCtxProvider>

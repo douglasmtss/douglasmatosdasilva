@@ -1,0 +1,87 @@
+{
+  "navigation": {
+    "home": "Home",
+    "about": "About",
+    "contact": "Contact",
+    "privacy": "Privacy",
+    "pages": "Pages"
+  },
+  "footer": {
+    "copy": "All Rights Reserved",
+    "policy": "Policy and Privacy"
+  },
+  "page": {
+    "home": {
+      "title": "Home",
+      "description": "This is my personal website, where i have one blog with any articles, tutors, challenges e more. Douglas Matos da Silva",
+      "slogan": "Father, husband, brother and software developer.",
+      "overview": {
+        "title": "Overview",
+        "p1": "Welcome to my website, this is the place where I would like to share knowledge, such as articles, tutorials, tips, etc.",
+        "p2": "Here you will find posts on my <a href='/blog'><u><strong>blog</strong></u></a> that talk about software engineering and development, from project management to hands-on coding, including front-end, back-end, mobile, web, Linux and much more more.",
+        "p3": "Here I will be unifying everything I have learned and am learning, I will always make the source codes available on <a href={github.url}><u><strong>github</strong></u></a>, I will always try to publish posts explaining any new subject I have learned and I will also make some small projects developed as studies available.",
+        "p4": "I wish you all the best! For more information, <a href='/pages/contact'><strong><u>get in touch.</u></strong></a>"
+      },
+      "about": {
+        "title": "About",
+        "p1": "Hello, my name is <strong><u>Douglas Matos da Silva</u></strong>, I'm 30 years old, I work as a <strong><u>Software Developer</u> </strong> for 4 years. I'm currently studying the 6th period of <strong>Software Engineering</strong> college at <a href={college.url} target='_blank' rel='noreferrer'><u><strong>Estacio</strong></u></a>.",
+        "p2": "I currently work as a <strong><u>Software Developer</strong></u> at <a href='https://www.intelie.ai/' target='_blank' rel='noreferrer'><u><strong>Intelie by ViaSat</strong></u></a>.",
+        "read_more": "Learn more"
+      },
+      "latest_posts": {
+        "title": "Latest posts",
+        "read_more": "Read more"
+      },
+      "contact": {
+        "title": "Contact",
+        "p1": "If you want to get in touch, the main method is via email, this can be done via the contact area.",
+        "p2": "But you can find my profiles on some social networks, but I cannot guarantee that I will be able to respond in time if you send me a message through any of them.",
+        "read_more": "Learn more"
+      }
+    },
+    "about": {
+      "title": "About",
+      "name": "Name",
+      "message": "Message",
+      "description": "This page contains some information of author - Douglas Matos da Silva",
+      "p1": "Hello, my name is <strong><u>Douglas Matos da Silva</u></strong>, I'm 30 years old, I work as a <strong><u>Software Developer</u> </strong> for 4 years. I'm currently studying the 6th period of <strong>Software Engineering</strong> college at <a href={college.url} target='_blank' rel='noreferrer'><u><strong>Estacio</strong></u></a>.",
+      "p2": "I am Joanna's FATHER, Brian and Brenda's stepfather, Verônica's husband and Gabriela's brother, these the people who make up my family. Family that with her and because of her I am who I am today.",
+      "p3": "I don't have a lot of experience in the world of Software Development, I entered this world at 26 years old first out of curiosity, I always had a restless and curious mind, I was first interested in fixing computers and notebooks, I learned a lot researching and I came to accept small work as a computer technician, formatting computers, network cabling, configuring routers, assembling and maintaining computers, printers, etc... But the moment I found myself in was one of the worst moments of my life and there was no money to buy tools or equipment, then I thought “How does a computer program work?”, so I started researching programming, and chose the C++ language to start."
+    },
+    "contact": {
+      "title": "Contact",
+      "subtitle": "Send me a e-email",
+      "description": "Contact. I'll try to respond, but it may take a while as I'm busy."
+    },
+    "privacy": {
+      "title": "Douglas Matos privacy policy",
+      "description": "At Douglas Matos, accessible from https://www.douglasmatosdasilva.com.br/, one of our main priorities is the privacy of our visitors. This Privacy Policy document contains types of information that is collected and recorded by Douglas Matos and how we use it.",
+      "p1": "At Douglas Matos, accessible at https://www.douglasmatosdasilva.com.br/, one of our main priorities is the privacy of our visitors. This Privacy Policy document contains types of information that is collected and recorded by Douglas Matos and how we use them.",
+      "p2": "If you have additional questions or require more information about our Privacy Policy, do not hesitate to contact us.",
+      "p3": "Douglas Matos follows a standard procedure of using log files. These files log visitors when they visit websites. All hosting companies do this and a part of hosting services&apos; analytics. The information collected by log files include internet protocol (IP) addresses, browser type, Internet Service Provider (ISP), date and time stamp, referring/exit pages, and possibly the number of clicks. These are not linked to any information that is personally identifiable. The purpose of the information is for analyzing trends, administering the site, tracking users&apos; movement on the website, and gathering demographic information. Our Privacy Policy was created with the help of the{' '} <a href='https://www.privacypolicygenerator.org'>Privacy Policy Generator</a>.",
+      "p4": "Like any other website, Douglas Matos uses {'cookies'}. These cookies are used to store information including visitors&apos; preferences, and the pages on the website that the visitor accessed or visited. The information is used to optimize the users&apos; experience by customizing our web page content based on visitors&apos; browser type and/or other information.",
+      "p5": "Google is one of a third-party vendor on our site. It also uses cookies, known as DART cookies, to serve ads to our site visitors based upon their visit to www.website.com and other sites on the internet. However, visitors may choose to decline the use of DART cookies by visiting the Google ad and content network Privacy Policy at the following URL –{' '} <a href='https://policies.google.com/technologies/ads'>https://policies.google.com/technologies/ads</a>",
+      "p6": "Some of advertisers on our site may use cookies and web beacons. Our advertising partners are listed below. Each of our advertising partners has their own Privacy Policy for their policies on user data. For easier access, we hyperlinked to their Privacy Policies below.",
+      "p7": "You may consult this list to find the Privacy Policy for each of the advertising partners of Douglas Matos.",
+      "p8": "Third-party ad servers or ad networks uses technologies like cookies, JavaScript, or Web Beacons that are used in their respective advertisements and links that appear on Douglas Matos, which are sent directly to users&apos; browser. They automatically receive your IP address when this occurs. These technologies are used to measure the effectiveness of their advertising campaigns and/or to personalize the advertising content that you see on websites that you visit.",
+      "p9": "Note that Douglas Matos has no access to or control over these cookies that are used by third-party advertisers.",
+      "p10": "Douglas Matos&apos;s Privacy Policy does not apply to other advertisers or websites. Thus, we are advising you to consult the respective Privacy Policies of these third-party ad servers for more detailed information. It may include their practices and instructions about how to opt-out of certain options.",
+      "p11": "You can choose to disable cookies through your individual browser options. To know more detailed information about cookie management with specific web browsers, it can be found at the browsers&apos; respective websites.",
+      "p12": "Another part of our priority is adding protection for children while using the internet. We encourage parents and guardians to observe, participate in, and/or monitor and guide their online activity.",
+      "p13": "Douglas Matos does not knowingly collect any Personal Identifiable Information from children under the age of 13. If you think that your child provided this kind of information on our website, we strongly encourage you to contact us immediately and we will do our best efforts to promptly remove such information from our records.",
+      "p14": "This Privacy Policy applies only to our online activities and is valid for visitors to our website with regards to the information that they shared and/or collect in Douglas Matos. This policy is not applicable to any information collected offline or via channels other than this website.",
+      "p15": "By using our website, you hereby consent to our Privacy Policy and agree to its Terms and Conditions.",
+      "subtitle": {
+        "t1": "Registry files",
+        "t2": "Cookies and web beacons",
+        "t3": "Google DoubleClick DART Cookie",
+        "t4": "Our advertising partners",
+        "t5": "Privacy Policies",
+        "t6": "Third Party Privacy Policies",
+        "t7": "Children Information",
+        "t8": "Online Privacy Policy Only",
+        "t9": "Consent"
+      }
+    }
+  }
+}

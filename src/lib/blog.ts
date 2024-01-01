@@ -1,16 +1,17 @@
 import fs from 'fs'
 import { join } from 'path'
 import matter from 'gray-matter'
+import { Locale } from '#/i18n.config'
 
 const postsDirectory = join(process.cwd(), 'src/articles')
 
-export function getPostSlugs(): string[] {
-    return fs.readdirSync(postsDirectory)
+export function getPostSlugs(lang: Locale): string[] {
+    return fs.readdirSync(`${postsDirectory}/${lang}`)
 }
 
-export function getPostBySlug(slug: string, fields: string[] = []): Record<string, string> {
+export function getPostBySlug(slug: string, fields: string[] = [], lang: Locale): Record<string, string> {
     const realSlug = slug.replace(/\.mdx$/, '')
-    const fullPath = join(postsDirectory, `${realSlug}.mdx`)
+    const fullPath = join(`${postsDirectory}/${lang}`, `${realSlug}.mdx`)
     const fileContents = fs.readFileSync(fullPath, 'utf8')
     const { data, content } = matter(fileContents)
 
@@ -33,10 +34,10 @@ export function getPostBySlug(slug: string, fields: string[] = []): Record<strin
     return items
 }
 
-export function getAllPosts(fields: string[] = []): Post[] {
-    const slugs = getPostSlugs()
+export function getAllPosts(fields: string[] = [], lang: Locale): Post[] {
+    const slugs = getPostSlugs(lang)
     const posts = slugs
-        .map(slug => getPostBySlug(slug, fields))
+        .map(slug => getPostBySlug(slug, fields, lang))
         .sort((post1, post2) => (post1.createdAt > post2.createdAt ? -1 : 1)) as unknown as Post[]
 
     return posts
