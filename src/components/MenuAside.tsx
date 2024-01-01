@@ -4,7 +4,7 @@ import { MenuContent } from './MenuContent'
 import { IconCross } from './IconCross'
 import { IconHamburger } from './IconHamburger'
 
-export const MenuAside = (): JSX.Element => {
+export default function MenuAside(): JSX.Element {
     const [open, setOpen] = useState(false)
 
     return (

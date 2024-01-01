@@ -1,0 +1,87 @@
+---
+title: Java Loops I
+description: Como resolver o desafio do Hackerrank em java, Java Loops I. Neste desafio, usaremos loops para nos ajudar a fazer algumas contas simples.
+createdAt: 2023-12-25 18:40
+author: Douglas Matos
+image: /en/images/thumb-hackerrank-java-loops-i.png
+---
+![Hackerrank - Java Loops I](/en/images/thumb-hackerrank-java-loops-i.png)
+
+
+## Vamos primeiro ler o enunciado do desafio
+
+### Objetivo
+Neste desafio, usaremos loops para nos ajudar a fazer algumas contas simples.
+
+### Tarefa
+Dado um número inteiro, ***N*** , imprima seu primeiro **10** múltiplos. Cada múltiplo ***N x i*** (onde ***{'1 <= i <= 10'}***) deve ser impresso em uma nova linha no formato: **N x i = result**.
+
+### Formato de entrada
+
+Um único número inteiro, ***N***.
+
+### Restrições
+
+- ***{'2 <= N <= 20'}***
+
+### Formato de saída
+
+Imprimir **10** linhas de saída; cada linha ***i*** (onde ***{'1 <= i <= 10'}***) contém o ***result*** de ***N x i*** no formato: **N x i = result**.
+
+### Exemplo de entrada
+```bash
+2
+```
+### Saída de amostra
+
+```bash
+2 x 1 = 2
+2 x 2 = 4
+2 x 3 = 6
+2 x 4 = 8
+2 x 5 = 10
+2 x 6 = 12
+2 x 7 = 14
+2 x 8 = 16
+2 x 9 = 18
+2 x 10 = 20
+```
+
+No desfio, é deixado um código inicial, o que aparece logo a seguir
+
+```java
+import java.io.*;
+import java.math.*;
+import java.security.*;
+import java.text.*;
+import java.util.*;
+import java.util.concurrent.*;
+import java.util.regex.*;
+
+public class Solution {
+    public static void main(String[] args) throws IOException {
+        BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(System.in));
+
+        int N = Integer.parseInt(bufferedReader.readLine().trim());
+
+        bufferedReader.close();
+    }
+}
+```
+
+Vamos a solução, primeiro crie um loop for, o qual terá como condição final ***{'i <= 10'}***, pois o enunciodo pede para imprimirmos os 10 primeiros múltiplos.
+
+```java
+for (int i = 1; i <= 10; i++) {
+    
+}
+```
+
+Em seguida chame o ***{'System.out.println'}*** passando ***N***, concatenado com a ***string*** ***" x "***, concatenado com ***i***, concatenado com a ***string*** ***" = "***, concatenado com a multiplicação de **N * i**
+
+```java
+for (int i = 1; i <= 10; i++) {
+    System.out.println(N + " x " + i + " = " + N * i);
+}
+```
+

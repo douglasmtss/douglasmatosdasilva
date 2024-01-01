@@ -3,10 +3,11 @@ import path from 'path'
 import fsExtra from 'fs-extra'
 
 const fsPromises = fs.promises
-const targetDir = './public/images'
+// const targetDir = './public/br/images'
 const postsDir = './src/assets/images'
+const targetDirs = ['./public/br/images', './public/en/images']
 
-async function copyImagesToPublic() {
+async function copyImagesToPublic(targetDir) {
     const allowedImageFileExtensions = ['.png', '.jpg', '.jpeg', '.gif', '.webp', '.svg']
     const postDirFiles = await fsPromises.readdir(`${postsDir}`)
     const images = postDirFiles.filter(file => allowedImageFileExtensions.includes(path.extname(file)))
@@ -44,7 +45,8 @@ async function copyImagesToPublic() {
 //         }
 //     }
 // }
-
-await fsExtra.emptyDir(targetDir)
-copyImagesToPublic()
+targetDirs.forEach(async e => {
+    await fsExtra.emptyDir(e)
+    copyImagesToPublic(e)
+})
 // await createPostImageFoldersForCopy()

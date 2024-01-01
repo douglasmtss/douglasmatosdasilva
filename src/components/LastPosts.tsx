@@ -1,19 +1,21 @@
 import { getAllPosts } from '@/lib/blog'
 import PostPreview from './PostPreview'
+import { Locale } from '#/i18n.config'
 
-function getPosts(): Post[] {
-    const allPosts = getAllPosts(['createdAt', 'slug', 'title', 'image', 'content', 'description'])
+function getPosts(lang: Locale): Post[] {
+    const allPosts = getAllPosts(['createdAt', 'slug', 'title', 'image', 'content', 'description'], lang)
 
     return allPosts
 }
 
 interface LastPostProps {
     amount?: number
+    lang: Locale
 }
 const LastPosts = (props: LastPostProps): JSX.Element => {
     const { amount = 5 } = props
 
-    const allPosts = getPosts()
+    const allPosts = getPosts(props.lang)
 
     const lastPosts = allPosts.slice(allPosts.length - amount, allPosts.length)
 
