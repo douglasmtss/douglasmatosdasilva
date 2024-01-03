@@ -32,7 +32,7 @@ export default async function Home({ params: { lang } }: { params: { lang: Local
                 `}
             </Script>
 
-            <header className="flex flex-col items-center h-dvh pt-32 pb-8 w-max mx-auto">
+            <header className="flex flex-col items-center h-screen pt-32 pb-8 w-max mx-auto">
                 <h1 className="font-ranga mt-8 text-5xl text-dmds-2 dark:text-dmds-1 md:text-8xl tracking-tighter mb-8">
                     Douglas Silva
                 </h1>
@@ -41,7 +41,7 @@ export default async function Home({ params: { lang } }: { params: { lang: Local
                 </p>
             </header>
 
-            <section className="h-dvh" title={page.home.overview.title}>
+            <section className="mb-80" title={page.home.overview.title}>
                 <h2
                     className="mb-6 text-2xl font-semibold tracking-tight hover:underline"
                     title={page.home.overview.title}
@@ -58,7 +58,7 @@ export default async function Home({ params: { lang } }: { params: { lang: Local
                 <Paragraph dangerouslySetInnerHTML={{ __html: page.home.overview.p4 }} />
             </section>
 
-            <section className="h-dvh" title={page.home.about.title}>
+            <section className="mb-80" title={page.home.about.title}>
                 <h2
                     className="mb-6 text-2xl font-semibold tracking-tight hover:underline"
                     title={page.home.about.title}
@@ -91,7 +91,7 @@ export default async function Home({ params: { lang } }: { params: { lang: Local
                 </button>
             </section>
 
-            <section className="h-dvh" title={page.home.latest_posts.title}>
+            <section className="mb-80" title={page.home.latest_posts.title}>
                 <h2
                     className="mb-6 text-2xl font-semibold tracking-tight hover:underline"
                     title={page.home.latest_posts.title}
@@ -110,7 +110,7 @@ export default async function Home({ params: { lang } }: { params: { lang: Local
                 </button>
             </section>
 
-            <section className="h-dvh" title={page.home.contact.title}>
+            <section className="mb-80" title={page.home.contact.title}>
                 <h2
                     className="mb-6 text-2xl font-semibold tracking-tight hover:underline"
                     title={page.home.contact.title}
