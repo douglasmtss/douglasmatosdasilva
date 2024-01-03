@@ -2,7 +2,6 @@ import { Metadata } from 'next'
 import perfilImg from '@/assets/images/perfil.jpeg'
 import Image from 'next/image'
 import Paragraph from '@/components/Paragraph'
-// import info from '@/utils/info'
 import { Locale } from '#/i18n.config'
 import { getDictionary } from '@/lib/dictionary'
 import getBaseUrl from '@/lib/baseUrl'
@@ -15,7 +14,6 @@ export async function generateMetadata({ params }: { params: { lang: Locale } })
     const description = about.description
     const baseUrl = getBaseUrl()
     const url = `${baseUrl}/${params.lang}`
-    const images = `${url}/opengraph-image.png`
 
     return {
         metadataBase: new URL(url),
@@ -25,7 +23,14 @@ export async function generateMetadata({ params }: { params: { lang: Locale } })
             url,
             title,
             description,
-            images
+            images: [
+                {
+                    url: `/images/opengraph-image.png`,
+                    width: 1220,
+                    height: 630,
+                    alt: 'Douglas Matos Banner'
+                }
+            ]
         }
     }
 }

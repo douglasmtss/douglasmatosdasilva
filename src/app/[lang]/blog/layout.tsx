@@ -14,7 +14,7 @@ interface WrapperPageProps {
 export default function PageLayout({ children, params }: WrapperPageProps): JSX.Element {
     return (
         <main className="w-full bg-dmds-1 dark:bg-dmds-2 flex flex-col flex-1 md:px-8 md:pt-8">
-            <TopPageContent />
+            <TopPageContent lang={params.lang} />
             <BreadCrumbs
                 lang={params.lang}
                 homeElement={params.lang === 'br' ? 'Início' : 'Home'}

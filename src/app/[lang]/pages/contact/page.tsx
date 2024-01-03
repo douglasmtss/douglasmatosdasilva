@@ -13,7 +13,6 @@ export async function generateMetadata({ params }: { params: { lang: Locale } })
         page: { contact }
     } = await getDictionary(params.lang)
     const title = `${contact.title} // Douglas Matos`
-    const image = '/images/random.webp'
     const description = contact.description
     const baseUrl = getBaseUrl()
     const url = `${baseUrl}/${params.lang}`
@@ -26,7 +25,14 @@ export async function generateMetadata({ params }: { params: { lang: Locale } })
             url,
             title,
             description,
-            images: `${url}${image}`
+            images: [
+                {
+                    url: `/images/random.webp`,
+                    width: 1220,
+                    height: 630,
+                    alt: 'Douglas Matos Banner'
+                }
+            ]
         }
     }
 }

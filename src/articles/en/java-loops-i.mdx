@@ -1,38 +1,40 @@
 ---
 title: Java Loops I
-description: Como resolver o desafio do Hackerrank em java, Java Loops I. Neste desafio, usaremos loops para nos ajudar a fazer algumas contas simples.
+description: How to solve the Hackerrank challenge in java, Java Loops I. In this challenge, we will use loops to help us do some simple math.
 createdAt: 2023-12-25 18:40
 author: Douglas Matos
-image: /en/images/thumb-hackerrank-java-loops-i.png
+image: /images/thumb-hackerrank-java-loops-i.png
+lang: en
+tags: chanllenges, hackerrank, java
 ---
-![Hackerrank - Java Loops I](/en/images/thumb-hackerrank-java-loops-i.png)
+![Hackerrank - Java Loops I](/images/thumb-hackerrank-java-loops-i.png)
 
 
-## Vamos primeiro ler o enunciado do desafio
+### First let's read the challenge statement
 
-### Objetivo
-Neste desafio, usaremos loops para nos ajudar a fazer algumas contas simples.
+### Objective
+In this challenge, we're going to use loops to help us do some simple math.
 
-### Tarefa
-Dado um número inteiro, ***N*** , imprima seu primeiro **10** múltiplos. Cada múltiplo ***N x i*** (onde ***{'1 <= i <= 10'}***) deve ser impresso em uma nova linha no formato: **N x i = result**.
+### Task
+Given an integer, ***N*** , print its first **10** multiples. Each multiple ***N x i*** (where ***{'1 <= i <= 10'}***) should be printed on a new line in the form: **N x i = result**.
 
-### Formato de entrada
+### Input Format
 
-Um único número inteiro, ***N***.
+A single integer, ***N***.
 
-### Restrições
+### Constraints
 
 - ***{'2 <= N <= 20'}***
 
-### Formato de saída
+### Output Format
 
-Imprimir **10** linhas de saída; cada linha ***i*** (onde ***{'1 <= i <= 10'}***) contém o ***result*** de ***N x i*** no formato: **N x i = result**.
+Print **10** lines of output; each line ***i*** (where ***{'1 <= i <= 10'}***) contains the ***result*** of ***N x i*** in the form: **N x i = result**.
 
-### Exemplo de entrada
+### Sample Input
 ```bash
 2
 ```
-### Saída de amostra
+### Sample Output
 
 ```bash
 2 x 1 = 2
@@ -47,7 +49,7 @@ Imprimir **10** linhas de saída; cada linha ***i*** (onde ***{'1 <= i <= 10'}**
 2 x 10 = 20
 ```
 
-No desfio, é deixado um código inicial, o que aparece logo a seguir
+In the challenge, an initial code is left, which appears right after
 
 ```java
 import java.io.*;
@@ -69,7 +71,7 @@ public class Solution {
 }
 ```
 
-Vamos a solução, primeiro crie um loop for, o qual terá como condição final ***{'i <= 10'}***, pois o enunciodo pede para imprimirmos os 10 primeiros múltiplos.
+Let's look at the solution, first create a for loop, which will have the final condition ***{'i <= 10'}***, because the statement asks us to print the first 10 multiples.
 
 ```java
 for (int i = 1; i <= 10; i++) {
@@ -77,7 +79,7 @@ for (int i = 1; i <= 10; i++) {
 }
 ```
 
-Em seguida chame o ***{'System.out.println'}*** passando ***N***, concatenado com a ***string*** ***" x "***, concatenado com ***i***, concatenado com a ***string*** ***" = "***, concatenado com a multiplicação de **N * i**
+Then call the ***{'System.out.println'}*** passing ***N***, concatenated with the ***string*** ***" x "***, concatenated with the ***i***, concatenated with the ***string*** ***" = "***, concatenated with the multiplication of **N * i**
 
 ```java
 for (int i = 1; i <= 10; i++) {

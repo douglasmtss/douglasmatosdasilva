@@ -23,7 +23,6 @@ export async function generateMetadata({ params }: { params: { lang: Locale } })
     )
     const baseUrl = getBaseUrl()
     const url = `${baseUrl}/${params.lang}`
-    const image = `${url}/images/random.webp`
 
     return {
         metadataBase: new URL(url),
@@ -33,7 +32,14 @@ export async function generateMetadata({ params }: { params: { lang: Locale } })
             url,
             title,
             description,
-            images: image
+            images: [
+                {
+                    url: `/images/random.webp`,
+                    width: 1220,
+                    height: 630,
+                    alt: 'Douglas Matos Banner'
+                }
+            ]
         }
     }
 }

@@ -12,7 +12,6 @@ export async function generateMetadata({ params }: { params: { lang: Locale } })
     const description = privacy.description
     const baseUrl = getBaseUrl()
     const url = `${baseUrl}/${params.lang}`
-    const images = `${url}/opengraph-image.png`
 
     return {
         metadataBase: new URL(url),
@@ -22,7 +21,14 @@ export async function generateMetadata({ params }: { params: { lang: Locale } })
             url,
             title,
             description,
-            images
+            images: [
+                {
+                    url: `/images/opengraph-image.png`,
+                    width: 1220,
+                    height: 630,
+                    alt: 'Douglas Matos Banner'
+                }
+            ]
         }
     }
 }

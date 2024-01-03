@@ -14,6 +14,8 @@ export type Doc = {
   _raw: Local.RawDocumentData
   type: 'Doc'
   lastModified?: string | undefined
+  lang: string
+  tags: string
   title: string
   description?: string | undefined
   createdAt: string

@@ -24,4 +24,6 @@ declare interface Post {
     lastModified?: string
     content: string
     slug: string
+    tags: string
+    lang: string
 }

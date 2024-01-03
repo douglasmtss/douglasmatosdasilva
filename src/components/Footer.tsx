@@ -1,7 +1,9 @@
-import Link from 'next/link'
 import SocialMedias from './SocialMedias'
 import { Locale } from '#/i18n.config'
 import { getDictionary } from '@/lib/dictionary'
+import dynamic from 'next/dynamic'
+
+const LinkI18n = dynamic(() => import('./LinkI18n'), { ssr: false })
 
 interface FooterProps {
     lang: Locale
@@ -18,7 +20,7 @@ export const Footer = async ({ lang }: FooterProps): Promise<JSX.Element> => {
                 <SocialMedias />
             </div>
             <div className="text-dmds-3 dark:text-dmds-5 hover:underline">
-                <Link href="/pages/privacy">{footer.policy}</Link>
+                <LinkI18n href="/pages/privacy">{footer.policy}</LinkI18n>
             </div>
         </footer>
     )

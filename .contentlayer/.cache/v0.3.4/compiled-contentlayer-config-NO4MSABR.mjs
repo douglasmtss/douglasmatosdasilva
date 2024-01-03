@@ -24,6 +24,14 @@ var Doc = defineDocumentType(() => ({
       type: "string",
       required: false
     },
+    lang: {
+      type: "string",
+      required: true
+    },
+    tags: {
+      type: "string",
+      required: true
+    },
     title: {
       type: "string",
       required: true
@@ -90,4 +98,4 @@ export {
   Doc,
   contentlayer_config_default as default
 };
-//# sourceMappingURL=compiled-contentlayer-config-MOQ2KHSJ.mjs.map
+//# sourceMappingURL=compiled-contentlayer-config-NO4MSABR.mjs.map
