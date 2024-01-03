@@ -1,21 +1,25 @@
 import { FaHome, FaUser, FaPaperclip, FaMailBulk } from 'react-icons/fa'
-import Link from 'next/link'
+import dynamic from 'next/dynamic'
+const LinkI18n = dynamic(() => import('./LinkI18n'), { ssr: false })
 
 interface MenuContentProps {
     open: boolean
     setOpen: React.Dispatch<React.SetStateAction<boolean>>
 }
 export const MenuContent = ({ open, setOpen }: MenuContentProps): JSX.Element => {
+    const lang = localStorage.getItem('lang')
+    const isBr = lang === 'br'
+
     const links = [
         {
             url: '/',
             icon: <FaHome />,
-            text: 'Home'
+            text: isBr ? 'Início' : 'Home'
         },
         {
             url: '/pages/about',
             icon: <FaUser />,
-            text: 'Sobre'
+            text: isBr ? 'Sobre' : 'About'
         },
         {
             url: '/blog',
@@ -25,7 +29,7 @@ export const MenuContent = ({ open, setOpen }: MenuContentProps): JSX.Element =>
         {
             url: '/pages/contact',
             icon: <FaMailBulk />,
-            text: 'Contato'
+            text: isBr ? 'Contato' : 'Contact'
         }
     ]
 
@@ -48,14 +52,14 @@ export const MenuContent = ({ open, setOpen }: MenuContentProps): JSX.Element =>
                 <ul className="mt-6 pt-8 border-t dark:border-dmds-5 md:flex md:justify-end md:items-end md:border-none md:border md:m-0 md:p-0">
                     {links.map((link, index) => (
                         <li key={`${link.text}_${index}`} className="md:ml-8">
-                            <Link
+                            <LinkI18n
                                 href={link.url}
                                 className="mt-6 flex justify-start items-center text-dms-2 dark:text-dmds-4 md:m-0 md:text-2xl md:cursor-pointer md:hover:underline"
                                 onClick={() => setOpen(!open)}
                             >
                                 {link.icon}
                                 <span className="ml-6">{link.text}</span>
-                            </Link>
+                            </LinkI18n>
                         </li>
                     ))}
                 </ul>

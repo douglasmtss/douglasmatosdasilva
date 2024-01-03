@@ -43,7 +43,6 @@ export async function generateMetadata({ params }: GenerateMetadataProps): Promi
     const doc = await getCachedDocFromParams(`${params.lang}/${params.slug}`)
 
     const title = `Post // ${doc.title}`
-    const image = doc.image
     const description = stripHtml(doc.description ?? '').replaceAll('**', '')
     const url = getBaseUrl() + '/' + params.lang
 
@@ -55,7 +54,14 @@ export async function generateMetadata({ params }: GenerateMetadataProps): Promi
             url,
             title,
             description,
-            images: `${url}${image}`
+            images: [
+                {
+                    url: doc.image,
+                    width: 1220,
+                    height: 630,
+                    alt: 'Douglas Matos Banner'
+                }
+            ]
         }
     }
 }

@@ -7,23 +7,28 @@ import { ToastContainer } from 'react-toastify'
 import { Locale, i18n } from '#/i18n.config'
 import getBaseUrl from '@/lib/baseUrl'
 
-export async function generateMetadata({ params }: { params: { lang: Locale } }): Promise<Metadata> {
+export async function generateMetadata(): Promise<Metadata> {
     const title = 'Home Page // Douglas Matos da Silva'
     const description =
         'This is my personal website, where i have one blog with any articles, tutors, challenges e more. Douglas Matos da Silva'
-    const baseUrl = getBaseUrl()
-    const url = `${baseUrl}/${params.lang}`
-    const images = `${url}/images/opengraph-image.png`
+    const baseUrl = getBaseUrl() + '/en'
 
     return {
-        metadataBase: new URL(url),
+        metadataBase: new URL(baseUrl),
         title,
         description,
         openGraph: {
-            url,
+            url: baseUrl,
             title,
             description,
-            images
+            images: [
+                {
+                    url: `/images/opengraph-image.png`,
+                    width: 1220,
+                    height: 630,
+                    alt: 'Douglas Matos Banner'
+                }
+            ]
         }
     }
 }
