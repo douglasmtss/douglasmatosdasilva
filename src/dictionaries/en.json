@@ -16,11 +16,19 @@
       "description": "This is my personal website, where i have one blog with any articles, tutors, challenges e more. Douglas Matos da Silva",
       "slogan": "Father, husband, brother and software developer.",
       "overview": {
-        "title": "Overview",
-        "p1": "Welcome to my website, this is the place where I would like to share knowledge, such as articles, tutorials, tips, etc.",
-        "p2": "Here you will find posts on my <a href='/blog'><u><strong>blog</strong></u></a> that talk about software engineering and development, from project management to hands-on coding, including front-end, back-end, mobile, web, Linux and much more more.",
-        "p3": "Here I will be unifying everything I have learned and am learning, I will always make the source codes available on <a href={github.url}><u><strong>github</strong></u></a>, I will always try to publish posts explaining any new subject I have learned and I will also make some small projects developed as studies available.",
-        "p4": "I wish you all the best! For more information, <a href='/pages/contact'><strong><u>get in touch.</u></strong></a>"
+        "title": "Welcome to My Knowledge Hub!",
+        "p1": "Greetings and welcome to my digital realm of knowledge-sharing! This platform serves as a hub where I aim to disseminate insights through a variety of mediums such as articles, tutorials, and practical tips.",
+        "h2p2": "What to Expect:",
+        "p2": "Dive into a plethora of blog posts that traverse the vast landscape of software engineering and development. From the intricacies of project management to the nitty-gritty of hands-on coding, the spectrum encompasses front-end, back-end, mobile, web, Linux, and beyond.",
+        "h2p3": "A Unified Learning Experience:",
+        "p3": "This space is a convergence of my ongoing learning journey. I'm committed to consolidating and sharing everything I absorb along the way. Expect regular updates where I not only share the knowledge I acquire but also provide accessible source codes on GitHub for your exploration.",
+        "h2p4": "Beyond the Basics:",
+        "p4": "In my quest for continuous improvement, I pledge to unravel the mysteries of any new subject I encounter. Through insightful blog posts, I'll break down complex topics, making them more approachable for everyone. Additionally, you'll find some of my smaller projects developed as part of my ongoing studies, available for exploration and learning.",
+        "h2p5": "Wishing You Success:",
+        "p5": "To all visitors, I extend my heartfelt wishes for success and growth. Your journey into the world of software and development is bound to be an enriching one, and I'm here to contribute to that journey in any way I can.",
+        "h2p6": "Connect with Me:",
+        "p6": "For more details, inquiries, or just a friendly chat, feel free to get in touch. Your engagement is highly valued, and I look forward to connecting with fellow enthusiasts, learners, and industry professionals alike.",
+        "greetings": "Best regards,"
       },
       "about": {
         "title": "About",

@@ -16,11 +16,19 @@
       "description": "Este é o meu site pessoal, onde tenho um blog com artigos, tutores, desafios e muito mais. Douglas Matos da Silva",
       "slogan": "Pai, marido, irmão e desenvolvedor de software",
       "overview": {
-        "title": "Visão geral",
-        "p1": "Bem vindo ao meu site, aqui é o local onde gostaria de compartilhar conhecimentos, como artigos, tutoriais, dicas etc.",
-        "p2": "Aqui você vai encontrar post no meu <a href='/blog'><u><strong>blog</strong></u></a> que falam sobre engenharia e desenvolvimento de software desde de gestão de projetos até mão namassa no código, passando pelo front-end, back-end, mobile, web, linux e muito mais.",
-        "p3": "Aqui estarei unificando tudo que aprendi e estou aprendendo, deixarei sempre dispnível dos códigos fontes no github, tentarei sempre publicar posts explicando algum assunto novo que aprendi e também disponibilizarei agluns pequenos projetos desenvolvidos como estudos.",
-        "p4": "Desejo tudo de bom a você! Para mais informações entre em contato."
+        "title": "Bem-vindo ao meu centro de conhecimento!",
+        "p1": "Saudações e bem-vindo ao meu reino digital de compartilhamento de conhecimento! Esta plataforma serve como um centro onde pretendo disseminar insights através de uma variedade de meios, como artigos, tutoriais e dicas práticas.",
+        "h2p2": "O que esperar:",
+        "p2": "Mergulhe em uma infinidade de postagens de blog que abrangem o vasto cenário da engenharia e desenvolvimento de software. Dos meandros do gerenciamento de projetos aos detalhes da codificação prática, o espectro abrange front-end, back-end , dispositivos móveis, web, Linux e muito mais.",
+        "h2p3": "Uma experiência de aprendizagem unificada:",
+        "p3": "Este espaço é uma convergência da minha jornada de aprendizagem contínua. Estou empenhado em consolidar e compartilhar tudo o que absorvo ao longo do caminho. Conte com atualizações regulares onde não apenas compartilho o conhecimento que adquiro, mas também forneço códigos-fonte acessíveis sobre GitHub para sua exploração.",
+        "h2p4": "Além do básico:",
+        "p4": "Em minha busca pela melhoria contínua, comprometo-me a desvendar os mistérios de qualquer novo assunto que encontrar. Através de postagens de blog esclarecedoras, detalharei tópicos complexos, tornando-os mais acessíveis para todos. Além disso, você encontre alguns de meus projetos menores desenvolvidos como parte de meus estudos em andamento, disponíveis para exploração e aprendizagem.",
+        "h2p5": "Desejamos sucesso:",
+        "p5": "A todos os visitantes, estendo meus sinceros votos de sucesso e crescimento. Sua jornada no mundo do software e do desenvolvimento certamente será enriquecedora, e estou aqui para contribuir com essa jornada de qualquer maneira que eu pode.",
+        "h2p6": "Conecte-se comigo:",
+        "p6": "Para mais detalhes, dúvidas ou apenas um bate-papo amigável, sinta-se à vontade para entrar em contato. Seu envolvimento é altamente valorizado e estou ansioso para me conectar com outros entusiastas, alunos e profissionais da indústria.",
+        "greetings": "Atenciosamente,"
       },
       "about": {
         "title": "Sobre",
