@@ -51,11 +51,49 @@ export default async function Home({ params: { lang } }: { params: { lang: Local
 
                 <Paragraph>{page.home.overview.p1}</Paragraph>
 
-                <Paragraph dangerouslySetInnerHTML={{ __html: page.home.overview.p2 }} />
+                <h2
+                    className="mb-6 text-2xl font-semibold tracking-tight hover:underline"
+                    title={page.home.overview.h2p2}
+                >
+                    {page.home.overview.h2p2}
+                </h2>
+                <Paragraph>{page.home.overview.p2}</Paragraph>
 
-                <Paragraph dangerouslySetInnerHTML={{ __html: page.home.overview.p3 }} />
+                <h2
+                    className="mb-6 text-2xl font-semibold tracking-tight hover:underline"
+                    title={page.home.overview.h2p3}
+                >
+                    {page.home.overview.h2p3}
+                </h2>
+                <Paragraph>{page.home.overview.p3}</Paragraph>
 
-                <Paragraph dangerouslySetInnerHTML={{ __html: page.home.overview.p4 }} />
+                <h2
+                    className="mb-6 text-2xl font-semibold tracking-tight hover:underline"
+                    title={page.home.overview.h2p4}
+                >
+                    {page.home.overview.h2p4}
+                </h2>
+                <Paragraph>{page.home.overview.p4}</Paragraph>
+
+                <h2
+                    className="mb-6 text-2xl font-semibold tracking-tight hover:underline"
+                    title={page.home.overview.h2p5}
+                >
+                    {page.home.overview.h2p5}
+                </h2>
+                <Paragraph>{page.home.overview.p5}</Paragraph>
+
+                <h2
+                    className="mb-6 text-2xl font-semibold tracking-tight hover:underline"
+                    title={page.home.overview.h2p6}
+                >
+                    {page.home.overview.h2p6}
+                </h2>
+                <Paragraph>{page.home.overview.p6}</Paragraph>
+
+                <Paragraph>{page.home.overview.greetings}</Paragraph>
+
+                <Paragraph>Douglas Matos da Silva</Paragraph>
             </section>
 
             <section className="mb-80" title={page.home.about.title}>
