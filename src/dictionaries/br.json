@@ -90,6 +90,16 @@
         "t8": "Somente Política de Privacidade Online",
         "t9": "Consentimento"
       }
+    },
+    "disclaimer": {
+      "title": "Isenção de responsabilidade",
+      "p1": "O conteúdo apresentado neste site/blog destina-se exclusivamente a fins educacionais e informativos. As informações fornecidas sobre programação front-end, back-end, engenharia de software, tutoriais, dicas, soluções de desafios de programação e pequenos projetos de software são baseadas em conhecimentos disponíveis até a última atualização desta página.",
+      "p2": "É fundamental ressaltar que o campo da tecnologia da informação está em constante evolução, e as práticas, ferramentas e padrões podem ser atualizados com o tempo. Portanto, recomenda-se que os leitores verifiquem as informações mais recentes e utilizem seu discernimento ao aplicar as sugestões fornecidas.",
+      "p3": "O autor deste site/blog não se responsabiliza por quaisquer consequências resultantes da aplicação das técnicas, códigos ou informações apresentadas. Cada projeto e situação pode ser único, e é aconselhável adaptar as abordagens de acordo com as necessidades específicas.",
+      "p4": "Além disso, os links externos podem redirecionar para recursos que estão fora do controle direto do autor, e a sua disponibilidade e conteúdo não são garantidos. Os usuários são encorajados a revisar as políticas de privacidade e termos de uso desses sites vinculados.",
+      "p5": "Ao utilizar este site/blog, os leitores concordam em isentar o autor de qualquer responsabilidade por danos, perdas ou inconvenientes que possam surgir como resultado direto ou indireto do uso das informações fornecidas.",
+      "p6": "Lembre-se sempre de realizar backups, seguir as melhores práticas de segurança e buscar a orientação de profissionais qualificados ao lidar com questões críticas de programação e engenharia de software.",
+      "p7": "Obrigado por visitar o site/blog e por sua compreensão."
     }
   }
 }
