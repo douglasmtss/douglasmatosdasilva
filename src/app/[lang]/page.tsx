@@ -4,7 +4,6 @@ import Image from 'next/image'
 import Script from 'next/script'
 import perfilImg from '@/assets/images/perfil.jpeg'
 import Paragraph from '@/components/Paragraph'
-import SocialMedias from '@/components/SocialMedias'
 import { getDictionary } from '@/lib/dictionary'
 import { Locale } from '#/i18n.config'
 import dynamic from 'next/dynamic'
@@ -132,25 +131,6 @@ export default async function Home({ params: { lang } }: { params: { lang: Local
                 </button>
             </section>
 
-            <section className="mb-80" title={page.home.latest_posts.title}>
-                <h2
-                    className="mb-6 text-2xl font-semibold tracking-tight hover:underline"
-                    title={page.home.latest_posts.title}
-                >
-                    <LinkI18n href="/blog">{page.home.latest_posts.title}</LinkI18n>
-                </h2>
-                <LastPosts amount={2} lang={lang} />
-                <button
-                    type="button"
-                    className="rounded-md bg-dmds-5 dark:text-dmds-2 px-4 py-2 text-xl mt-6"
-                    title={page.home.contact.read_more}
-                >
-                    <LinkI18n href="/blog" title={page.home.latest_posts.read_more}>
-                        {page.home.latest_posts.read_more}
-                    </LinkI18n>
-                </button>
-            </section>
-
             <section className="mb-80" title={page.home.contact.title}>
                 <h2
                     className="mb-6 text-2xl font-semibold tracking-tight hover:underline"
@@ -160,7 +140,6 @@ export default async function Home({ params: { lang } }: { params: { lang: Local
                 </h2>
                 <Paragraph>{page.home.contact.p1}</Paragraph>
                 <Paragraph>{page.home.contact.p2}</Paragraph>
-                <SocialMedias />
                 <button
                     type="button"
                     className="rounded-md bg-dmds-5 dark:text-dmds-2 px-4 py-2 text-xl mt-6"
@@ -168,6 +147,25 @@ export default async function Home({ params: { lang } }: { params: { lang: Local
                 >
                     <LinkI18n href="/pages/contact" title={page.home.contact.read_more}>
                         {page.home.contact.read_more}
+                    </LinkI18n>
+                </button>
+            </section>
+
+            <section className="mb-80" title={page.home.latest_posts.title}>
+                <h2
+                    className="mb-6 text-2xl font-semibold tracking-tight hover:underline"
+                    title={page.home.latest_posts.title}
+                >
+                    <LinkI18n href="/blog">{page.home.latest_posts.title}</LinkI18n>
+                </h2>
+                <LastPosts amount={5} lang={lang} />
+                <button
+                    type="button"
+                    className="rounded-md bg-dmds-5 dark:text-dmds-2 px-4 py-2 text-xl mt-6"
+                    title={page.home.contact.read_more}
+                >
+                    <LinkI18n href="/blog" title={page.home.latest_posts.read_more}>
+                        {page.home.latest_posts.read_more}
                     </LinkI18n>
                 </button>
             </section>

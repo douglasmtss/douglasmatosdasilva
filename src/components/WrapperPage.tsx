@@ -11,7 +11,7 @@ export default function WrapperPage({ children, lang }: WrapperPageProps): JSX.E
     return (
         <main className="w-full bg-dmds-1 dark:bg-dmds-2 flex flex-col flex-1 md:px-8 md:pt-8">
             <TopPageContent lang={lang} />
-            <section className="w-11/12 md:w-full max-w-[800px] flex-1 h-full ml-auto mr-auto">{children}</section>
+            <section className="w-11/12 md:w-full max-w-[900px] flex-1 h-full ml-auto mr-auto">{children}</section>
             <Footer lang={lang} />
         </main>
     )

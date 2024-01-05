@@ -1,7 +1,10 @@
 import readingTime from 'reading-time'
-import Link from 'next/link'
 import stripHtml from '@/lib/strip-html'
 
+import { cn } from '@/utils/tailwindMerge'
+import dynamic from 'next/dynamic'
+
+const LinkI18n = dynamic(() => import('./LinkI18n'), { ssr: false })
 interface PostPreviewProps {
     content: string
     href: string
@@ -10,6 +13,7 @@ interface PostPreviewProps {
     title: string
     description: string
     stats?: string
+    className?: string
 }
 
 export default function PostPreview(props: PostPreviewProps): JSX.Element {
@@ -17,7 +21,10 @@ export default function PostPreview(props: PostPreviewProps): JSX.Element {
     const description = stripHtml(props.description ?? '')
 
     return (
-        <Link href={props.href} className="border-0 flex-1 md:w-96 no-underline cursor-pointer">
+        <LinkI18n
+            href={props.href}
+            className={cn('border-0 flex-1 md:w-96 no-underline cursor-pointer', props?.className || '')}
+        >
             <Animation index={`${props.index}`}>
                 <div className="flex flex-col">
                     <div
@@ -34,7 +41,7 @@ export default function PostPreview(props: PostPreviewProps): JSX.Element {
                     </div>
                 </div>
             </Animation>
-        </Link>
+        </LinkI18n>
     )
 }
 
