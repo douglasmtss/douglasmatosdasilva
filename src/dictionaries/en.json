@@ -90,6 +90,16 @@
         "t8": "Online Privacy Policy Only",
         "t9": "Consent"
       }
+    },
+    "disclaimer": {
+      "title": "Disclaimer",
+      "p1": "The content presented on this website/blog is intended solely for educational and informational purposes. The information provided on front-end programming, back-end development, software engineering, tutorials, tips, programming challenge solutions, and small software projects is based on knowledge available up to the last update of this page.",
+      "p2": "It is crucial to emphasize that the field of information technology is in constant evolution, and practices, tools, and standards may be updated over time. Therefore, readers are advised to check the most recent information and use their discretion when applying the suggestions provided.",
+      "p3": "The author of this website/blog does not take responsibility for any consequences resulting from the application of techniques, code, or information presented. Each project and situation may be unique, and it is advisable to adapt approaches according to specific needs.",
+      "p4": "Additionally, external links may redirect to resources that are beyond the direct control of the author, and their availability and content are not guaranteed. Users are encouraged to review the privacy policies and terms of use of these linked sites.",
+      "p5": "By using this website/blog, readers agree to release the author from any liability for damages, losses, or inconveniences that may arise as a direct or indirect result of using the provided information.",
+      "p6": "Always remember to perform backups, follow security best practices, and seek guidance from qualified professionals when dealing with critical programming and software engineering issues.",
+      "p7": "Thank you for visiting the website/blog and for your understanding."
     }
   }
 }
