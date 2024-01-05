@@ -6,6 +6,9 @@ import { IsClientCtxProvider } from '@/hooks/useIsClient'
 import { ToastContainer } from 'react-toastify'
 import { Locale, i18n } from '#/i18n.config'
 import getBaseUrl from '@/lib/baseUrl'
+import dynamic from 'next/dynamic'
+
+const ScrollToTopButton = dynamic(() => import('@/components/ScrollToTopButton'), { ssr: false })
 
 export async function generateMetadata(): Promise<Metadata> {
     const title = 'Home Page // Douglas Matos da Silva'
@@ -50,6 +53,7 @@ export default function RootLayout({
                 <ToastContainer />
                 <IsClientCtxProvider>
                     <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
+                        <ScrollToTopButton />
                         {children}
                     </ThemeProvider>
                 </IsClientCtxProvider>
