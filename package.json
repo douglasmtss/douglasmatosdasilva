@@ -19,7 +19,7 @@
     "contentlayer": "^0.3.4",
     "cookies-next": "^4.1.0",
     "date-fns": "^3.0.6",
-    "framer-motion": "^10.16.16",
+    "framer-motion": "^10.17.9",
     "fs-extra": "^11.2.0",
     "negotiator": "^0.6.3",
     "next": "14.0.4",
