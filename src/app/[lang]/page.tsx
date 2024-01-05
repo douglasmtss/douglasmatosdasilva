@@ -9,6 +9,8 @@ import { getDictionary } from '@/lib/dictionary'
 import { Locale } from '#/i18n.config'
 import dynamic from 'next/dynamic'
 
+const CookieConsent = dynamic(() => import('@/components/CookieConsent'), { ssr: false })
+
 const LinkI18n = dynamic(() => import('@/components/LinkI18n'), { ssr: false })
 
 export default async function Home({ params: { lang } }: { params: { lang: Locale } }): Promise<JSX.Element> {
@@ -16,6 +18,7 @@ export default async function Home({ params: { lang } }: { params: { lang: Local
 
     return (
         <WrapperPage lang={lang}>
+            <CookieConsent />
             <Script
                 async
                 src={`https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=${process.env.NEXT_PULIC_ADS_CLIENT}`}
