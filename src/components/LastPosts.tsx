@@ -13,10 +13,13 @@ interface LastPostProps {
     lang: Locale
 }
 const LastPosts = (props: LastPostProps): JSX.Element => {
-    const { amount = 5 } = props
+    let { amount = 5 } = props
 
     const allPosts = getPosts(props.lang)
 
+    if (amount > allPosts.length) {
+        amount = allPosts.length
+    }
     const lastPosts = allPosts.slice(allPosts.length - amount, allPosts.length)
 
     const renderAllPosts = (): Iterable<React.ReactNode> => {
@@ -29,7 +32,7 @@ const LastPosts = (props: LastPostProps): JSX.Element => {
                     title={post.title}
                     description={post.description}
                     image={post.image}
-                    // stats={post.stats}
+                    className="md:min-w-[350px]"
                     content={post.content}
                 />
             )
