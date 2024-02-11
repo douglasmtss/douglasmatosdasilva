@@ -3,10 +3,12 @@
 import br__beecrowdHelloWorldJavascriptMdx from './br__beecrowd-hello-world-javascript.mdx.json' assert { type: 'json' }
 import br__javaLoopsIMdx from './br__java-loops-i.mdx.json' assert { type: 'json' }
 import br__javaLoopsIiMdx from './br__java-loops-ii.mdx.json' assert { type: 'json' }
+import br__javaStdinAndStdoutIMdx from './br__java-stdin-and-stdout-i.mdx.json' assert { type: 'json' }
 import br__welcomeToJavaMdx from './br__welcome-to-java.mdx.json' assert { type: 'json' }
 import en__beecrowdHelloWorldJavascriptMdx from './en__beecrowd-hello-world-javascript.mdx.json' assert { type: 'json' }
 import en__javaLoopsIMdx from './en__java-loops-i.mdx.json' assert { type: 'json' }
 import en__javaLoopsIiMdx from './en__java-loops-ii.mdx.json' assert { type: 'json' }
+import en__javaStdinAndStdoutIMdx from './en__java-stdin-and-stdout-i.mdx.json' assert { type: 'json' }
 import en__welcomeToJavaMdx from './en__welcome-to-java.mdx.json' assert { type: 'json' }
 
-export const allDocs = [br__beecrowdHelloWorldJavascriptMdx, br__javaLoopsIMdx, br__javaLoopsIiMdx, br__welcomeToJavaMdx, en__beecrowdHelloWorldJavascriptMdx, en__javaLoopsIMdx, en__javaLoopsIiMdx, en__welcomeToJavaMdx]
+export const allDocs = [br__beecrowdHelloWorldJavascriptMdx, br__javaLoopsIMdx, br__javaLoopsIiMdx, br__javaStdinAndStdoutIMdx, br__welcomeToJavaMdx, en__beecrowdHelloWorldJavascriptMdx, en__javaLoopsIMdx, en__javaLoopsIiMdx, en__javaStdinAndStdoutIMdx, en__welcomeToJavaMdx]
