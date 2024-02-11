@@ -39,6 +39,7 @@
     "sharp": "^0.33.2",
     "shiki": "^0.14.7",
     "shikiji": "^0.9.9",
+    "tailwind": "^4.0.0",
     "tailwind-merge": "^2.1.0",
     "unist-util-visit": "^5.0.0"
   },
