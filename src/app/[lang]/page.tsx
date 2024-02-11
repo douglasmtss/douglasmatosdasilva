@@ -34,7 +34,7 @@ export default async function Home({ params: { lang } }: { params: { lang: Local
                 `}
             </Script>
 
-            <header className="flex flex-col items-center h-screen pt-32 pb-8 w-max mx-auto">
+            <header className="flex flex-col items-center h-auto pt-32 pb-8 w-max mx-auto mb-60">
                 <h1 className="font-ranga mt-8 text-5xl text-dmds-2 dark:text-dmds-1 md:text-8xl tracking-tighter mb-8">
                     Douglas Silva
                 </h1>
@@ -43,7 +43,7 @@ export default async function Home({ params: { lang } }: { params: { lang: Local
                 </p>
             </header>
 
-            <section className="mb-80" title={page.home.overview.title}>
+            <section className="mb-40" title={page.home.overview.title}>
                 <h2
                     className="mb-6 text-2xl font-semibold tracking-tight hover:underline"
                     title={page.home.overview.title}
@@ -98,7 +98,7 @@ export default async function Home({ params: { lang } }: { params: { lang: Local
                 <Paragraph>Douglas Matos da Silva</Paragraph>
             </section>
 
-            <section className="mb-80" title={page.home.about.title}>
+            <section className="mb-40" title={page.home.about.title}>
                 <h2
                     className="mb-6 text-2xl font-semibold tracking-tight hover:underline"
                     title={page.home.about.title}
@@ -122,7 +122,7 @@ export default async function Home({ params: { lang } }: { params: { lang: Local
 
                 <button
                     type="button"
-                    className="rounded-md bg-dmds-5 dark:text-dmds-2 px-4 py-2 text-xl"
+                    className="hover:bg-white transition-all duration-300 rounded-md bg-dmds-5 dark:text-dmds-2 px-4 py-2 text-xl"
                     title={page.home.about.read_more}
                 >
                     <LinkI18n href="/pages/about" title={page.home.about.read_more}>
@@ -131,7 +131,7 @@ export default async function Home({ params: { lang } }: { params: { lang: Local
                 </button>
             </section>
 
-            <section className="mb-80" title={page.home.contact.title}>
+            <section className="mb-40" title={page.home.contact.title}>
                 <h2
                     className="mb-6 text-2xl font-semibold tracking-tight hover:underline"
                     title={page.home.contact.title}
@@ -142,7 +142,7 @@ export default async function Home({ params: { lang } }: { params: { lang: Local
                 <Paragraph>{page.home.contact.p2}</Paragraph>
                 <button
                     type="button"
-                    className="rounded-md bg-dmds-5 dark:text-dmds-2 px-4 py-2 text-xl mt-6"
+                    className="hover:bg-white transition-all duration-300 rounded-md bg-dmds-5 dark:text-dmds-2 px-4 py-2 text-xl mt-6"
                     title={page.home.contact.read_more}
                 >
                     <LinkI18n href="/pages/contact" title={page.home.contact.read_more}>
@@ -151,7 +151,7 @@ export default async function Home({ params: { lang } }: { params: { lang: Local
                 </button>
             </section>
 
-            <section className="mb-80" title={page.home.latest_posts.title}>
+            <section className="mb-40" title={page.home.latest_posts.title}>
                 <h2
                     className="mb-6 text-2xl font-semibold tracking-tight hover:underline"
                     title={page.home.latest_posts.title}
@@ -161,7 +161,7 @@ export default async function Home({ params: { lang } }: { params: { lang: Local
                 <LastPosts amount={5} lang={lang} />
                 <button
                     type="button"
-                    className="rounded-md bg-dmds-5 dark:text-dmds-2 px-4 py-2 text-xl mt-6"
+                    className="hover:bg-white transition-all duration-300 rounded-md bg-dmds-5 dark:text-dmds-2 px-4 py-2 text-xl mt-6"
                     title={page.home.contact.read_more}
                 >
                     <LinkI18n href="/blog" title={page.home.latest_posts.read_more}>
