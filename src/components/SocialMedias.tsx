@@ -23,7 +23,7 @@ export default function SocialMedias(props: SocialMediasProps): JSX.Element {
                         <li key={`${sm.name}_${i}`} className="list-none flex-1">
                             <Link
                                 href={sm.url}
-                                className="flex flex-col justify-center items-center w-full h-full opacity-75 hover:opacity-100 focus:opacity-100"
+                                className="flex flex-col justify-center items-center w-full h-full opacity-75 hover:opacity-100 focus:opacity-100 transition-all duration-300"
                             >
                                 <span className="text-4xl">{sm?.icon}</span>
                                 {labels ? <small>{sm.name}</small> : null}
