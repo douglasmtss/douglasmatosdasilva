@@ -1,4 +1,11 @@
-import { FaFacebookSquare, FaInstagramSquare, FaTwitterSquare, FaGithubSquare, FaLinkedin } from 'react-icons/fa'
+import {
+    FaFacebookSquare,
+    FaInstagramSquare,
+    FaTwitterSquare,
+    FaGithubSquare,
+    FaLinkedin,
+    FaYoutubeSquare
+} from 'react-icons/fa'
 import { IoLogoDiscord } from 'react-icons/io5'
 import { BiLogoGmail } from 'react-icons/bi'
 
@@ -24,6 +31,7 @@ interface Info {
     college: FieldNameAndUrl
     socialMedias: {
         gmail: FieldNameAndUrl
+        youtube: FieldNameAndUrl
         github: FieldNameAndUrl
         instagram: FieldNameAndUrl
         facebook: FieldNameAndUrl
@@ -74,6 +82,11 @@ export default function info(): Info {
             name: 'Douglas Matos da Silva',
             url: `mailto:${mail.secundary}`,
             icon: <BiLogoGmail />
+        },
+        youtube: {
+            name: 'Douglas Silva',
+            url: 'https://www.youtube.com/@douglasmatosdasilva',
+            icon: <FaYoutubeSquare />
         },
         github: {
             ...github,
