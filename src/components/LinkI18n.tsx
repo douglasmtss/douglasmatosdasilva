@@ -17,9 +17,6 @@ export default function LinkI18n(props: LinkI18nProps): JSX.Element {
 
     const redirectedPathName = (locale: Locale): string => {
         if (!pathName) return '/'
-        // const segments = pathName.split('/')
-        // segments[1] = locale
-        // return segments.join('/')
 
         return `/${locale}${href}`
     }

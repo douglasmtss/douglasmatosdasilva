@@ -13,7 +13,7 @@ export default function ToggleLanguage({ lang }: ToggleLanguageProps): JSX.Eleme
     const storageLang = localStorage.getItem('lang')
     const selectedLanguage = storageLang || lang
 
-    if (!selectedLanguage) {
+    if (!storageLang) {
         localStorage.setItem('lang', lang)
     }
 
