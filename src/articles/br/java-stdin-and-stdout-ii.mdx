@@ -1,0 +1,146 @@
+---
+title: Java Stdin And Stdout II
+description: Neste desafio, você deve ler um inteiro, um duplo e uma String do stdin e, em seguida, imprimir os valores de acordo com as instruções na seção Formato de saída abaixo. Para tornar o problema um pouco mais fácil, uma parte do código é fornecida no editor.
+createdAt: 2024-02-12 20:11
+author: Douglas Matos
+image: /images/java-stdin-and-stdout-ii.png
+lang: br
+tags: chanllenges, hackerrank, java
+---
+![Java Stdin e Stdout II](/images/java-stdin-and-stdout-ii.png)
+
+Neste desafio, você deve ler um inteiro, um duplo e uma String do stdin e, em seguida, imprimir os valores de acordo com as instruções na seção Formato de saída abaixo. Para tornar o problema um pouco mais fácil, uma parte do código é fornecida no editor.
+
+**Observação**: Recomendamos completar [Java Stdin e Stdout I](https://www.hackerrank.com/challenges/java-stdin-and-stdout-1) antes de tentar este desafio.
+
+### Formato de entrada
+
+Existem três linhas de entrada:
+
+1. A primeira linha contém um número inteiro.
+2. A segunda linha contém um duplo.
+3. A terceira linha contém uma String.
+
+### Formato de saída
+
+Existem três linhas de saída:
+
+1. Na primeira linha, imprima ***String:*** seguido pela String inalterada lida em stdin.
+2. Na segunda linha, imprima ***Double:*** seguido pela leitura dupla inalterada de stdin.
+3. Na terceira linha, imprima ***Int:*** seguido pelo número inteiro inalterado lido em stdin.
+
+Para facilitar o problema, uma parte do código já vem fornecida no editor.
+
+**Observação**: Se você usar o método nextLine() imediatamente após o método nextInt(), lembre-se de que nextInt() lê tokens inteiros; por causa disso, o último caractere de nova linha para aquela linha de entrada inteira ainda está na fila no buffer de entrada e a próxima nextLine() estará lendo o restante da linha inteira (que está vazia).
+
+### Exemplo de entrada
+
+```bash
+42
+3.1415
+Welcome to HackerRank's Java tutorials!
+```
+
+### Exemplo de saída
+
+```bash
+String: Welcome to HackerRank's Java tutorials!
+Double: 3.1415
+Int: 42
+```
+
+### Solução
+
+Este desafio tem um código inicial, que devemos dar continuidade, veja abaixo.
+
+```Java
+import java.util.Scanner;
+
+public class Solution {
+
+    public static void main(String[] args) {
+        Scanner scan = new Scanner(System.in);
+        int i = scan.nextInt();
+
+        // Write your code here.
+
+        System.out.println("String: " + s);
+        System.out.println("Double: " + d);
+        System.out.println("Int: " + i);
+    }
+}
+```
+
+Lendo um valor ***double***
+
+```Java
+import java.util.Scanner;
+
+public class Solution {
+
+    public static void main(String[] args) {
+        Scanner scan = new Scanner(System.in);
+        int i = scan.nextInt();
+
+        double d = scan.nextDouble();
+
+        System.out.println("String: " + s);
+        System.out.println("Double: " + d);
+        System.out.println("Int: " + i);
+    }
+}
+```
+
+Lendo um valor ***string***
+
+```Java
+import java.util.Scanner;
+
+public class Solution {
+
+    public static void main(String[] args) {
+        Scanner scan = new Scanner(System.in);
+        int i = scan.nextInt();
+
+        double d = scan.nextDouble();
+        scan.nextLine();
+        String s = scan.nextLine();
+
+        System.out.println("String: " + s);
+        System.out.println("Double: " + d);
+        System.out.println("Int: " + i);
+    }
+}
+```
+
+scan.nextLine(); é necessário porque:
+
+Nota: Se você usar o método nextLine() imediatamente após o método nextInt(), lembre-se de que nextInt() lê tokens inteiros; por causa disso, o último caractere de nova linha para aquela linha de entrada inteira ainda está na fila no buffer de entrada e a próxima nextLine() estará lendo o restante da linha inteira (que está vazia).
+
+Agora, imprima todos os valores e feche o Scanner
+
+```Java
+import java.util.Scanner;
+
+public class Solution {
+
+    public static void main(String[] args) {
+        Scanner scan = new Scanner(System.in);
+        int i = scan.nextInt();
+
+        double d = scan.nextDouble();
+        scan.nextLine();
+        String s = scan.nextLine();
+
+        System.out.println("String: " + s);
+        System.out.println("Double: " + d);
+        System.out.println("Int: " + i);
+
+          scan.close();
+    }
+}
+```
+
+## Código completo no Github:
+
+https://github.com/douglasmatosdev/hacker-rank/blob/main/prepare/java/basic/introduction/java_stdin_and_stdout_2/src/Solution.java
