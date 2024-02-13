@@ -1,0 +1,147 @@
+---
+title: Java Big Integer
+description: Neste problema, você tem que somar e multiplicar números enormes! Esses números são tão grandes que você não pode contê-los em nenhum tipo de dados comum, como um número inteiro longo.
+createdAt: 2024-02-13 15:19
+author: Douglas Matos
+image: /images/thumb-hackerrank-java-big-integer.png
+lang: br
+tags: 
+---
+![Java Big Integer](/images/thumb-hackerrank-java-big-integer.png)
+
+Neste problema, você tem que somar e multiplicar números enormes! Esses números são tão grandes que você não pode contê-los em nenhum tipo de dados comum, como um número inteiro longo.
+
+Use o poder da classe BigInteger do Java e resolva este problema.
+
+### Formato de entrada
+
+Haverá duas linhas contendo dois números, **a** e **b**.
+
+### Restrições
+
+**a** e **b** são números inteiros não negativos e podem ter no máximo **200** dígitos.
+
+### Formato de saída
+
+Produza duas linhas. A primeira linha deve conter **a + b** e a segunda linha deve conter **a x b**. Não imprima nenhum zero à esquerda.
+
+### Exemplo de entrada
+
+```bash
+1234
+20
+```
+
+### Exemplo de saída
+
+```bash
+1254
+24680
+```
+
+### Explicação
+
+```bash
+1234 + 20 = 1254
+1234 x 20 = 24680
+```
+
+Recebemos um código base para iniciarmos.
+
+```Java
+import java.io.*;
+import java.util.*;
+
+public class Solution {
+
+    public static void main(String[] args) {
+        /* Enter your code here. Read input from STDIN. Print output to STDOUT. Your class should be named Solution. */
+    }
+}
+```
+
+Para resolver devemos primeiro vamos instânciar a classe **Scanner**.
+
+```Java
+import java.io.*;
+import java.util.*;
+
+public class Solution {
+
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        
+        sc.close();
+    }
+}
+```
+
+Agora vamos ler os valores para as variáveis **a** e **b**
+
+```Java
+import java.io.*;
+import java.util.*;
+
+public class Solution {
+
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        
+        String a = sc.nextLine();
+        String b = sc.nextLine();
+
+        sc.close();
+    }
+}
+```
+
+Neste momento, os valores de **a** e **b** são **strings**, devemos então, transforma-los em **BigInteger**
+
+```Java
+import java.io.*;
+import java.util.*;
+
+public class Solution {
+
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        
+        String a = sc.nextLine();
+        String b = sc.nextLine();
+
+        BigInteger iA = new BigInteger(a);
+        BigInteger iB = new BigInteger(b);
+
+        sc.close();
+    }
+}
+```
+
+Agora vamos imprimir a soma e a multiplacação dos valores
+
+```Java
+import java.io.*;
+import java.util.*;
+
+public class Solution {
+
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        
+        String a = sc.nextLine();
+        String b = sc.nextLine();
+
+        BigInteger iA = new BigInteger(a);
+        BigInteger iB = new BigInteger(b);
+
+        System.out.println(iA.add(iB));
+        System.out.println(iA.multiply(iB));
+
+        sc.close();
+    }
+}
+```
+
+## Código completo no Github: 
+
+https://github.com/douglasmatosdev/hacker-rank/blob/main/prepare/java/basic/bigNumber/java_big_integer/src/main/java/org/example/Main.java
