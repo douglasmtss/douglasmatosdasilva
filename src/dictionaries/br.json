@@ -47,6 +47,12 @@
         "read_more": "Saiba mais"
       }
     },
+    "portfolio": {
+      "title": "Portfólio",
+      "description": "Está página contém alguns pequenos projetos desenvolvidos a fim de praticar.",
+      "button_online": "Veja a aplicação online",
+      "button_repository": "Veja o repositório do projeto"
+    },
     "about": {
       "title": "Sobre",
       "name": "Nome",

@@ -1,4 +1,5 @@
 import { FaHome, FaUser, FaPaperclip, FaMailBulk } from 'react-icons/fa'
+import { BiSolidCarousel } from 'react-icons/bi'
 import dynamic from 'next/dynamic'
 const LinkI18n = dynamic(() => import('./LinkI18n'), { ssr: false })
 
@@ -15,6 +16,11 @@ export const MenuContent = ({ open, setOpen }: MenuContentProps): JSX.Element =>
             url: '/',
             icon: <FaHome />,
             text: isBr ? 'Início' : 'Home'
+        },
+        {
+            url: '/pages/portfolio',
+            icon: <BiSolidCarousel />,
+            text: isBr ? 'Portfólio' : 'Portfolio'
         },
         {
             url: '/pages/about',
