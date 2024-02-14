@@ -16,16 +16,16 @@ const components = {
     h3: ({ className, ...props }: React.HTMLAttributes<HTMLHeadingElement>) => (
         <h1 className={cn('mt-2 text-xl font-bold tracking-tight', className)} {...props} />
     ),
-    img: ({ className, ...props }: React.HTMLAttributes<HTMLHeadingElement>) => (
-        <Image src="" alt="" width={370} height={210} className={cn('my-6 w-full', className)} {...props} />
+    img: ({ className, ...props }: React.HTMLAttributes<HTMLImageElement>) => (
+        <Image src={''} alt={''} width={370} height={210} className={cn('my-6 w-full', className)} {...props} />
     ),
-    p: ({ className, ...props }: React.HTMLAttributes<HTMLHeadingElement>) => (
-        <Paragraph className={className} {...props} />
+    p: ({ className, ...props }: React.HTMLAttributes<HTMLParagraphElement>) => (
+        <Paragraph className={cn('break-words', className)} {...props} />
     ),
-    strong: ({ className, ...props }: React.HTMLAttributes<HTMLHeadingElement>) => (
+    strong: ({ className, ...props }: React.HTMLAttributes<HTMLParagraphElement>) => (
         <strong className={cn('font-extrabold', className)} {...props} />
     ),
-    b: ({ className, ...props }: React.HTMLAttributes<HTMLHeadingElement>) => (
+    b: ({ className, ...props }: React.HTMLAttributes<HTMLParagraphElement>) => (
         <bdo className={cn('font-bold', className)} {...props} />
     ),
     pre: Pre
