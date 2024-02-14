@@ -1,0 +1,239 @@
+---
+title: Java If Else
+description: Neste desafio, testamos seu conhecimento sobre o uso de instruções condicionais if-else para automatizar processos de tomada de decisão.
+createdAt: 2024-02-14 16:34
+author: Douglas Matos
+image: /images/thumb-hackerrank-java-if-else.png
+lang: br
+tags: chanllenges, hackerrank, java
+---
+![Java If Else](/images/thumb-hackerrank-java-if-else.png)
+
+[HackerRank - Java if else](https://www.hackerrank.com/challenges/java-if-else)
+
+Neste desafio, testamos seu conhecimento sobre o uso de instruções condicionais if-else para automatizar processos de tomada de decisão. Uma instrução if-else tem o seguinte fluxo lógico:
+
+<image
+    style={{
+        width: "200px",
+        background: "#fff"
+    }}
+    alt="Diagram"
+    src="https://s3.amazonaws.com/hr-challenge-images/13689/1446563087-4ec019a919-332px-If-Then-Else-diagram.svg.png"
+/>
+Fonte: [Wikipédia](https://en.wikipedia.org/wiki/Conditional_%28computer_programming%29)
+
+### Tarefa
+
+Dado um número inteiro, **n**, execute as seguintes ações condicionais:
+
+Se **n** for estranho, imprima ***Weird***
+Se **n** for par e estiver no intervalo inclusivo de **2** a **5**, imprima ***Not Weird***
+Se **n** for par e estiver no intervalo inclusivo de **6** a **20**, imprima ***Weird***
+Se **n** for par e maior que **20**, imprima ***Not Weird***
+Preencha o código stub fornecido em seu editor para imprimir se **n** é estranho ou não.
+
+### Formato de entrada
+
+Uma única linha contendo um número inteiro positivo, **n**.
+
+### Restrições
+
+```bash 
+1<= n <= 100
+```
+
+### Formato de saída
+
+Imprima ***Estranho*** se o número for estranho; caso contrário, imprima ***Not Weird***.
+
+### Exemplo de entrada 0
+
+```bash
+3
+```
+
+### Exemplo de saída 0
+
+```bash
+Esquisito
+```
+
+### Exemplo de entrada 1
+
+```bash
+24
+```
+
+### Exemplo de saída 1
+
+```bash
+Não é estranho
+```
+
+### Explicação
+
+Exemplo de caso 0: **n = 3**
+**n** é ímpar e números ímpares são estranhos, então imprimimos ***Estranho***.
+
+Exemplo de caso 1: **n ==24**
+**n > 20** e **n** é par, então não é estranho. Assim, imprimimos ***Not Weird***.
+
+### Resolvendo o desafio
+
+Primeiro vamos verificar o código base que nos foi fornecido.
+
+```Java
+import java.io.*;
+import java.math.*;
+import java.security.*;
+import java.text.*;
+import java.util.*;
+import java.util.concurrent.*;
+import java.util.regex.*;
+
+public class Solution {
+    private static final Scanner scanner = new Scanner(System.in);
+
+    public static void main(String[] args) {
+        int N = scanner.nextInt();
+        scanner.skip("(\r\n|[\n\r\u2028\u2029\u0085])?");
+
+        scanner.close();
+    }
+}
+
+```
+Vamos começar identificando se **N** é par ou ímpar, fazemos isso usando o operado **%** que retorna o resto da divisão, se o resto da divisão for igual a 0 (zero), isso quer dizer que o valor é par, se não, o valor é ímpar.
+
+```Java
+import java.util.Scanner;
+
+public class Solution {
+    private static final Scanner scanner = new Scanner(System.in);
+
+    public static void main(String[] args) {
+
+        int N = scanner.nextInt();
+        scanner.skip("(\r\n|[\n\r\u2028\u2029\u0085])?");
+
+        boolean isOdd = N % 2 != 0 ? true : false;
+
+        scanner.close();
+    }
+}
+```
+
+Agora, vamos as condicionais. Se **N** for ímpar, devemos imprimir ***Weird***
+
+```Java
+import java.util.Scanner;
+
+public class Solution {
+    private static final Scanner scanner = new Scanner(System.in);
+
+    public static void main(String[] args) {
+
+        int N = scanner.nextInt();
+        scanner.skip("(\r\n|[\n\r\u2028\u2029\u0085])?");
+
+        boolean isOdd = N % 2 != 0 ? true : false;
+
+        if (isOdd) {
+            System.out.println("Weird");
+        }
+
+        scanner.close();
+    }
+}
+```
+
+Se **N** não for ímpar e ** N** for maior que 2 e **N** menor que 5, devemos imprimir ***Not Weird***
+
+
+```Java
+import java.util.Scanner;
+
+public class Solution {
+    private static final Scanner scanner = new Scanner(System.in);
+
+    public static void main(String[] args) {
+
+        int N = scanner.nextInt();
+        scanner.skip("(\r\n|[\n\r\u2028\u2029\u0085])?");
+
+        boolean isOdd = N % 2 != 0 ? true : false;
+
+        if (isOdd) {
+            System.out.println("Weird");
+        } else if (!isOdd && N > 2 && N < 5) {
+            System.out.println("Not Weird");
+        }
+
+        scanner.close();
+    }
+}
+```
+
+Se **N** não for ímpar e **N** for maior que 6 e **N** for menor que 20, devemos imprimir ***Weird***
+
+```Java
+import java.util.Scanner;
+
+public class Solution {
+    private static final Scanner scanner = new Scanner(System.in);
+
+    public static void main(String[] args) {
+
+        int N = scanner.nextInt();
+        scanner.skip("(\r\n|[\n\r\u2028\u2029\u0085])?");
+
+        boolean isOdd = N % 2 != 0 ? true : false;
+
+        if (isOdd) {
+            System.out.println("Weird");
+        } else if (!isOdd && N > 2 && N < 5) {
+            System.out.println("Not Weird");
+        } else if (!isOdd && N > 6 && N < 20) {
+            System.out.println("Weird");
+        }
+        scanner.close();
+    }
+}
+```
+
+Agora, por último, se **N** não for ímpar e **N** for maior que 20, devemos imprimir ***Not Weird***
+
+```Java
+import java.util.Scanner;
+
+public class Solution {
+    private static final Scanner scanner = new Scanner(System.in);
+
+    public static void main(String[] args) {
+
+        int N = scanner.nextInt();
+        scanner.skip("(\r\n|[\n\r\u2028\u2029\u0085])?");
+
+        boolean isOdd = N % 2 != 0 ? true : false;
+
+        if (isOdd) {
+            System.out.println("Weird");
+        } else if (!isOdd && N > 2 && N < 5) {
+            System.out.println("Not Weird");
+        } else if (!isOdd && N > 6 && N < 20) {
+            System.out.println("Weird");
+        } else if (!isOdd && N > 20) {
+            System.out.println("Not Weird");
+        }
+
+        scanner.close();
+    }
+}
+```
+
+Pronto, resolvido o nosso desafio.
+
+### Código completo no Github:
+
+https://github.com/douglasmatosdev/hacker-rank/blob/main/prepare/java/basic/introduction/java_if_else/src/Solution.java
