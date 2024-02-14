@@ -29,7 +29,7 @@ export default function PostPreview(props: PostPreviewProps): JSX.Element {
                 <div className="flex flex-col">
                     <div
                         style={{ backgroundImage: `url(${props.image})` }}
-                        className="rounded-[8px] w-full h-[180px] mb-5 bg-cover bg-no-repeat bg-center filter-[grayscale(1)]"
+                        className="rounded-[8px] md:min-w-96 w-full h-[180px] mb-5 bg-cover bg-no-repeat bg-center filter-[grayscale(1)]"
                     />
 
                     <div className="max-w-md">
