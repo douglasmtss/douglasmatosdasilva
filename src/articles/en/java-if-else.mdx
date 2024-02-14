@@ -1,0 +1,241 @@
+---
+title: Java If Else
+description: In this challenge, we test your knowledge of using if-else conditional statements to automate decision-making processes.
+createdAt: 2024-02-14 16:34
+author: Douglas Matos
+image: /images/thumb-hackerrank-java-if-else.png
+lang: en
+tags: chanllenges, hackerrank, java
+---
+![Java If Else](/images/thumb-hackerrank-java-if-else.png)
+
+[HackerRank - Java if else](https://www.hackerrank.com/challenges/java-if-else)
+
+In this challenge, we test your knowledge of using if-else conditional statements to automate decision-making processes. An if-else statement has the following logical flow:
+
+<image
+    style={{
+        width: "200px",
+        background: "#fff"
+    }}
+    alt="Diagram"
+    src="https://s3.amazonaws.com/hr-challenge-images/13689/1446563087-4ec019a919-332px-If-Then-Else-diagram.svg.png"
+/>
+
+
+Source: [Wikipedia](https://en.wikipedia.org/wiki/Conditional_%28computer_programming%29)
+
+### Task
+
+Given an integer, **n**, perform the following conditional actions:
+
+If **n** is odd, print ***Weird***
+If **n** is even and in the inclusive range of **2** to **5**, print ***Not Weird***
+If **n** is even and in the inclusive range of **6** to **20**, print ***Weird***
+If **n** is even and greater than **20**, print ***Not Weird***
+Complete the stub code provided in your editor to print whether or not **n** is weird.
+
+### Input Format
+
+A single line containing a positive integer, **n**.
+
+### Constraints
+
+```bash 
+1<= n <= 100
+```
+
+### Output Format
+
+Print ***Weird*** if the number is weird; otherwise, print ***Not Weird***.
+
+### Sample Input 0
+
+```bash
+3
+```
+
+### Sample Output 0
+
+```bash
+Weird
+```
+
+### Sample Input 1
+
+```bash
+24
+```
+
+### Sample Output 1
+
+```bash
+Not Weird
+```
+
+### Explanation
+
+Sample Case 0: **n = 3**
+**n** is odd and odd numbers are weird, so we print ***Weird***.
+
+Sample Case 1: **n ==24**
+**n > 20** and **n** is even, so it isn't weird. Thus, we print ***Not Weird***.
+
+### Solving the challenge
+
+First let's check the base code provided to us.
+
+```Java
+import java.io.*;
+import java.math.*;
+import java.security.*;
+import java.text.*;
+import java.util.*;
+import java.util.concurrent.*;
+import java.util.regex.*;
+
+public class Solution {
+     private static final Scanner scanner = new Scanner(System.in);
+
+     public static void main(String[] args) {
+         int N = scanner.nextInt();
+         scanner.skip("(\r\n|[\n\r\u2028\u2029\u0085])?");
+
+         scanner.close();
+     }
+}
+
+```
+Let's start by identifying whether **N** is even or odd, we do this using the **%** operator which returns the remainder of the division, if the remainder of the division is equal to 0 (zero), this means that the value is even, if not, the value is odd.
+
+```Java
+import java.util.Scanner;
+
+public class Solution {
+     private static final Scanner scanner = new Scanner(System.in);
+
+     public static void main(String[] args) {
+
+         int N = scanner.nextInt();
+         scanner.skip("(\r\n|[\n\r\u2028\u2029\u0085])?");
+
+         boolean isOdd = N % 2 != 0 ? true : false;
+
+         scanner.close();
+     }
+}
+```
+
+Now, let's go to the conditionals. If **N** is odd, we should print ***Weird***
+
+```Java
+import java.util.Scanner;
+
+public class Solution {
+     private static final Scanner scanner = new Scanner(System.in);
+
+     public static void main(String[] args) {
+
+         int N = scanner.nextInt();
+         scanner.skip("(\r\n|[\n\r\u2028\u2029\u0085])?");
+
+         boolean isOdd = N % 2 != 0 ? true : false;
+
+         if (isOdd) {
+             System.out.println("Weird");
+         }
+
+         scanner.close();
+     }
+}
+```
+
+If **N** is not odd and **N** is greater than 2 and **N** is less than 5, we should print ***Not Weird***
+
+
+```Java
+import java.util.Scanner;
+
+public class Solution {
+     private static final Scanner scanner = new Scanner(System.in);
+
+     public static void main(String[] args) {
+
+         int N = scanner.nextInt();
+         scanner.skip("(\r\n|[\n\r\u2028\u2029\u0085])?");
+
+         boolean isOdd = N % 2 != 0 ? true : false;
+
+         if (isOdd) {
+             System.out.println("Weird");
+         } else if (!isOdd && N > 2 && N < 5) {
+             System.out.println("Not Weird");
+         }
+
+         scanner.close();
+     }
+}
+```
+
+If **N** is not odd and **N** is greater than 6 and **N** is less than 20, we must print ***Weird***
+
+```Java
+import java.util.Scanner;
+
+public class Solution {
+     private static final Scanner scanner = new Scanner(System.in);
+
+     public static void main(String[] args) {
+
+         int N = scanner.nextInt();
+         scanner.skip("(\r\n|[\n\r\u2028\u2029\u0085])?");
+
+         boolean isOdd = N % 2 != 0 ? true : false;
+
+         if (isOdd) {
+             System.out.println("Weird");
+         } else if (!isOdd && N > 2 && N < 5) {
+             System.out.println("Not Weird");
+         } else if (!isOdd && N > 6 && N < 20) {
+             System.out.println("Weird");
+         }
+         scanner.close();
+     }
+}
+```
+
+Now lastly, if **N** is not odd and **N** is greater than 20, we should print ***Not Weird***
+
+```Java
+import java.util.Scanner;
+
+public class Solution {
+     private static final Scanner scanner = new Scanner(System.in);
+
+     public static void main(String[] args) {
+
+         int N = scanner.nextInt();
+         scanner.skip("(\r\n|[\n\r\u2028\u2029\u0085])?");
+
+         boolean isOdd = N % 2 != 0 ? true : false;
+
+         if (isOdd) {
+             System.out.println("Weird");
+         } else if (!isOdd && N > 2 && N < 5) {
+             System.out.println("Not Weird");
+         } else if (!isOdd && N > 6 && N < 20) {
+             System.out.println("Weird");
+         } else if (!isOdd && N > 20) {
+             System.out.println("Not Weird");
+         }
+
+         scanner.close();
+     }
+}
+```
+
+Okay, our challenge solved.
+
+### Full code in Github:
+
+https://github.com/douglasmatosdev/hacker-rank/blob/main/prepare/java/basic/introduction/java_if_else/src/Solution.java
