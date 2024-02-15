@@ -20,7 +20,7 @@ const LastPosts = (props: LastPostProps): JSX.Element => {
     if (amount > allPosts.length) {
         amount = allPosts.length
     }
-    const lastPosts = allPosts.slice(allPosts.length - amount, allPosts.length)
+    const lastPosts = allPosts.slice(0, allPosts.length)
 
     const renderAllPosts = (): Iterable<React.ReactNode> => {
         return lastPosts.map((post, index) => {

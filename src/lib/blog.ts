@@ -38,7 +38,8 @@ export function getAllPosts(fields: string[] = [], lang: Locale): Post[] {
     const slugs = getPostSlugs(lang)
     const posts = slugs
         .map(slug => getPostBySlug(slug, fields, lang))
-        .sort((post1, post2) => (post1.createdAt > post2.createdAt ? -1 : 1)) as unknown as Post[]
+        .sort((a, b) => new Date(a.createdAt).getTime() - new Date(b.createdAt).getTime())
+        .reverse() as unknown as Post[]
 
     return posts
 }
