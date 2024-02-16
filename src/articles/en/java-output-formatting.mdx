@@ -1,0 +1,100 @@
+---
+title: Java Output Formatting
+description: Java's System.out.printf function can be used to print formatted output. The purpose of this exercise is to test your understanding of formatting output using printf.
+createdAt: 2024-02-15 17:12
+author: Douglas Matos
+image: /images/thumb-hackerrank-java-output-formatting.png
+lang: en
+tags: chanllenges, hackerrank, java
+---
+![Java Output Formatting](/images/thumb-hackerrank-java-output-formatting.png)
+
+Java's System.out.printf function can be used to print formatted output. The purpose of this exercise is to test your understanding of formatting output using printf.
+
+To get you started, a portion of the solution is provided for you in the editor; you must format and print the input to complete the solution.
+
+### Input Format
+
+Every line of input will contain a String followed by an integer.
+Each String will have a maximum of **10** alphabetic characters, and each integer will be in the inclusive range from **0** to **999**.
+
+### Output Format
+
+In each line of output there should be two columns:
+The first column contains the String and is left justified using exactly **15** characters.
+The second column contains the integer, expressed in exactly **3** digits; if the original input has less than three digits, you must pad your output's leading digits with zeroes.
+
+### Sample Input
+
+```Java
+java 100
+cpp 65
+python 50
+```
+### Sample Output
+
+```Java
+================================
+java           100 
+cpp            065 
+python         050 
+================================
+```
+
+### Explanation
+
+Each String is left-justified with trailing whitespace through the first  **15** characters. The leading digit of the integer is the **16^th** character, and each integer that was less than **3** digits now has leading zeroes.
+
+### Let's solve the problem
+
+First let's look at the initial code provided to us by the challenge.
+
+```Java
+import java.util.Scanner;
+
+public class Solution {
+
+    public static void main(String[] args) {
+            Scanner sc=new Scanner(System.in);
+            System.out.println("================================");
+            for(int i=0;i<3;i++)
+            {
+                String s1=sc.next();
+                int x=sc.nextInt();
+                //Complete this line
+            }
+            System.out.println("================================");
+
+    }
+}
+```
+
+Maybe you noticed that the code is already 95% complete, to solve it we will just write one line of code.
+
+We will need to understand String formatting, in this case we will add a size to the string using **%[width]**.
+
+See below, I'm using printf to print the values of **s1* and **x** and the end of line ***System.out.printf("%s%d\n", s1, x) ;***, but we need to add a space between the string and the 15-character integer to the right of the string, for this we must do ***%-15s***, thus resulting in ***System.out.printf(" %-15s%d\n", s1, x);***, there is one more step, we have to print zeros on the left for cases where the integer has less than 3 decimal places, to do this just do the following **%03d** this fills the number of remaining decimal places with the value zero until completing 3 decimal places, now we have the following formatting mask **System.out.printf("%-15s%03d\n", s1 , x);**.
+
+So the end result was like this.
+
+```Java
+import java.util.Scanner;
+
+public class Solution {
+    public static void main(String[] args) {
+
+        Scanner sc = new Scanner(System.in);
+        System.out.println("================================");
+        for (int i = 0; i < 3; i++) {
+            String s1 = sc.next();
+            int x = sc.nextInt();
+            System.out.printf("%-15s%03d\n", s1, x);
+        }
+        System.out.println("================================");
+    }
+}
+```
+
+The full code is on Giuthub:
+
+https://github.com/douglasmatosdev/hacker-rank/blob/main/prepare/java/basic/introduction/java_output_formating/src/Solution.java
