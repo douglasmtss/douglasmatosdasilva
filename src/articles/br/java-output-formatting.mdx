@@ -1,0 +1,101 @@
+---
+title: Java Output Formatting
+description: A função System.out.printf do Java pode ser usada para imprimir saída formatada. O objetivo deste exercício é testar sua compreensão da formatação de saída usando printf.
+createdAt: 2024-02-15 17:12
+author: Douglas Matos
+image: /images/thumb-hackerrank-java-output-formatting.png
+lang: br
+tags: chanllenges, hackerrank, java
+---
+![Java Output Formatting](/images/thumb-hackerrank-java-output-formatting.png)
+
+A função System.out.printf do Java pode ser usada para imprimir saída formatada. O objetivo deste exercício é testar sua compreensão da formatação de saída usando printf.
+
+Para começar, uma parte da solução é fornecida no editor; você deve formatar e imprimir a entrada para concluir a solução.
+
+### Formato de entrada
+
+Cada linha de entrada conterá uma String seguida por um número inteiro.
+Cada String terá no máximo **10** caracteres alfabéticos e cada número inteiro estará no intervalo inclusivo de **0** a **999**.
+
+### Formato de saída
+
+Em cada linha de saída deve haver duas colunas:
+A primeira coluna contém a String e é justificada à esquerda usando exatamente **15** caracteres.
+A segunda coluna contém o número inteiro, expresso exatamente em **3** dígitos; se a entrada original tiver menos de três dígitos, você deverá preencher os dígitos iniciais da saída com zeros.
+
+### Exemplo de entrada
+
+```Java
+Java 100
+cp 65
+píton 50
+```
+### Exemplo de saída
+
+```Java
+===============================
+Java 100
+cpp 065
+píton 050
+===============================
+```
+
+### Explicação
+
+Cada String é justificada à esquerda com espaços em branco à direita nos primeiros **15** caracteres. O dígito inicial do número inteiro é o **16^th** caractere, e cada número inteiro que era menor que **3** dígitos agora tem zeros à esquerda.
+
+### Vamos a solução do problema
+
+Primeiro vamos analisar o código inicial que nos foi fornecido pelo desafio.
+
+```Java
+import java.util.Scanner;
+
+public class Solution {
+
+    public static void main(String[] args) {
+            Scanner sc=new Scanner(System.in);
+            System.out.println("================================");
+            for(int i=0;i<3;i++)
+            {
+                String s1=sc.next();
+                int x=sc.nextInt();
+                //Complete this line
+            }
+            System.out.println("================================");
+
+    }
+}
+```
+
+Talvez você tenha percebido que o código já está 95% concluíodo, para resolver escreveremos apenas uma linha de código.
+
+
+Precisaremos entender a formatação de String, neste caso iremos adicionar um tamho para a string usando **%[width]**.
+
+Veja a seguir, estou usando o printf para imprimir os valores de **s1* e **x** e o fim de linha ***System.out.printf("%s%d\n", s1, x);***, mas precisamos adicionar um espaço entre a string e o inteiro de 15 caracteres a direita da string,  para isso devemos fazer  ***%-15s***, ficando assim  ***System.out.printf("%-15s%d\n", s1, x);***, tem mais uma etapa, temos que imprimir zeros a esquerda para os casos em que o número inteiro tenha menos de 3 casas decimais, para isso basta fazer o seguinte **%03d** isso preenche o quantidade de casas decimais restantes com o valor zero até completer 3 casas decimais, agora temos a seguinte máscara de formatação **System.out.printf("%-15s%03d\n", s1, x);**.
+
+Então o resultado final ficou assim.
+
+```Java
+import java.util.Scanner;
+
+public class Solution {
+    public static void main(String[] args) {
+
+        Scanner sc = new Scanner(System.in);
+        System.out.println("================================");
+        for (int i = 0; i < 3; i++) {
+            String s1 = sc.next();
+            int x = sc.nextInt();
+            System.out.printf("%-15s%03d\n", s1, x);
+        }
+        System.out.println("================================");
+    }
+}
+```
+
+O código completo do está no Giuthub:
+
+https://github.com/douglasmatosdev/hacker-rank/blob/main/prepare/java/basic/introduction/java_output_formating/src/Solution.java
