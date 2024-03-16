@@ -55,6 +55,16 @@ const portfolios = [
         thumb: 'https://raw.githubusercontent.com/douglasmatosdev/weather/master/doc/desktop-consult.png',
         repository: 'https://github.com/douglasmatosdev/weather',
         online: 'https://weather-app-forecast.netlify.app/'
+    },
+    {
+        name: 'Pomodoro App',
+        description: {
+            br: 'Simples aplicação Pomodoro.',
+            en: 'Simple Pomodoro Application.'
+        },
+        thumb: 'https://raw.githubusercontent.com/douglasmatosdev/pomodoro/main/docs/pomodoro-countdown.png',
+        repository: 'https://github.com/douglasmatosdev/pomodoro',
+        online: 'https://pomodoro-doug.vercel.app/'
     }
 ]
 
