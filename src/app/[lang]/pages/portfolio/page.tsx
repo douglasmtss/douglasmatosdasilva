@@ -99,7 +99,7 @@ export default async function About({ params }: { params: { lang: Locale } }): P
                             />
                         </figure>
 
-                        <div className="flex flex-col">
+                        <div className="flex flex-col w-full">
                             <h2>{portf.name}</h2>
 
                             <Paragraph>{portf.description[params.lang]}</Paragraph>
