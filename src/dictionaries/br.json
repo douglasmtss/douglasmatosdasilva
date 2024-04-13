@@ -59,7 +59,7 @@
       "message": "Mensagem",
       "description": "Está página contém informações sobre o autor - Douglas Matos da Silva",
       "p1": "Olá, meu nome é <strong><u>Douglas Matos da Silva</u></strong>, tenho 30 anos de idade, trabalho como <strong><u>Desenvolvedor de Software</u></strong> à 4 anos. Atualmente estou cursando o 6º período da faculdade de <strong>Engenharia de Software</strong> na faculdade <a href={college.url} target='_blank' rel='noreferrer'><u><strong>Estacio</strong></u></a>.",
-      "p2": "Sou PAI da Joanna, padrasto do Brian e da Branda, sou marido da Verônica e irmão da Gabriela, essas as pessoas que formam minha família. Família que com ela e por ela sou o que sou hoje.",
+      "p2": "Sou PAI da Joanna, padrasto do Brian e da Brenda, sou marido da Verônica e irmão da Gabriela, essas as pessoas que formam minha família. Família que com ela e por ela sou o que sou hoje.",
       "p3": "Não possuo uma grande experiência no mundo de Desenvolvimento de Software, entrei neste mundo aos 26 anos de idade primeiro por curiosidade, sempre tive uma mente inquieta e curiosa, primeiro tive interesse e consertar computadores e notebooks, aprendi muita coisa pesquisando e cheguei a aceitar pequenos trabalhos como técnico de informática, fazendo formatação de computadores, cabeamento de rede, confguração de roteadores, montagem e manutenção de computadores, impressoras, etc...Mas o momento em que eu me econtrava era um dos piores momentos da minha vida e não tinha dinheiro para comprar ferramentas ou equipamentos, aí pensei Como será que funciona um programa de computador? daí passei a pesquisar sobre programação, e escolhi a linguagem C++ para começar."
     },
     "contact": {
