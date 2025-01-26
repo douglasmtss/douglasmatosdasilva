@@ -7,6 +7,7 @@ import Paragraph from '@/components/Paragraph'
 import { getDictionary } from '@/lib/dictionary'
 import { Locale } from '#/i18n.config'
 import dynamic from 'next/dynamic'
+import { handleText } from '@/lib/handleText'
 
 const CookieConsent = dynamic(() => import('@/components/CookieConsent'), { ssr: false })
 
@@ -115,7 +116,14 @@ export default async function Home({ params: { lang } }: { params: { lang: Local
                             alt="Douglas Matos perfil"
                         />
                     </figure>
-                    <Paragraph dangerouslySetInnerHTML={{ __html: page.home.about.p1 }} />
+                    <Paragraph
+                        dangerouslySetInnerHTML={{
+                            __html: handleText(page.home.about.p1, [
+                                +new Date().getFullYear() - 1993,
+                                +new Date().getFullYear() - 2020
+                            ])
+                        }}
+                    />
 
                     <Paragraph dangerouslySetInnerHTML={{ __html: page.home.about.p2 }} />
                 </div>
