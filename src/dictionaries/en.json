@@ -58,7 +58,7 @@
       "name": "Name",
       "message": "Message",
       "description": "This page contains some information of author - Douglas Matos da Silva",
-      "p1": "Hello, my name is <strong><u>Douglas Matos da Silva</u></strong>, I'm 30 years old, I work as a <strong><u>Software Developer</u> </strong> for 4 years. I'm currently studying the 6th period of <strong>Software Engineering</strong> college at <a href={college.url} target='_blank' rel='noreferrer'><u><strong>Estacio</strong></u></a>.",
+      "p1": "Hello, my name is <strong><u>Douglas Matos da Silva</u></strong>, I'm {{}} years old, I work as a <strong><u>Software Developer</u> </strong> for {{}} years. I have a bachelor's degree in <strong>Software Engineering</strong> at <a href={college.url} target='_blank' rel='noreferrer'><u><strong>Estacio</strong></u></a>.",
       "p2": "I am Joanna's FATHER, Brian and Brenda's stepfather, Verônica's husband and Gabriela's brother, these the people who make up my family. Family that with her and because of her I am who I am today.",
       "p3": "I don't have a lot of experience in the world of Software Development, I entered this world at 26 years old first out of curiosity, I always had a restless and curious mind, I was first interested in fixing computers and notebooks, I learned a lot researching and I came to accept small work as a computer technician, formatting computers, network cabling, configuring routers, assembling and maintaining computers, printers, etc... But the moment I found myself in was one of the worst moments of my life and there was no money to buy tools or equipment, then I thought “How does a computer program work?”, so I started researching programming, and chose the C++ language to start."
     },
