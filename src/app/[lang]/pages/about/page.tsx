@@ -5,6 +5,7 @@ import Paragraph from '@/components/Paragraph'
 import { Locale } from '#/i18n.config'
 import { getDictionary } from '@/lib/dictionary'
 import getBaseUrl from '@/lib/baseUrl'
+import { handleText } from '@/lib/handleText'
 
 export async function generateMetadata({ params }: { params: { lang: Locale } }): Promise<Metadata> {
     const {
@@ -63,7 +64,14 @@ export default async function About({ params }: { params: { lang: Locale } }): P
                         </p>
                     </figcaption>
                 </figure>
-                <Paragraph dangerouslySetInnerHTML={{ __html: about.p1 }} />
+                <Paragraph
+                    dangerouslySetInnerHTML={{
+                        __html: handleText(about.p1, [
+                            +new Date().getFullYear() - 1993,
+                            +new Date().getFullYear() - 2020
+                        ])
+                    }}
+                />
 
                 <Paragraph>{about.p2}</Paragraph>
 
