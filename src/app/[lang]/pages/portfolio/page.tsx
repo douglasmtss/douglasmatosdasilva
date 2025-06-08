@@ -42,8 +42,8 @@ const portfolios = [
             br: 'Uma aplicação para Desktop e Mobile, que permite a criação, edição, deleção e importação de tarefas ou lista de tarefas. As informações são armazenadas no "indexDB" do dispositivo.',
             en: 'An application for Desktop and Mobile, which allows you to create, edit, delete and import tasks or task lists. The information is stored in the device\'s "indexDB".'
         },
-        thumb: 'https://raw.githubusercontent.com/douglasmatosdev/todo-app-without-context-management/main/docs/todo-app-desktop-dark-mode.png',
-        repository: 'https://github.com/douglasmatosdev/todo-app-without-context-management',
+        thumb: 'https://raw.githubusercontent.com/dougsoftware/todo-app-without-context-management/main/docs/todo-app-desktop-dark-mode.png',
+        repository: 'https://github.com/dougsoftware/todo-app-without-context-management',
         online: 'https://todo-app-without-context-management.vercel.app/'
     },
     {
@@ -52,8 +52,8 @@ const portfolios = [
             br: 'Aplicação para consulta do clima apenas para regiões do Brasil, e em sua página inicial mostra a temperatura miníma e maxima das 10 capitais do Brasil.',
             en: 'Application for consulting the weather only for regions of Brazil, and on its home page it shows the minimum and maximum temperature of the 10 capitals of Brazil.'
         },
-        thumb: 'https://raw.githubusercontent.com/douglasmatosdev/weather/master/doc/desktop-consult.png',
-        repository: 'https://github.com/douglasmatosdev/weather',
+        thumb: 'https://raw.githubusercontent.com/dougsoftware/weather/master/doc/desktop-consult.png',
+        repository: 'https://github.com/dougsoftware/weather',
         online: 'https://weather-app-forecast.netlify.app/'
     },
     {
@@ -62,9 +62,19 @@ const portfolios = [
             br: 'Simples aplicação Pomodoro.',
             en: 'Simple Pomodoro Application.'
         },
-        thumb: 'https://raw.githubusercontent.com/douglasmatosdev/pomodoro/main/docs/pomodoro-countdown.png',
-        repository: 'https://github.com/douglasmatosdev/pomodoro',
+        thumb: 'https://raw.githubusercontent.com/dougsoftware/pomodoro/main/docs/pomodoro-countdown.png',
+        repository: 'https://github.com/dougsoftware/pomodoro',
         online: 'https://pomodoro-doug.vercel.app/'
+    },
+    {
+        name: 'WIFI Senha',
+        description: {
+            br: 'Página de destino simples para gerar senha de wifi como código QR.',
+            en: 'Simple landpage for generate wifi password as QRCode.'
+        },
+        thumb: 'https://raw.githubusercontent.com/dougsoftware/wifi-senha/refs/heads/main/docs/images/wifi-senha.png',
+        repository: 'https://github.com/dougsoftware/wifi-senha',
+        online: 'https://wifi-senha.vercel.app/'
     }
 ]
 
