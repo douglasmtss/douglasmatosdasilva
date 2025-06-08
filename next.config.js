@@ -7,7 +7,7 @@ const nextConfig = {
                 protocol: 'https',
                 hostname: 'raw.githubusercontent.com',
                 port: '',
-                pathname: '/douglasmatosdev/**'
+                pathname: '/dougsoftware/**'
             },
             {
                 protocol: 'https',
