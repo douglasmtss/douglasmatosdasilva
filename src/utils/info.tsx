@@ -104,7 +104,7 @@ export default function info(): Info {
         },
         linkedin: {
             name: 'dougsoftware',
-            url: 'www.linkedin.com/in/dougsoftware',
+            url: 'https://www.linkedin.com/in/dougsoftware',
             icon: <FaLinkedin />
         },
         discord: {
