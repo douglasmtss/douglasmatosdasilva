@@ -26,7 +26,6 @@ interface Info {
     github: FieldNameAndUrl
     company: {
         intelie: FieldNameAndUrl
-        viasat: FieldNameAndUrl
     }
     college: FieldNameAndUrl
     socialMedias: {
