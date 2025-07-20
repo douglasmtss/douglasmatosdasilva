@@ -1,5 +1,5 @@
 /** @type {import('next').NextConfig} */
-// https://raw.githubusercontent.com/douglasmatosdev/todo-app-without-context-management/main/docs/todo-app-desktop-dark-mode.png
+// https://raw.githubusercontent.com/dougsoftware/todo-app-without-context-management/main/docs/todo-app-desktop-dark-mode.png
 const nextConfig = {
     images: {
         remotePatterns: [

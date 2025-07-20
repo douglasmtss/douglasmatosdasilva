@@ -58,17 +58,13 @@ export default function info(): Info {
         secundary: 'douglasmatosdev@gmail.com'
     }
     const github = {
-        name: 'douglasmatosdev',
-        url: 'https://github.com/douglasmatosdev'
+        name: 'dougsoftware',
+        url: 'https://github.com/dougsoftware'
     }
     const company = {
         intelie: {
-            name: 'Intelie by ViaSat',
+            name: 'Intelie',
             url: 'https://www.intelie.ai/'
-        },
-        viasat: {
-            name: 'ViaSat',
-            url: 'https://www.viasat.com/'
         }
     }
 
@@ -93,18 +89,18 @@ export default function info(): Info {
             icon: <FaGithubSquare />
         },
         instagram: {
-            name: 'douglasmatosdev',
-            url: 'https://www.instagram.com/douglasmatosdev',
+            name: 'dougsoftware',
+            url: 'https://www.instagram.com/dougsoftware',
             icon: <FaInstagramSquare />
         },
         facebook: {
-            name: 'devdouglasmatos',
-            url: 'https://www.facebook.com/devdouglasmatos',
+            name: 'dougsoftware',
+            url: 'https://www.facebook.com/dougsoftware',
             icon: <FaFacebookSquare />
         },
         twitter: {
-            name: 'devdouglasmatos',
-            url: 'https://twitter.com/devdouglasmatos',
+            name: 'dougsoftware',
+            url: 'https://twitter.com/dougsoftware',
             icon: <FaTwitterSquare />
         },
         linkedin: {
