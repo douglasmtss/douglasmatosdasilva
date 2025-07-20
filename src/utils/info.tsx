@@ -103,8 +103,8 @@ export default function info(): Info {
             icon: <FaTwitterSquare />
         },
         linkedin: {
-            name: 'devdouglasmatos',
-            url: 'www.linkedin.com/in/devdouglasmatos',
+            name: 'dougsoftware',
+            url: 'www.linkedin.com/in/dougsoftware',
             icon: <FaLinkedin />
         },
         discord: {
