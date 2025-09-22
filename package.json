@@ -2,6 +2,9 @@
   "name": "douglasmatosdasilva",
   "version": "0.1.0",
   "private": true,
+  "engines": {
+    "node": ">=22.0.0"
+  },
   "scripts": {
     "dev": "yarn copyimages && yarn clb && next dev",
     "build": "next build",
