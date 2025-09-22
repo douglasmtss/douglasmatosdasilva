@@ -33,7 +33,7 @@
       "about": {
         "title": "Sobre",
         "p1": "Olá, meu nome é <strong><u>Douglas Matos da Silva</u></strong>, tenho {{}} anos de idade, trabalho como <strong><u>Desenvolvedor de Software</u></strong> à {{}} anos. Possuo bacharelado em <strong>Engenharia de Software</strong> na faculdade <a href={college.url} target='_blank' rel='noreferrer'><u><strong>Estacio</strong></u></a>.",
-        "p2": "Trabalho atualmente como <strong><u>Desenvolvedor de Software</strong></u> na <a href='https://www.intelie.ai/' target='_blank' rel='noreferrer'><u><strong>Intelie by ViaSat</strong></u></a>.",
+        "p2": "Trabalho atualmente como <strong><u>Desenvolvedor de Software</strong></u> na <a href='https://www.intelie.ai/' target='_blank' rel='noreferrer'><u><strong>Intelie</strong></u></a>.",
         "read_more": "Saiba mais"
       },
       "latest_posts": {

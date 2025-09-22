@@ -33,7 +33,7 @@
       "about": {
         "title": "About",
         "p1": "Hello, my name is <strong><u>Douglas Matos da Silva</u></strong>, I'm {{}} years old, I work as a <strong><u>Software Developer</u> </strong> for {{}} years. I have a bachelor's degree in <strong>Software Engineering</strong> at <a href={college.url} target='_blank' rel='noreferrer'><u><strong>Estacio</strong></u></a>.",
-        "p2": "I currently work as a <strong><u>Software Developer</strong></u> at <a href='https://www.intelie.ai/' target='_blank' rel='noreferrer'><u><strong>Intelie by ViaSat</strong></u></a>.",
+        "p2": "I currently work as a <strong><u>Software Developer</strong></u> at <a href='https://www.intelie.ai/' target='_blank' rel='noreferrer'><u><strong>Intelie</strong></u></a>.",
         "read_more": "Learn more"
       },
       "latest_posts": {
