@@ -6,12 +6,12 @@ export const contacts = [
     },
     {
         title: 'Github',
-        url: 'https://github.com/dougsoftware',
+        url: 'https://github.com/douglasmtss',
         icon: ''
     },
     {
         title: 'Linkedin',
-        url: 'https://www.linkedin.com/in/dougsoftware/',
+        url: 'https://www.linkedin.com/in/douglasmtss/',
         icon: ''
     }
 ]
