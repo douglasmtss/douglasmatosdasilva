@@ -57,8 +57,8 @@ export default function info(): Info {
         secundary: 'douglasmatosdev@gmail.com'
     }
     const github = {
-        name: 'dougsoftware',
-        url: 'https://github.com/dougsoftware'
+        name: 'douglasmtss',
+        url: 'https://github.com/douglasmtss'
     }
     const company = {
         intelie: {
@@ -88,23 +88,23 @@ export default function info(): Info {
             icon: <FaGithubSquare />
         },
         instagram: {
-            name: 'dougsoftware',
-            url: 'https://www.instagram.com/dougsoftware',
+            name: 'douglasmtss',
+            url: 'https://www.instagram.com/douglasmtss',
             icon: <FaInstagramSquare />
         },
         facebook: {
-            name: 'dougsoftware',
-            url: 'https://www.facebook.com/dougsoftware',
+            name: 'douglasmtss',
+            url: 'https://www.facebook.com/douglasmtss',
             icon: <FaFacebookSquare />
         },
         twitter: {
-            name: 'dougsoftware',
-            url: 'https://twitter.com/dougsoftware',
+            name: 'douglasmtss',
+            url: 'https://twitter.com/douglasmtss',
             icon: <FaTwitterSquare />
         },
         linkedin: {
-            name: 'dougsoftware',
-            url: 'https://www.linkedin.com/in/dougsoftware',
+            name: 'douglasmtss',
+            url: 'https://www.linkedin.com/in/douglasmtss',
             icon: <FaLinkedin />
         },
         discord: {

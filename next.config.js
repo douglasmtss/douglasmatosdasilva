@@ -1,5 +1,5 @@
 /** @type {import('next').NextConfig} */
-// https://raw.githubusercontent.com/dougsoftware/todo-app-without-context-management/main/docs/todo-app-desktop-dark-mode.png
+// https://raw.githubusercontent.com/douglasmtss/todo-app-without-context-management/main/docs/todo-app-desktop-dark-mode.png
 const nextConfig = {
     images: {
         remotePatterns: [
@@ -7,7 +7,7 @@ const nextConfig = {
                 protocol: 'https',
                 hostname: 'raw.githubusercontent.com',
                 port: '',
-                pathname: '/dougsoftware/**'
+                pathname: '/douglasmtss/**'
             },
             {
                 protocol: 'https',
