@@ -106,12 +106,12 @@ export default function info(): Info {
         },
         twitter: {
             name: 'douglasmtss',
-            url: 'https://twitter.com/douglasmtss',
+            url: 'https://twitter.com/douglasmtsss',
             icon: <FaTwitterSquare />
         },
         linkedin: {
             name: 'douglasmtss',
-            url: 'https://www.linkedin.com/in/douglasmtss',
+            url: 'https://www.linkedin.com/in/dougsoftware',
             icon: <FaLinkedin />
         },
         discord: {
