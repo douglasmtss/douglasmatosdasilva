@@ -16,11 +16,6 @@ export default async function Home({ params: { lang } }: { params: { lang: Local
 
     return (
         <WrapperPage lang={lang}>
-            <Script
-                async
-                src={`https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=${process.env.NEXT_PULIC_ADS_CLIENT}`}
-                crossOrigin="anonymous"
-            />
             <Script async src={`https://www.googletagmanager.com/gtag/js?id=${process.env.NEXT_PULIC_GTAG_ID}`} />
             <Script id="google-analytics">
                 {`
