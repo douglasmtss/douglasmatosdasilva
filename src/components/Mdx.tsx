@@ -1,5 +1,5 @@
 import React from 'react'
-import { useMDXComponent } from 'next-contentlayer/hooks'
+import { useMDXComponent } from 'next-contentlayer2/hooks'
 
 import { cn } from '@/utils/tailwindMerge'
 import Image from 'next/image'
