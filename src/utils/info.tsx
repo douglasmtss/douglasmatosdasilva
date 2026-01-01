@@ -18,6 +18,7 @@ type FieldNameAndUrl = {
 interface Info {
     currentYear: number
     age: number
+    birthDate: Date
     experienceAge: number
     collegeSemesters: number
     inCollegeNow: boolean
@@ -52,14 +53,18 @@ export default function info(): Info {
     const experienceAge = currentYear - 2019
     const collegeSemesters = (currentYear - 2020) * 2
     const inCollegeNow = currentYear <= 2025
+    const birthDate = new Date(1993, 4, 21) // 21-May-1993
+
     const mail = {
         main: 'douglasmatos.contato@gmail.com',
         secundary: 'douglasmatosdev@gmail.com'
     }
+
     const github = {
         name: 'douglasmtss',
         url: 'https://github.com/douglasmtss'
     }
+
     const company = {
         intelie: {
             name: 'Intelie',
@@ -118,6 +123,7 @@ export default function info(): Info {
         mail,
         currentYear,
         age,
+        birthDate,
         experienceAge,
         collegeSemesters,
         inCollegeNow,
