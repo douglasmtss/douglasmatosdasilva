@@ -19,6 +19,7 @@ interface Info {
     currentYear: number
     age: number
     birthDate: Date
+    startExperience: Date
     experienceAge: number
     collegeSemesters: number
     inCollegeNow: boolean
@@ -50,7 +51,8 @@ export default function info(): Info {
     const fullName = name + ' da Silva'
     const currentYear = +new Date().getFullYear()
     const age = currentYear - 1993
-    const experienceAge = currentYear - 2019
+    const startExperience = new Date(2019, 0, 1) // 01-Jan-2019
+    const experienceAge = currentYear - +startExperience.getFullYear()
     const collegeSemesters = (currentYear - 2020) * 2
     const inCollegeNow = currentYear <= 2025
     const birthDate = new Date(1993, 4, 21) // 21-May-1993
@@ -125,6 +127,7 @@ export default function info(): Info {
         age,
         birthDate,
         experienceAge,
+        startExperience,
         collegeSemesters,
         inCollegeNow,
         name,
