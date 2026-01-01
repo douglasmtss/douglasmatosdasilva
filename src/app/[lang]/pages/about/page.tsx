@@ -6,6 +6,8 @@ import { Locale } from '#/i18n.config'
 import { getDictionary } from '@/lib/dictionary'
 import getBaseUrl from '@/lib/baseUrl'
 import { handleText } from '@/lib/handleText'
+import info from '@/utils/info'
+import { yearsOld } from '@/lib/yearsOld'
 
 export async function generateMetadata({ params }: { params: { lang: Locale } }): Promise<Metadata> {
     const {
@@ -66,10 +68,7 @@ export default async function About({ params }: { params: { lang: Locale } }): P
                 </figure>
                 <Paragraph
                     dangerouslySetInnerHTML={{
-                        __html: handleText(about.p1, [
-                            +new Date().getFullYear() - 1993,
-                            +new Date().getFullYear() - 2020
-                        ])
+                        __html: handleText(about.p1, [yearsOld(info().birthDate), info().experienceAge])
                     }}
                 />
 
