@@ -31,6 +31,8 @@ export const useToggleSystemOrAppTheme = (): {
     useEffect(() => {
         if (theme !== 'system') {
             setCurrentTheme(theme as ThemeModes)
+
+            return
         }
 
         if (!isClient) return
