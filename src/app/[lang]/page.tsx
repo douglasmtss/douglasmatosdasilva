@@ -8,6 +8,8 @@ import { getDictionary } from '@/lib/dictionary'
 import { Locale } from '#/i18n.config'
 import dynamic from 'next/dynamic'
 import { handleText } from '@/lib/handleText'
+import info from '@/utils/info'
+import { yearsOld } from '@/lib/yearsOld'
 
 const LinkI18n = dynamic(() => import('@/components/LinkI18n'), { ssr: false })
 
@@ -110,10 +112,7 @@ export default async function Home({ params: { lang } }: { params: { lang: Local
                     </figure>
                     <Paragraph
                         dangerouslySetInnerHTML={{
-                            __html: handleText(page.home.about.p1, [
-                                +new Date().getFullYear() - 1993,
-                                +new Date().getFullYear() - 2020
-                            ])
+                            __html: handleText(page.home.about.p1, [yearsOld(info().birthDate), info().experienceAge])
                         }}
                     />
 
