@@ -40,7 +40,6 @@ export function Mdx({ code }: MdxProps): JSX.Element {
 
     return (
         <div className="my-6">
-            {/* eslint-disable-next-line @typescript-eslint/ban-ts-comment */}
             {/* @ts-ignore */}
             <Component components={components} />
         </div>
