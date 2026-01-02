@@ -47,7 +47,6 @@
     "unist-util-visit": "^5.0.0"
   },
   "devDependencies": {
-    "@douglasmatosdev/eslint-config": "^1.0.4",
     "@types/negotiator": "^0.6.3",
     "@types/node": "^20",
     "@types/react": "^18",
@@ -60,10 +59,6 @@
     "postcss": "^8",
     "rimraf": "^5.0.5",
     "tailwindcss": "^3.3.0",
-    "typescript": "^5"
-  },
-  "prettier": "@douglasmatosdev/eslint-config/prettier",
-  "eslintConfig": {
-    "extends": "@douglasmatosdev/eslint-config/eslint"
+    "typescript": "^5.4.2"
   }
 }
