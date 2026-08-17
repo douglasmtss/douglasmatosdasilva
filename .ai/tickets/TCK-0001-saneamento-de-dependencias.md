@@ -4,7 +4,7 @@ titulo: Saneamento de dependências do package.json
 tipo: debito
 prioridade: P0
 fase: 1
-status: em-andamento
+status: review
 criado: 2026-08-16
 atualizado: 2026-08-16
 depende-de: []
@@ -46,4 +46,4 @@ Plano de execução:
 Ticket criado a partir da auditoria de `docs/current-state.md` (P0 #1, #2 e P1 #11).
 
 ### 2026-08-16 — triagem/executor
-Auditoria confirmou que `tailwind-merge`, `date-fns`, plugins remark/rehype, `resend` e demais dependências usadas permanecem necessárias. `@fontsource/open-sans` e `@fontsource/ranga` não são importados; a classe `font-ranga` existe, mas hoje cai no fallback porque a fonte não é carregada. As cinco dependências fantasma continuam necessárias enquanto `lib/blog.ts` e `lib/mdToHtml.ts` não forem convergidos. Plano aplicado; ticket em execução.
+Auditoria confirmou que `tailwind-merge`, `date-fns`, plugins remark/rehype, `resend` e demais dependências usadas permanecem necessárias. `@fontsource/ranga` foi carregado de fato no layout; `@fontsource/open-sans` não tinha uso e foi removido. `shikiji` permaneceu por ser peer de `rehype-pretty-code`. As cinco dependências fantasma foram declaradas enquanto os leitores atuais não forem convergidos. Lint e build passaram; ticket enviado para review.
