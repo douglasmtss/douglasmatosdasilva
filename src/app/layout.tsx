@@ -1,5 +1,6 @@
 import type { Metadata } from 'next'
 import './globals.css'
+import '@fontsource/ranga'
 import 'react-toastify/dist/ReactToastify.css'
 import ThemeProvider from '@/providers/themeProvider'
 import { IsClientCtxProvider } from '@/hooks/useIsClient'
