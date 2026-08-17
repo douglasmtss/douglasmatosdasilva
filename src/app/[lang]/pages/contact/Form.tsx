@@ -1,7 +1,6 @@
 'use client'
 import { Locale } from '#/i18n.config'
 import { useToastify } from '@/hooks/useToastify'
-import getBaseUrl from '@/lib/baseUrl'
 
 type Target = {
     name: {
@@ -48,17 +47,20 @@ export default function Form({ lang }: FormProps): JSX.Element {
         const target = e.target as Target
 
         try {
-            const baseUrl = getBaseUrl()
-
-            await fetch(`${baseUrl}/pages/contact/api`, {
+            const response = await fetch('/api/contact', {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify({
                     name: target.name.value,
                     email: target.email.value,
-                    message: target.message.value
+                    message: target.message.value,
+                    website: (e.currentTarget.elements.namedItem('website') as HTMLInputElement)?.value
                 })
             })
+
+            if (!response.ok) {
+                throw new Error(`Contact request failed with status ${response.status}`)
+            }
 
             toast(dic.success, 'success')
         } catch (e) {
@@ -76,6 +78,7 @@ export default function Form({ lang }: FormProps): JSX.Element {
                 <input
                     className="bg-none border rounded-md p-3 focus:outline-none focus:border-cyan-400"
                     id="name"
+                    name="name"
                     type="text"
                     placeholder="Super Man"
                     required
@@ -88,6 +91,7 @@ export default function Form({ lang }: FormProps): JSX.Element {
                 <input
                     className="bg-none border rounded-md p-3 focus:outline-none focus:border-cyan-400"
                     id="email"
+                    name="email"
                     type="email"
                     placeholder="super@man.com"
                     required
@@ -100,11 +104,13 @@ export default function Form({ lang }: FormProps): JSX.Element {
                 <textarea
                     className="bg-none border rou p-3 focus:outline-none focus:border-cyan-400"
                     id="message"
+                    name="message"
                     placeholder={dic.message_placeholder}
                     rows={4}
                     required
                 />
             </div>
+            <input className="hidden" tabIndex={-1} autoComplete="off" name="website" aria-hidden="true" />
             <div className="flex flex-col mb-3">
                 <button
                     className="bg-dmds-5 text-dmds-2 border cursor-pointer p-3 mt-2"

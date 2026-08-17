@@ -5,7 +5,6 @@
 ## Backlog
 
 - [TCK-0002](TCK-0002-upgrade-next-react-tailwind.md) — Upgrade Next 14→15, React 19 e Tailwind (debito, P0, fase 1)
-- [TCK-0003](TCK-0003-form-contato-seguro.md) — Corrigir e endurecer o formulário de contato (bug, P0, fase 1)
 - [TCK-0004](TCK-0004-spec-novo-blog-performatico.md) — Spec do novo blog performático multi-assunto (feature, P1, fase 3)
 
 ## Pronto
@@ -18,7 +17,7 @@ _(vazio)_
 
 ## Review
 
-_(vazio)_
+- [TCK-0003](TCK-0003-form-contato-seguro.md) — Corrigir e endurecer o formulário de contato (bug, P0, fase 1)
 
 ## Bloqueado
 
