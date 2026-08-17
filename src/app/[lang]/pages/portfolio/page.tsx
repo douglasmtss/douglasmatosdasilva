@@ -6,14 +6,15 @@ import { getDictionary } from '@/lib/dictionary'
 import getBaseUrl from '@/lib/baseUrl'
 import Link from 'next/link'
 
-export async function generateMetadata({ params }: { params: { lang: Locale } }): Promise<Metadata> {
+export async function generateMetadata({ params }: { params: Promise<{ lang: Locale }> }): Promise<Metadata> {
+    const { lang } = await params
     const {
         page: { portfolio }
-    } = await getDictionary(params.lang)
+    } = await getDictionary(lang)
     const title = `${portfolio.title} // Douglas Matos`
     const description = portfolio.description
     const baseUrl = getBaseUrl()
-    const url = `${baseUrl}/${params.lang}`
+    const url = `${baseUrl}/${lang}`
 
     return {
         metadataBase: new URL(url),
@@ -78,10 +79,11 @@ const portfolios = [
     }
 ]
 
-export default async function About({ params }: { params: { lang: Locale } }): Promise<JSX.Element> {
+export default async function About({ params }: { params: Promise<{ lang: Locale }> }): Promise<JSX.Element> {
+    const { lang } = await params
     const {
         page: { portfolio }
-    } = await getDictionary(params.lang)
+    } = await getDictionary(lang)
 
     return (
         <main className="flex flex-col mb-8">
@@ -112,7 +114,7 @@ export default async function About({ params }: { params: { lang: Locale } }): P
                         <div className="flex flex-col w-full">
                             <h2>{portf.name}</h2>
 
-                            <Paragraph>{portf.description[params.lang]}</Paragraph>
+                            <Paragraph>{portf.description[lang]}</Paragraph>
 
                             <div className="flex flex-col lg:flex-row  lg:justify-between items-center mt-auto">
                                 <button

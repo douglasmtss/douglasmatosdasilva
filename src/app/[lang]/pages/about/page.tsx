@@ -9,14 +9,15 @@ import { handleText } from '@/lib/handleText'
 import info from '@/utils/info'
 import { yearsOld } from '@/lib/yearsOld'
 
-export async function generateMetadata({ params }: { params: { lang: Locale } }): Promise<Metadata> {
+export async function generateMetadata({ params }: { params: Promise<{ lang: Locale }> }): Promise<Metadata> {
+    const { lang } = await params
     const {
         page: { about }
-    } = await getDictionary(params.lang)
+    } = await getDictionary(lang)
     const title = `${about.title} // Douglas Matos`
     const description = about.description
     const baseUrl = getBaseUrl()
-    const url = `${baseUrl}/${params.lang}`
+    const url = `${baseUrl}/${lang}`
 
     return {
         metadataBase: new URL(url),
@@ -38,10 +39,11 @@ export async function generateMetadata({ params }: { params: { lang: Locale } })
     }
 }
 
-export default async function About({ params }: { params: { lang: Locale } }): Promise<JSX.Element> {
+export default async function About({ params }: { params: Promise<{ lang: Locale }> }): Promise<JSX.Element> {
+    const { lang } = await params
     const {
         page: { about }
-    } = await getDictionary(params.lang)
+    } = await getDictionary(lang)
 
     return (
         <main className="flex flex-col mb-8">
@@ -58,8 +60,8 @@ export default async function About({ params }: { params: { lang: Locale } }): P
                             <strong>
                                 <i>
                                     <small>
-                                        {params.lang === 'br' ? 'junho' : 'June'} 2023, Duque de Caxias, RJ -{' '}
-                                        {params.lang === 'br' ? 'Brasil' : 'Brazil'}{' '}
+                                        {lang === 'br' ? 'junho' : 'June'} 2023, Duque de Caxias, RJ -{' '}
+                                        {lang === 'br' ? 'Brasil' : 'Brazil'}{' '}
                                     </small>
                                 </i>
                             </strong>

@@ -1,10 +1,8 @@
 import SocialMedias from './SocialMedias'
 import { Locale } from '#/i18n.config'
 import { getDictionary } from '@/lib/dictionary'
-import dynamic from 'next/dynamic'
 import info from '@/utils/info'
-
-const LinkI18n = dynamic(() => import('./LinkI18n'), { ssr: false })
+import LinkI18n from './LinkI18n'
 
 interface FooterProps {
     lang: Locale

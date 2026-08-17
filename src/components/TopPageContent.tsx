@@ -1,15 +1,7 @@
-import dynamic from 'next/dynamic'
 import Nav from './Nav'
-import LoadIcon from './LoadIcon'
 import { Locale } from '#/i18n.config'
-
-const TogggleTheme = dynamic(() => import('./ToggleTheme'), {
-    loading: () => <LoadIcon />,
-    ssr: false
-})
-const ToggleLanguage = dynamic(() => import('./ToggleLanguage'), {
-    ssr: false
-})
+import TogggleTheme from './ToggleTheme'
+import ToggleLanguage from './ToggleLanguage'
 
 interface TopPageContentProps {
     lang: Locale

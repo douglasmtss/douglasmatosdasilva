@@ -11,14 +11,14 @@ import getBaseUrl from '@/lib/baseUrl'
 import { Locale } from '#/i18n.config'
 
 interface PageProps {
-    params: {
+    params: Promise<{
         lang: Locale
         slug: string
-    }
+    }>
 }
 
 type GenerateMetadataProps = {
-    params: { slug: string; lang: Locale }
+    params: Promise<{ slug: string; lang: Locale }>
 }
 
 const getCachedDocFromParams = async (slug: string): Promise<Doc> => {
@@ -27,8 +27,12 @@ const getCachedDocFromParams = async (slug: string): Promise<Doc> => {
     return doc
 }
 
-export async function generateStaticParams(): Promise<string[]> {
-    return allDocs.map(doc => doc.slugAsParams) // .slice(0, 10) // precache on first 10 posts
+export async function generateStaticParams(): Promise<{ lang: string; slug: string }[]> {
+    return allDocs.map(doc => {
+        const [lang, ...slugParts] = doc.slugAsParams.split('/')
+
+        return { lang, slug: slugParts.join('/') }
+    })
 }
 
 async function getDocFromParams(slug: string): Promise<Doc> {
@@ -40,11 +44,12 @@ async function getDocFromParams(slug: string): Promise<Doc> {
 }
 
 export async function generateMetadata({ params }: GenerateMetadataProps): Promise<Metadata> {
-    const doc = await getCachedDocFromParams(`${params.lang}/${params.slug}`)
+    const { lang, slug } = await params
+    const doc = await getCachedDocFromParams(`${lang}/${slug}`)
 
     const title = `Post // ${doc.title}`
     const description = stripHtml(doc.description ?? '').replaceAll('**', '')
-    const url = getBaseUrl() + '/' + params.lang
+    const url = getBaseUrl() + '/' + lang
 
     return {
         metadataBase: new URL(url),
@@ -67,7 +72,8 @@ export async function generateMetadata({ params }: GenerateMetadataProps): Promi
 }
 
 export default async function Page({ params }: PageProps): Promise<JSX.Element> {
-    const doc = await getCachedDocFromParams(mountSlugParam(params))
+    const resolvedParams = await params
+    const doc = await getCachedDocFromParams(mountSlugParam(resolvedParams))
 
     const description = await mdToHtml(doc.description ?? '')
 

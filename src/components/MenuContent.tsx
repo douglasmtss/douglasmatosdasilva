@@ -1,14 +1,16 @@
 import { FaHome, FaUser, FaPaperclip, FaMailBulk } from 'react-icons/fa'
 import { BiSolidCarousel } from 'react-icons/bi'
-import dynamic from 'next/dynamic'
-const LinkI18n = dynamic(() => import('./LinkI18n'), { ssr: false })
+import LinkI18n from './LinkI18n'
+import { usePathname } from 'next/navigation'
+import { type Locale } from '#/i18n.config'
 
 interface MenuContentProps {
     open: boolean
     setOpen: React.Dispatch<React.SetStateAction<boolean>>
 }
 export const MenuContent = ({ open, setOpen }: MenuContentProps): JSX.Element => {
-    const lang = localStorage.getItem('lang')
+    const pathName = usePathname()
+    const lang = pathName?.split('/')[1] as Locale
     const isBr = lang === 'br'
 
     const links = [

@@ -6,14 +6,13 @@ import perfilImg from '@/assets/images/perfil.jpeg'
 import Paragraph from '@/components/Paragraph'
 import { getDictionary } from '@/lib/dictionary'
 import { Locale } from '#/i18n.config'
-import dynamic from 'next/dynamic'
+import LinkI18n from '@/components/LinkI18n'
 import { handleText } from '@/lib/handleText'
 import info from '@/utils/info'
 import { yearsOld } from '@/lib/yearsOld'
 
-const LinkI18n = dynamic(() => import('@/components/LinkI18n'), { ssr: false })
-
-export default async function Home({ params: { lang } }: { params: { lang: Locale } }): Promise<JSX.Element> {
+export default async function Home({ params }: { params: Promise<{ lang: Locale }> }): Promise<JSX.Element> {
+    const { lang } = await params
     const { page } = await getDictionary(lang)
 
     return (

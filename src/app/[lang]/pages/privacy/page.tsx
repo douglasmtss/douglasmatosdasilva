@@ -4,14 +4,15 @@ import getBaseUrl from '@/lib/baseUrl'
 import { getDictionary } from '@/lib/dictionary'
 import { Metadata } from 'next'
 
-export async function generateMetadata({ params }: { params: { lang: Locale } }): Promise<Metadata> {
+export async function generateMetadata({ params }: { params: Promise<{ lang: Locale }> }): Promise<Metadata> {
+    const { lang } = await params
     const {
         page: { privacy }
-    } = await getDictionary(params.lang)
+    } = await getDictionary(lang)
     const title = privacy.title
     const description = privacy.description
     const baseUrl = getBaseUrl()
-    const url = `${baseUrl}/${params.lang}`
+    const url = `${baseUrl}/${lang}`
 
     return {
         metadataBase: new URL(url),
@@ -33,10 +34,11 @@ export async function generateMetadata({ params }: { params: { lang: Locale } })
     }
 }
 
-export default async function Privacy({ params }: { params: { lang: Locale } }): Promise<JSX.Element> {
+export default async function Privacy({ params }: { params: Promise<{ lang: Locale }> }): Promise<JSX.Element> {
+    const { lang } = await params
     const {
         page: { privacy }
-    } = await getDictionary(params.lang)
+    } = await getDictionary(lang)
 
     return (
         <div>

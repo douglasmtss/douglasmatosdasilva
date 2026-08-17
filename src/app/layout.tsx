@@ -7,9 +7,7 @@ import { IsClientCtxProvider } from '@/hooks/useIsClient'
 import { ToastContainer } from 'react-toastify'
 import { Locale, i18n } from '#/i18n.config'
 import getBaseUrl from '@/lib/baseUrl'
-import dynamic from 'next/dynamic'
-
-const ScrollToTopButton = dynamic(() => import('@/components/ScrollToTopButton'), { ssr: false })
+import ScrollToTopButton from '@/components/ScrollToTopButton'
 
 export async function generateMetadata(): Promise<Metadata> {
     const title = 'Home Page // Douglas Matos da Silva'
@@ -46,10 +44,11 @@ export default function RootLayout({
     params
 }: {
     children: React.ReactNode
-    params: { lang: Locale }
+    params: Promise<Record<string, never>>
 }): JSX.Element {
+    void params
     return (
-        <html suppressHydrationWarning={true} lang={params.lang}>
+        <html suppressHydrationWarning={true} lang="en">
             <body>
                 <ToastContainer />
                 <IsClientCtxProvider>

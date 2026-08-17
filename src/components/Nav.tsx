@@ -1,6 +1,5 @@
-import dynamic from 'next/dynamic'
 import { Logo } from './Logo'
-const MenuAside = dynamic(() => import('./MenuAside'), { ssr: false })
+import MenuAside from './MenuAside'
 
 export default async function Nav(): Promise<JSX.Element> {
     return (

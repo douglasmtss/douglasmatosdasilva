@@ -2,9 +2,7 @@ import readingTime from 'reading-time'
 import stripHtml from '@/lib/strip-html'
 
 import { cn } from '@/utils/tailwindMerge'
-import dynamic from 'next/dynamic'
-
-const LinkI18n = dynamic(() => import('./LinkI18n'), { ssr: false })
+import LinkI18n from './LinkI18n'
 interface PostPreviewProps {
     content: string
     href: string

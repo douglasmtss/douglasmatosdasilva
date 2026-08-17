@@ -13,7 +13,7 @@ type LinkI18nProps = {
 export default function LinkI18n(props: LinkI18nProps): JSX.Element {
     const { children, href } = props
     const pathName = usePathname()
-    const storageLang = localStorage.getItem('lang') as Locale
+    const currentLang = pathName?.split('/')[1] as Locale
 
     const redirectedPathName = (locale: Locale): string => {
         if (!pathName) return '/'
@@ -22,7 +22,7 @@ export default function LinkI18n(props: LinkI18nProps): JSX.Element {
     }
 
     return (
-        <Link {...props} href={redirectedPathName(storageLang)}>
+        <Link {...props} href={redirectedPathName(currentLang)}>
             {children}
         </Link>
     )

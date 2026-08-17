@@ -2,10 +2,11 @@ import { type Locale } from '#/i18n.config'
 import Paragraph from '@/components/Paragraph'
 import { getDictionary } from '@/lib/dictionary'
 
-export default async function Disclaimer({ params }: { params: { lang: Locale } }): Promise<JSX.Element> {
+export default async function Disclaimer({ params }: { params: Promise<{ lang: Locale }> }): Promise<JSX.Element> {
+    const { lang } = await params
     const {
         page: { disclaimer }
-    } = await getDictionary(params.lang)
+    } = await getDictionary(lang)
 
     return (
         <div>

@@ -10,12 +10,7 @@ interface ToggleLanguageProps {
 export default function ToggleLanguage({ lang }: ToggleLanguageProps): JSX.Element {
     const pathName = usePathname()
     const router = useRouter()
-    const storageLang = localStorage.getItem('lang')
-    const selectedLanguage = storageLang || lang
-
-    if (!storageLang) {
-        localStorage.setItem('lang', lang)
-    }
+    const selectedLanguage = lang
 
     const redirectedPathName = (locale: Locale): void => {
         if (!pathName) {
@@ -23,8 +18,6 @@ export default function ToggleLanguage({ lang }: ToggleLanguageProps): JSX.Eleme
         }
         const segments = pathName.split('/')
         segments[1] = locale
-
-        localStorage.setItem('lang', locale)
 
         router.push(segments.join('/'))
     }
