@@ -20,7 +20,9 @@ Site pessoal/portfólio de **Douglas Matos da Silva** — vitrine de trabalhos, 
 | Memória persistente (fatos duráveis) | `.ai/memory/MEMORY.md` (índice) + `.ai/memory/*.md` |
 | Lições aprendidas (erros/acertos) | `.ai/lessons/LESSONS.md` |
 | Dev loop (como rodar/validar) | `.ai/devloop.md` |
+| **Tickets (unidade de trabalho)** | `.ai/tickets/` (fluxo em `README.md`, quadro em `BOARD.md`) |
 | Handoff entre agentes/sessões | `.ai/handoff/` |
+| Papéis de agente do pipeline | `.claude/agents/{triagem,executor,revisor}.md` |
 | Slash commands (Claude Code) | `.claude/commands/*.md` |
 | Prompts reutilizáveis (Copilot) | `.github/prompts/*.prompt.md` |
 | Arquitetura (C4) | `docs/architecture/c4/` |
@@ -31,8 +33,9 @@ Site pessoal/portfólio de **Douglas Matos da Silva** — vitrine de trabalhos, 
 
 **Protocolo mínimo de qualquer sessão:**
 1. Leia `.ai/context.md` e `.ai/memory/MEMORY.md` antes de mexer no código.
-2. Ao terminar trabalho relevante, atualize memória/lições se aprendeu algo durável e crie um handoff em `.ai/handoff/` se a tarefa ficou incompleta.
-3. Mudança de arquitetura ⇒ novo ADR em `docs/adr/`. Funcionalidade nova ⇒ spec em `docs/specs/` **antes** do código (spec-driven development).
+2. **Trabalho novo entra como ticket** (`.ai/tickets/`, comando `/ticket`) e segue o pipeline triagem → execução → revisão (`/trabalhar`). O contexto entre agentes viaja pelo diário de bordo do ticket — leia o diário antes de agir, escreva nele depois.
+3. Ao terminar trabalho relevante, atualize memória/lições se aprendeu algo durável e crie um handoff em `.ai/handoff/` (linkado ao ticket) se a tarefa ficou incompleta.
+4. Mudança de arquitetura ⇒ novo ADR em `docs/adr/`. Funcionalidade nova ⇒ spec em `docs/specs/` **antes** do código (spec-driven development). A triagem do ticket decide quando isso se aplica.
 
 ## Comandos essenciais
 

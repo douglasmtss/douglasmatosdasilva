@@ -20,3 +20,4 @@ Registro das decisões de arquitetura do projeto. ADRs `0001`–`0007` são **re
 | [0006](0006-yarn-node24.md) | Yarn como gerenciador de pacotes e Node >= 24 | aceito (retroativo) |
 | [0007](0007-deploy-vercel-sem-ci.md) | Deploy contínuo pela integração Vercel↔GitHub, sem CI no repo | aceito (retroativo) |
 | [0008](0008-infraestrutura-de-ia-no-repo.md) | Infraestrutura de contexto para agentes de IA versionada no repo | aceito |
+| [0009](0009-sistema-de-tickets-multi-agente.md) | Sistema de tickets com pipeline de agentes (triagem → execução → revisão) | aceito |

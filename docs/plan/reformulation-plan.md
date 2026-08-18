@@ -1,6 +1,7 @@
 # Plano de reformulação — douglasmatosdasilva
 
-> **Data:** 2026-08-16 · **Status:** proposto (aguardando aprovação do Douglas)
+> **Data:** 2026-08-16 · **Status:** em execução
+> **Revisão 2 (2026-08-16):** direção do blog redefinida pelo Douglas — abandona o formato antigo (desafios de código) em favor de um **blog performático e multi-assunto, com maioria do conteúdo sobre IA/LLMs** (fase 3 reescrita). Execução passa a ser governada pelo **sistema de tickets** (`.ai/tickets/`, ADR-0009).
 > Baseado na auditoria completa do repositório ([current-state.md](../current-state.md)) e na análise do banco de evidências profissional privado do Douglas (já **sanitizada** conforme as regras de `.ai/memory/posicionamento-marca.md` — este documento é público e não contém dados sensíveis).
 
 ## 1. Diagnóstico: o problema não é técnico, é de posicionamento
@@ -71,16 +72,22 @@ O coração da reformulação. Specs novas (spec-006+) antes de cada página:
 4. **Página `/uses` ou `/stack`:** stack real com honestidade calibrada (produção vs estudo estruturado) — diferencial de credibilidade.
 5. **Dados estruturados:** JSON-LD `Person` + `Article`; OG images dinâmicas por página (`next/og`).
 
-### Fase 3 — Relançamento do blog (contínuo, iniciando ~1 mês após fase 2)
+### Fase 3 — Novo blog: performático e multi-assunto (contínuo, iniciando ~1 mês após fase 2)
 
-1. **Pilares editoriais** (alinhados aos diferenciais e ao plano de carreira):
-   - *Dados em tempo real na prática* — streams, mensageria, modelagem de eventos, performance/memória
-   - *IA aplicada à engenharia* — RAG, MCP, agentic workflows no fluxo real (o tema mais raro e com maior demanda)
-   - *Qualidade de software* — E2E com Playwright, testes em sistemas orientados a eventos
-   - Os artigos antigos de desafios permanecem (histórico honesto), reorganizados sob uma tag `fundamentos`.
-2. **Primeiros 3 artigos** (já sugeridos no brief de posicionamento): construindo uma suíte E2E Playwright do zero; uma base de conhecimento RAG/MCP para times de engenharia; lições de PWA offline-first em campo.
-3. **Features de blog:** filtro por tag, RSS/Atom, busca client-side leve, séries/coleções, tempo de leitura já existente mantido.
-4. **Cadência realista:** 1 artigo/mês, sempre bilíngue — apoiado pelo comando `/new-article`.
+> **Revisão 2:** o formato antigo (blog de desafios de código) foi descontinuado como direção editorial. O blog novo é **multi-assunto**, com **categorias como taxonomia de primeira classe** e a **maioria do conteúdo sobre inteligência artificial e LLMs**. Nasce da spec-006 (ticket TCK-0004) antes de qualquer código.
+
+1. **Categorias editoriais** (âncora em negrito = maioria do volume):
+   - **IA & LLMs** — RAG, MCP, agentic workflows, engenharia com agentes, prompt engineering, avaliação de LLMs (o diferencial mais raro do Douglas, e o de maior demanda)
+   - *Desenvolvimento de software* — práticas do dia a dia, ferramentas, produtividade
+   - *Engenharia de software* — testes (E2E/Playwright), qualidade, CI/CD, processos (SDD, ADRs)
+   - *Arquitetura de software* — sistemas distribuídos, mensageria/eventos, dados em tempo real, decisões e trade-offs
+   - *Inglês para devs* — a jornada real de aprendizado, vocabulário técnico, estudo com IA (documenta a frente F2 do plano de carreira de forma honesta)
+   - *Carreira* — trajetória fullstack, evidências, portfólio
+   - `fundamentos` — os 18 artigos antigos de desafios migram para cá (histórico honesto, sem destaque na navegação)
+2. **Performance como requisito de primeira classe** (quantificado na spec-006): SSG puro, JS mínimo no cliente (listagem e post sem hidratação desnecessária), imagens otimizadas, alvo Lighthouse ~100 e Core Web Vitals verdes — o blog em si é demonstração de competência.
+3. **Modelo de conteúdo novo:** `category` (obrigatória, 1 por post) + `tags` (lista livre), migrando o schema CSV atual; RSS/Atom por idioma; filtro por categoria; busca client-side leve; séries/coleções.
+4. **Primeiros artigos** (maioria IA/LLM, aproveitando os cases reais): base de conhecimento RAG/MCP para times de engenharia; agentic workflows no fluxo real de desenvolvimento; suíte E2E Playwright do zero; aprendendo inglês com LLMs como parceiro de estudo.
+5. **Cadência realista:** 1 artigo/mês, sempre bilíngue — apoiado por `/new-article` e pelo pipeline de tickets (cada artigo = 1 ticket tipo `conteudo`).
 
 ### Fase 4 — Diferenciais de IA e alcance (após fase 3 estabilizar)
 
@@ -111,9 +118,10 @@ gantt
 ```
 
 Regras de execução:
+- **Toda atividade do plano vira um ticket** em `.ai/tickets/` e segue o pipeline triagem → execução → revisão (ADR-0009). O quadro (`BOARD.md`) é a fonte de verdade do andamento; os 4 primeiros tickets (TCK-0001..0004) já cobrem o início das fases 1 e 3.
 - Nenhuma feature de fase N começa com débito P0 da fase 1 aberto.
-- Cada página/feature nova das fases 2–4 nasce de uma **spec** (`/spec`); cada mudança estrutural nasce de um **ADR** (`/adr`).
-- Sessões de IA seguem o protocolo `.ai/` (contexto → devloop → handoff/lessons).
+- Cada página/feature nova das fases 2–4 nasce de uma **spec** (`/spec`); cada mudança estrutural nasce de um **ADR** (`/adr`) — a triagem do ticket decide quando se aplica.
+- Sessões de IA seguem o protocolo `.ai/` (contexto → ticket → devloop → handoff/lessons).
 
 ## 6. Critérios de sucesso
 

@@ -27,6 +27,11 @@ Regras completas de posicionamento/sanitização: `.ai/memory/posicionamento-mar
 
 ## Prioridades correntes
 
-1. Fundação: corrigir débitos críticos (fase 1 do plano) antes de features novas.
-2. Reformular portfólio com cases reais sanitizados (fase 2–3 do plano).
-3. Retomar produção de conteúdo (blog) com os temas fortes: E2E/Playwright, RAG/MCP, dados em tempo real.
+1. **Trabalho flui por tickets**: `.ai/tickets/BOARD.md` é a fonte de verdade do andamento (pipeline triagem → executor → revisor, ADR-0009).
+2. Fundação: corrigir débitos críticos (fase 1 do plano, TCK-0001..0003) antes de features novas.
+3. Reformular portfólio com cases reais sanitizados (fase 2 do plano).
+4. **Blog novo (fase 3, revisado em 2026-08-16):** performático (SSG, JS mínimo, Lighthouse ~100) e multi-assunto com categorias — maioria do conteúdo sobre **IA/LLMs**, mais desenvolvimento/engenharia/arquitetura de software, inglês para devs e carreira. O formato antigo (desafios de código) foi descontinuado; espec. em elaboração (TCK-0004 → spec-006).
+
+## Política de commit vigente
+
+O Douglas autorizou (2026-08-16) **commits e pushes incrementais direto na `main`** para o trabalho deste plano. Commits pequenos e temáticos, mensagens em inglês (`feat:`/`fix:`/`chore:`), referenciando o ticket quando houver (`(TCK-NNNN)`).
