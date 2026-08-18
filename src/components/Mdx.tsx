@@ -11,10 +11,10 @@ const components = {
         <h1 className={cn('mt-2 text-4xl font-bold tracking-tight', className)} {...props} />
     ),
     h2: ({ className, ...props }: React.HTMLAttributes<HTMLHeadingElement>) => (
-        <h1 className={cn('mt-2 text-2xl font-semibold tracking-tight', className)} {...props} />
+        <h2 className={cn('mt-2 text-2xl font-semibold tracking-tight', className)} {...props} />
     ),
     h3: ({ className, ...props }: React.HTMLAttributes<HTMLHeadingElement>) => (
-        <h1 className={cn('mt-2 text-xl font-bold tracking-tight', className)} {...props} />
+        <h3 className={cn('mt-2 text-xl font-bold tracking-tight', className)} {...props} />
     ),
     img: ({ className, ...props }: React.HTMLAttributes<HTMLImageElement>) => (
         <Image src={''} alt={''} width={370} height={210} className={cn('my-6 w-full', className)} {...props} />
@@ -26,7 +26,7 @@ const components = {
         <strong className={cn('font-extrabold', className)} {...props} />
     ),
     b: ({ className, ...props }: React.HTMLAttributes<HTMLParagraphElement>) => (
-        <bdo className={cn('font-bold', className)} {...props} />
+        <b className={cn('font-bold', className)} {...props} />
     ),
     pre: Pre
 }
