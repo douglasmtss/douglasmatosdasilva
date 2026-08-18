@@ -33,7 +33,7 @@ O site funciona e está no ar (`douglasmatosdasilva.com.br` / `douglasmatosdev.c
 |---|---|
 | 8 | Typo sistêmico `NEXT_PULIC_*` → migração coordenada (código + .env.example + Vercel) para `NEXT_PUBLIC_*`/vars server |
 | 9 | Dois leitores de conteúdo (Contentlayer vs fs+gray-matter) → **resolvido em TCK-0006** |
-| 10 | Código morto: `src/utils/blog/*` (exceto `mountSlugParam.ts`), `lib/redirecti18nPathName.ts` (vazio), `utils/{links,constants,ascii_utf8_binary}.ts`, tipos órfãos em `types/blog.d.ts` |
+| 10 | Código morto: `src/utils/blog/*` (exceto `mountSlugParam.ts`), `lib/redirecti18nPathName.ts` (vazio), `utils/{links,constants,ascii_utf8_binary}.ts`, tipos órfãos em `types/blog.d.ts` | **resolvido em TCK-0007** |
 | 11 | Dependências não usadas: `react-router-dom` (+types), `cookies-next`, `shiki`, `shikiji`, `unist-util-visit`, `@fontsource/*` (não importados — `font-ranga` cai em `cursive`), `@types/react-icons` |
 | 12 | 3 fontes de verdade da base URL (`lib/baseUrl.ts` hardcoded, env var, README) |
 | 13 | Layouts `blog/` e `pages/` duplicados → um `[lang]/layout.tsx` |
