@@ -6,7 +6,7 @@ import { Locale } from '#/i18n.config'
 import PostsPreviewList from '@/components/PostsPreviewList'
 
 function getPosts(lang: Locale): Post[] {
-    const allPosts = getAllPosts(['createdAt', 'slug', 'title', 'image', 'content', 'description'], lang)
+    const allPosts = getAllPosts(lang)
 
     return allPosts
 }

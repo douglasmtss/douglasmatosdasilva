@@ -3,7 +3,7 @@ import PostPreview from './PostPreview'
 import { Locale } from '#/i18n.config'
 
 function getPosts(lang: Locale): Post[] {
-    const allPosts = getAllPosts(['createdAt', 'slug', 'title', 'image', 'content', 'description'], lang)
+    const allPosts = getAllPosts(lang)
 
     return allPosts
 }
@@ -20,7 +20,7 @@ const LastPosts = (props: LastPostProps): JSX.Element => {
     if (amount > allPosts.length) {
         amount = allPosts.length
     }
-    const lastPosts = allPosts.slice(0, allPosts.length)
+    const lastPosts = allPosts.slice(0, amount)
 
     const renderAllPosts = (): Iterable<React.ReactNode> => {
         return lastPosts.map((post, index) => {

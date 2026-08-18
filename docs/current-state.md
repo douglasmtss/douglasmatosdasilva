@@ -23,8 +23,8 @@ O site funciona e está no ar (`douglasmatosdasilva.com.br` / `douglasmatosdev.c
 | 2 | `"tailwind": "^4.0.0"` é pacote homônimo errado (o real é `tailwindcss`) | `package.json` |
 | 3 | Next 14.0.4 com CVEs conhecidas (incl. bypass de middleware) → atualizar major | `package.json` |
 | 4 | Form de contato: envio sem `await`, sem validação, sem escape de HTML, 200 sempre | `src/app/[lang]/pages/contact/api/route.ts` |
-| 5 | Sitemap gera URLs erradas (`/blog/br/x` em vez de `/br/blog/x`) | `src/app/sitemap.ts` |
-| 6 | `h2`/`h3` renderizam `<h1>` e `b` vira `<bdo>` nos posts (SEO/a11y) | `src/components/Mdx.tsx:13-20` |
+| 5 | Sitemap gera URLs erradas (`/blog/br/x` em vez de `/br/blog/x`) | **resolvido em TCK-0005** |
+| 6 | `h2`/`h3` renderizam `<h1>` e `b` vira `<bdo>` nos posts (SEO/a11y) | **resolvido em TCK-0005** |
 | 7 | `localStorage` lido no render → risco de `href="/null/..."` | `LinkI18n.tsx:16`, `MenuContent.tsx:11`, `ToggleLanguage.tsx:13` |
 
 ### P1 — higiene estrutural
@@ -32,7 +32,7 @@ O site funciona e está no ar (`douglasmatosdasilva.com.br` / `douglasmatosdev.c
 | # | Débito |
 |---|---|
 | 8 | Typo sistêmico `NEXT_PULIC_*` → migração coordenada (código + .env.example + Vercel) para `NEXT_PUBLIC_*`/vars server |
-| 9 | Dois leitores de conteúdo (Contentlayer vs fs+gray-matter) → convergir para Contentlayer e apagar `lib/blog.ts`/`mdToHtml.ts` |
+| 9 | Dois leitores de conteúdo (Contentlayer vs fs+gray-matter) → **resolvido em TCK-0006** |
 | 10 | Código morto: `src/utils/blog/*` (exceto `mountSlugParam.ts`), `lib/redirecti18nPathName.ts` (vazio), `utils/{links,constants,ascii_utf8_binary}.ts`, tipos órfãos em `types/blog.d.ts` |
 | 11 | Dependências não usadas: `react-router-dom` (+types), `cookies-next`, `shiki`, `shikiji`, `unist-util-visit`, `@fontsource/*` (não importados — `font-ranga` cai em `cursive`), `@types/react-icons` |
 | 12 | 3 fontes de verdade da base URL (`lib/baseUrl.ts` hardcoded, env var, README) |

@@ -4,7 +4,7 @@ titulo: Corrigir sitemap e semântica dos posts
 tipo: bug
 prioridade: P0
 fase: 1
-status: em_andamento
+status: concluido
 criado: 2026-08-17
 atualizado: 2026-08-17
 depende-de: []
@@ -30,3 +30,7 @@ Corrigir URLs canônicas do sitemap para incluir o locale, garantir que as pági
 ### 2026-08-17 — executor
 
 Auditoria dos débitos P0 restantes encontrou sitemap sem locale e mapeamentos MDX que transformavam `h2`/`h3` em `h1` e `b` em `bdo`. A correção será publicada em incremento isolado.
+
+### 2026-08-17 — validação
+
+`yarn lint` e `yarn build` passaram. O build gera 39 rotas estáticas, incluindo sitemap e as páginas bilíngues.

@@ -5,7 +5,6 @@ import { notFound } from 'next/navigation'
 import { mountSlugParam } from '@/utils/blog/mountSlugParam'
 import { Metadata } from 'next'
 import stripHtml from '@/lib/strip-html'
-import mdToHtml from '@/lib/mdToHtml'
 import BlogDate from '@/components/BlogDate'
 import getBaseUrl from '@/lib/baseUrl'
 import { Locale } from '#/i18n.config'
@@ -75,15 +74,16 @@ export default async function Page({ params }: PageProps): Promise<JSX.Element> 
     const resolvedParams = await params
     const doc = await getCachedDocFromParams(mountSlugParam(resolvedParams))
 
-    const description = await mdToHtml(doc.description ?? '')
+    const description = stripHtml(doc.description ?? '').replaceAll('**', '')
 
     return (
         <div className="mt-6">
             <h1 className="font-bold text-2xl text-dmds-2 dark:text-dmds-1 mb-6">{doc.title}</h1>
             <h2
                 className="font-light text-lg text-dmds-3 dark:text-dmds-4 mb-6"
-                dangerouslySetInnerHTML={{ __html: description }}
-            />
+            >
+                {description}
+            </h2>
             <small className="font-semibold text-md text-dmds-4 mb-6">
                 <BlogDate dateString={doc.createdAt} /> - {doc.author}
             </small>

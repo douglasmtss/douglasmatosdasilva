@@ -11,7 +11,7 @@ _(vazio)_
 
 ## Em andamento
 
-- [TCK-0005](TCK-0005-correcoes-seo-acessibilidade.md) — Corrigir sitemap e semântica dos posts (bug, P0, fase 1)
+_(vazio)_
 
 ## Review
 
@@ -26,4 +26,5 @@ _(vazio)_
 
 ## Concluído
 
-_(vazio)_
+- [TCK-0005](TCK-0005-correcoes-seo-acessibilidade.md) — Corrigir sitemap e semântica dos posts (bug, P0, fase 1)
+- [TCK-0006](TCK-0006-convergencia-conteudo.md) — Convergir leitura do blog para Contentlayer (débito, P1, fase 1)
